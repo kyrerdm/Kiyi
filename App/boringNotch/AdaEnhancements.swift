@@ -7,6 +7,7 @@ import OSLog
 import CoreImage
 
 extension Defaults.Keys {
+    static let kiyiLanguage = Key<String>("kiyiLanguage", default: "tr")
     static let kiyiNoticeWidth = Key<Double>("kiyiNoticeWidth", default: 320)
     static let kiyiNoticeCover = Key<Double>("kiyiNoticeCover", default: 56)
     static let kiyiNoticeDuration = Key<Double>("kiyiNoticeDuration", default: 2.4)
@@ -219,7 +220,7 @@ private final class AdaLockExpansion: ObservableObject {
         let existing = preview ? previewBackdrop : backdrop
         let window = existing ?? makePanel(preview: preview)
         if existing == nil {
-            window.title = preview ? "Kıyı Kapak Önizleme Arka Planı" : "Kıyı Kapak Arka Planı"
+            window.title = KiyiL(preview ? "Kıyı Kapak Önizleme Arka Planı" : "Kıyı Kapak Arka Planı")
             window.level = .init(rawValue: window.level.rawValue - 1)
             window.ignoresMouseEvents = true
             window.hasShadow = false
@@ -291,7 +292,7 @@ private final class AdaLockExpansion: ObservableObject {
     private func makePanel(preview: Bool) -> AdaPassivePanel {
         let window = AdaPassivePanel(contentRect: .zero, styleMask: [.borderless, .nonactivatingPanel],
                                      backing: .buffered, defer: false)
-        window.title = preview ? "Kıyı Kilit Kartı Önizleme" : "Kıyı Kilit Kartı"
+        window.title = KiyiL(preview ? "Kıyı Kilit Kartı Önizleme" : "Kıyı Kilit Kartı")
         window.isOpaque = false
         window.backgroundColor = .clear
         window.hasShadow = false
@@ -424,13 +425,13 @@ struct AdaLockCard: View {
             if showArtwork {
                 Button(action: toggleArtwork) { artwork }
                     .buttonStyle(.plain)
-                    .accessibilityLabel(expanded ? "Albüm kapağını küçült" : "Albüm kapağını büyüt")
+                    .accessibilityLabel(KiyiL(expanded ? "Albüm kapağını küçült" : "Albüm kapağını büyüt"))
             }
             VStack(spacing: 8) {
                 VStack(spacing: 2) {
-                    Text(hasTrack ? music.songTitle : demo ? "Kıyı" : "Müzik bekleniyor")
+                    Text(hasTrack ? music.songTitle : demo ? "Kıyı" : KiyiL("Müzik bekleniyor"))
                         .font(.system(size: 13, weight: .semibold)).lineLimit(1)
-                    Text(hasTrack ? music.artistName : demo ? "Örnek parça" : "Bir parça çaldığında burada görünür")
+                    Text(hasTrack ? music.artistName : demo ? KiyiL("Örnek parça") : KiyiL("Bir parça çaldığında burada görünür"))
                         .font(.system(size: 11)).foregroundStyle(.white.opacity(0.55)).lineLimit(1)
                 }
                 .frame(maxWidth: .infinity)
@@ -443,9 +444,9 @@ struct AdaLockCard: View {
                     let elapsed = playbackTime(at: context.date)
                     progress(elapsed: elapsed)
                     if showLyrics {
-                        Text(demo ? "Şarkı sözleri burada görünür"
+                        Text(demo ? KiyiL("Şarkı sözleri burada görünür")
                              : music.syncedLyrics.last(where: { $0.time <= elapsed })?.text
-                               ?? (music.isFetchingLyrics ? "Sözler yükleniyor…" : "Eşzamanlı söz bulunamadı"))
+                               ?? KiyiL(music.isFetchingLyrics ? "Sözler yükleniyor…" : "Eşzamanlı söz bulunamadı"))
                             .font(.subheadline.weight(.medium)).lineLimit(2)
                             .multilineTextAlignment(.center).frame(height: 44)
                     }
@@ -677,13 +678,13 @@ struct AdaSettingSlider: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                Text(title)
+                Text(KiyiL(title))
                 Spacer()
                 Text(percent ? "\(Int((value * 100).rounded()))%" : "\(Int(value.rounded())) pt")
                     .foregroundStyle(.secondary).monospacedDigit()
             }
             Slider(value: $value, in: range, step: step).labelsHidden()
-                .accessibilityLabel(title)
+                .accessibilityLabel(KiyiL(title))
         }
     }
 }
@@ -710,15 +711,15 @@ struct AdaAppearanceSettings: View {
             Text("Sağ").tag(true)
         }
         Text("Şarkı değişimi bildirimi").font(.headline)
-        Defaults.Toggle("Şarkı bildirimlerini göster", key: .enableSneakPeek)
+        Defaults.Toggle(key: .enableSneakPeek) { Text("Şarkı bildirimlerini göster") }
         AdaSettingSlider("Bildirim genişliği", value: $noticeWidth, range: 260...480, step: 10)
         AdaSettingSlider("Bildirim kapağı", value: $noticeCover, range: 40...80, step: 2)
         AdaSettingSlider("Bildirim yazı boyutu", value: $noticeText, range: 11...16, step: 1)
         Slider(value: $noticeDuration, in: 1...6, step: 0.2) {
-            Text("Görünme süresi: \(noticeDuration.formatted(.number.precision(.fractionLength(1)))) sn")
+            Text("Görünme süresi: \(noticeDuration.formatted(.number.locale(Locale(identifier: Defaults[.kiyiLanguage])).precision(.fractionLength(1)))) sn")
         }
-        Defaults.Toggle("Kapak altında hafif ışık", key: .kiyiNoticeGlow)
-        Defaults.Toggle("Bildirim geçiş animasyonu", key: .kiyiNoticeAnimation)
+        Defaults.Toggle(key: .kiyiNoticeGlow) { Text("Kapak altında hafif ışık") }
+        Defaults.Toggle(key: .kiyiNoticeAnimation) { Text("Bildirim geçiş animasyonu") }
         Text("Bildirim şeffaflığı Alt yüzey şeffaflığı ile eşzamanlı değişir.")
             .font(.caption).foregroundStyle(.secondary)
         HStack {
@@ -778,7 +779,7 @@ struct AdaAppearanceSettings: View {
     }
 
     func previewConnection() {
-        showConnection(["name": "AirPods Pro · Önizleme"])
+        showConnection(["name": KiyiL("AirPods Pro · Önizleme")])
     }
 
     private func showConnection(_ device: [String: String]) {
@@ -833,9 +834,9 @@ struct KiyiAirPodsConnection: View {
     }
 
     private var batteryText: String {
-        let values = [("Main", ""), ("Left", "Sol "), ("Right", "Sağ ")]
+        let values = [("Main", ""), ("Left", KiyiL("Sol") + " "), ("Right", KiyiL("Sağ") + " ")]
             .compactMap { key, label in device[key].map { label + $0 } }
-        return values.isEmpty ? "Bağlandı" : values.joined(separator: " · ")
+        return values.isEmpty ? KiyiL("Bağlandı") : values.joined(separator: " · ")
     }
 }
 
@@ -847,12 +848,12 @@ struct AdaAirPodsView: View {
             Toggle("AirPods bağlantı ve pil bilgisi", isOn: $enabled).onChange(of: enabled) { _, value in if value { monitor.refresh() } }
             ForEach(Array(monitor.devices.enumerated()), id: \.offset) { _, device in
                 VStack(alignment: .leading, spacing: 4) {
-                    Label(device["name"] ?? "Kulaklık", systemImage: "airpodspro")
-                    Text(device["connected"] == "true" ? "Bağlı" : "Bağlı değil").font(.caption).foregroundStyle(.secondary)
-                    if device["connected"] == "true" { Text([("Left", "Sol"), ("Right", "Sağ"), ("Case", "Kutu"), ("Main", "Pil")].compactMap { key, label in device[key].map { "\(label) \($0)" } }.joined(separator: " · ")).font(.caption) }
+                    Label(device["name"] ?? KiyiL("Kulaklık"), systemImage: "airpodspro")
+                    Text(KiyiL(device["connected"] == "true" ? "Bağlı" : "Bağlı değil")).font(.caption).foregroundStyle(.secondary)
+                    if device["connected"] == "true" { Text([("Left", KiyiL("Sol")), ("Right", KiyiL("Sağ")), ("Case", KiyiL("Kutu")), ("Main", KiyiL("Pil"))].compactMap { key, label in device[key].map { "\(label) \($0)" } }.joined(separator: " · ")).font(.caption) }
                 }
             }
-            Button(monitor.refreshing ? "Yenileniyor…" : "Cihazları yenile") { monitor.refresh() }.disabled(monitor.refreshing)
+            Button(KiyiL(monitor.refreshing ? "Yenileniyor…" : "Cihazları yenile")) { monitor.refresh() }.disabled(monitor.refreshing)
             Button("Bağlantı animasyonunu önizle") { monitor.previewConnection() }
             Text("Pil değerleri macOS tarafından raporlanıyorsa gösterilir.").font(.caption).foregroundStyle(.secondary)
         }
@@ -964,5 +965,66 @@ struct KiyiTrackChangeCard: View {
         .animation(reduceMotion || !animated ? nil : .easeOut(duration: 0.18), value: music.songTitle + music.artistName)
         .animation(reduceMotion || !animated ? nil : .easeOut(duration: 0.18), value: ObjectIdentifier(music.albumArt))
         .accessibilityElement(children: .combine)
+    }
+}
+
+// Explicit language selection is shared by SwiftUI and native strings.
+// Relaunching refreshes cached macOS menus and accessibility strings as well.
+func KiyiL(_ key: String) -> String {
+    let code = Defaults[.kiyiLanguage]
+    guard let path = Bundle.main.path(forResource: code, ofType: "lproj"),
+          let bundle = Bundle(path: path) else { return key }
+    return bundle.localizedString(forKey: key, value: key, table: nil)
+}
+
+struct KiyiMenuBarPanel: View {
+    var openSettings: () -> Void
+    var restart: () -> Void
+    var quit: () -> Void
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 10) {
+                Image("logo2").resizable().frame(width: 36, height: 36)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Kıyı").font(.system(size: 17, weight: .semibold, design: .rounded))
+                    Text("Kıyı burada.").font(.system(size: 11)).foregroundStyle(.secondary)
+                }
+                Spacer()
+            }.padding(.horizontal, 6).padding(.top, 4)
+            Divider()
+            KiyiMenuAction(title: "Ayarlar…", icon: "slider.horizontal.3", shortcut: "⌘,") { dismiss(); openSettings() }
+            KiyiMenuAction(title: "Yeniden başlat", icon: "arrow.clockwise") { dismiss(); restart() }
+            Divider()
+            KiyiMenuAction(title: "Kıyı’yı kapat", icon: "power") { dismiss(); quit() }
+            Text("kyrerdm · Kıyı").font(.system(size: 10)).foregroundStyle(.tertiary).padding(.horizontal, 8)
+        }
+        .padding(14).frame(width: 262)
+        .environment(\.locale, Locale(identifier: Defaults[.kiyiLanguage]))
+    }
+}
+
+private struct KiyiMenuAction: View {
+    var title: String
+    var icon: String
+    var shortcut: String = ""
+    var action: () -> Void
+    @State private var hovered = false
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 10) {
+                Image(systemName: icon).frame(width: 18).foregroundStyle(.secondary)
+                Text(KiyiL(title)).lineLimit(1).minimumScaleFactor(0.9)
+                Spacer(minLength: 8)
+                Text(shortcut).font(.system(size: 11)).foregroundStyle(.tertiary)
+            }
+            .font(.system(size: 13)).padding(.horizontal, 10).padding(.vertical, 10)
+            .background(hovered ? Color.primary.opacity(0.07) : .clear, in: RoundedRectangle(cornerRadius: 9))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain).onHover { hovered = $0 }
+        .accessibilityLabel(KiyiL(title))
     }
 }

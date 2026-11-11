@@ -1,0 +1,94 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "NSAppleEventsUsageDescription": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müziği görüntülemek ve oynatmayı kontrol etmek için Spotify veya Music uygulamasına erişir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı accesses Spotify or Music to display and control playback."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı greift auf Spotify oder Music zu, um die Wiedergabe anzuzeigen und zu steuern."
+          }
+        }
+      }
+    },
+    "NSCalendarsUsageDescription": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takvim etkinliklerini çentikte göstermek için erişim ister."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı requests calendar access to display events in the notch."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı benötigt Kalenderzugriff, um Ereignisse im Notch anzuzeigen."
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayna özelliğinde canlı kamera görüntüsü göstermek için erişim ister."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı requests camera access for the live mirror feature."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı benötigt Kamerazugriff für die Live-Spiegelfunktion."
+          }
+        }
+      }
+    },
+    "NSRemindersUsageDescription": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hatırlatıcılarını takvimde göstermek için erişim ister."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı requests access to show your reminders alongside calendar events."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı benötigt Zugriff, um Erinnerungen neben Kalenderereignissen anzuzeigen."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -18,6 +18,7 @@ struct SettingsView: View {
     let updaterController: SPUStandardUpdaterController?
     @State private var page = KiyiSettingsPage.appearance
     @State private var query = ""
+    @Default(.kiyiLanguage) private var languageCode
     @ObservedObject private var coordinator = BoringViewCoordinator.shared
     @ObservedObject private var calendars = CalendarManager.shared
     @ObservedObject private var shares = QuickShareService.shared
@@ -62,7 +63,7 @@ struct SettingsView: View {
                         Button { page = item } label: {
                             HStack(spacing: 11) {
                                 Image(systemName: item.symbol).frame(width: 20)
-                                Text(item.rawValue).fontWeight(page == item ? .semibold : .regular)
+                                Text(KiyiL(item.rawValue)).fontWeight(page == item ? .semibold : .regular)
                                 Spacer()
                                 if page == item { Circle().fill(Color.effectiveAccent).frame(width: 5, height: 5) }
                             }
@@ -85,8 +86,8 @@ struct SettingsView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text(page.rawValue).font(.system(size: 30, weight: .bold, design: .rounded))
-                        Text(page.subtitle).font(.system(size: 13)).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                        Text(KiyiL(page.rawValue)).font(.system(size: 30, weight: .bold, design: .rounded))
+                        Text(KiyiL(page.subtitle)).font(.system(size: 13)).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                     }.padding(.bottom, 6)
                     content
                     Text("Değişiklikler otomatik kaydedilir.").font(.system(size: 11)).foregroundStyle(.tertiary)
@@ -95,6 +96,7 @@ struct SettingsView: View {
             .id(page)
         }
         .frame(minWidth: 880, minHeight: 640)
+        .environment(\.locale, Locale(identifier: languageCode))
         .font(.system(size: 13))
         .tint(.effectiveAccent)
         .background(Color(nsColor: .windowBackgroundColor))
@@ -114,12 +116,12 @@ struct SettingsView: View {
                             NotificationCenter.default.post(name: NSNotification.Name("AccentColorChanged"), object: nil)
                         }
                 }
-                Defaults.Toggle("Panel gölgesi", key: .enableShadow)
-                Defaults.Toggle("Açık panelde yuvarlak köşeler", key: .cornerRadiusScaling)
-                Defaults.Toggle("Çentikte ayarlar düğmesi", key: .settingsIconInNotch)
-                Defaults.Toggle("Albüm rengine uygun oynatıcı", key: .playerColorTinting)
-                Defaults.Toggle("Kapak arkasında yumuşak ışık", key: .lightingEffect)
-                Defaults.Toggle("Renkli ses animasyonu", key: .coloredSpectrogram)
+                Defaults.Toggle(key: .enableShadow) { Text("Panel gölgesi") }
+                Defaults.Toggle(key: .cornerRadiusScaling) { Text("Açık panelde yuvarlak köşeler") }
+                Defaults.Toggle(key: .settingsIconInNotch) { Text("Çentikte ayarlar düğmesi") }
+                Defaults.Toggle(key: .playerColorTinting) { Text("Albüm rengine uygun oynatıcı") }
+                Defaults.Toggle(key: .lightingEffect) { Text("Kapak arkasında yumuşak ışık") }
+                Defaults.Toggle(key: .coloredSpectrogram) { Text("Renkli ses animasyonu") }
                 Picker("Oynatıcı çubuğu rengi", selection: $sliderColor) {
                     Text("Beyaz").tag(SliderColorEnum.white)
                     Text("Albüm kapağı").tag(SliderColorEnum.albumArt)
@@ -128,11 +130,23 @@ struct SettingsView: View {
                 Toggle("Ana ekran ve raf sekmelerini göster", isOn: $coordinator.alwaysShowTabs)
             }
         case .general:
+            card("Dil", "globe") {
+                Picker("Uygulama dili", selection: $languageCode) {
+                    Text(verbatim: "Türkçe").tag("tr")
+                    Text(verbatim: "English").tag("en")
+                    Text(verbatim: "Deutsch").tag("de")
+                }
+                .onChange(of: languageCode) { _, code in
+                    UserDefaults.standard.set([code], forKey: "AppleLanguages")
+                    NotificationCenter.default.post(name: Notification.Name("kiyi.languageChanged"), object: nil)
+                }
+                Text("Dil değişince Kıyı yeniden açılır; ayarların korunur.").font(.callout).foregroundStyle(.secondary)
+            }
             card("Mac ile birlikte", "desktopcomputer") {
-                LaunchAtLogin.Toggle("Oturum açınca Kıyı’yı başlat")
-                Defaults.Toggle("Menü çubuğunda Kıyı simgesi", key: .menubarIcon)
-                Defaults.Toggle("Tüm ekranlarda göster", key: .showOnAllDisplays)
-                Defaults.Toggle("Etkin ekranı takip et", key: .automaticallySwitchDisplay)
+                LaunchAtLogin.Toggle { Text("Oturum açınca Kıyı’yı başlat") }
+                Defaults.Toggle(key: .menubarIcon) { Text("Menü çubuğunda Kıyı simgesi") }
+                Defaults.Toggle(key: .showOnAllDisplays) { Text("Tüm ekranlarda göster") }
+                Defaults.Toggle(key: .automaticallySwitchDisplay) { Text("Etkin ekranı takip et") }
                 Picker("Tercih edilen ekran", selection: $coordinator.preferredScreenUUID) {
                     ForEach(NSScreen.screens, id: \.displayUUID) { screen in
                         Text(screen.localizedName).tag(screen.displayUUID)
@@ -141,19 +155,19 @@ struct SettingsView: View {
                 Text("Ayarlar açıkken Dock simgesi görünür. ⌘Q ayarları kapatır; tam çıkış menü çubuğundandır.").foregroundStyle(.secondary).font(.callout)
             }
             card("Etkileşim", "hand.draw") {
-                Defaults.Toggle("Fareyle üzerine gelince aç", key: .openNotchOnHover)
-                Slider(value: $hoverDelay, in: 0...1, step: 0.05) { Text("Açılma beklemesi · \(hoverDelay.formatted()) sn") }
-                Defaults.Toggle("Dokunsal geri bildirim", key: .enableHaptics)
-                Defaults.Toggle("Trackpad hareketleri", key: .enableGestures)
-                Defaults.Toggle("Yukarı kaydırınca kapat", key: .closeGestureEnabled)
+                Defaults.Toggle(key: .openNotchOnHover) { Text("Fareyle üzerine gelince aç") }
+                Slider(value: $hoverDelay, in: 0...1, step: 0.05) { Text("Açılma beklemesi · \(hoverDelay.formatted(.number.locale(Locale(identifier: languageCode)))) sn") }
+                Defaults.Toggle(key: .enableHaptics) { Text("Dokunsal geri bildirim") }
+                Defaults.Toggle(key: .enableGestures) { Text("Trackpad hareketleri") }
+                Defaults.Toggle(key: .closeGestureEnabled) { Text("Yukarı kaydırınca kapat") }
                 Slider(value: $sensitivity, in: 50...500) { Text("Hareket eşiği") }
                 Picker("Tam ekranda", selection: $fullscreen) {
                     Text("Daima gizle").tag(HideNotchOption.always)
                     Text("Medya uygulamasında gizle").tag(HideNotchOption.nowPlayingOnly)
                     Text("Görünür kalsın").tag(HideNotchOption.never)
                 }
-                Defaults.Toggle("Ekran kaydında paneli gizle", key: .hideFromScreenRecording)
-                Defaults.Toggle("Üst pencere başlık alanını koru", key: .hideTitleBar)
+                Defaults.Toggle(key: .hideFromScreenRecording) { Text("Ekran kaydında paneli gizle") }
+                Defaults.Toggle(key: .hideTitleBar) { Text("Üst pencere başlık alanını koru") }
             }
             card("Ekrana uyum", "display") {
                 Picker("Çentikli ekran yüksekliği", selection: $notchMode) {
@@ -177,8 +191,8 @@ struct SettingsView: View {
                     Text("YouTube Music").tag(MediaControllerType.youtubeMusic)
                 }.onChange(of: source) { _, _ in NotificationCenter.default.post(name: .mediaControllerChanged, object: nil) }
                 Toggle("Kapalı adada müzik bilgisi", isOn: $coordinator.musicLiveActivityEnabled)
-                Defaults.Toggle("Şarkı değişiminde bildirim kartı", key: .enableSneakPeek)
-                Defaults.Toggle("Şarkı sözleri", key: .enableLyrics)
+                Defaults.Toggle(key: .enableSneakPeek) { Text("Şarkı değişiminde bildirim kartı") }
+                Defaults.Toggle(key: .enableLyrics) { Text("Şarkı sözleri") }
                 Slider(value: $idleDelay, in: 0...10, step: 1) {
                     Text("Duraklatınca gizleme beklemesi · \(Int(idleDelay)) sn")
                 }
@@ -191,19 +205,19 @@ struct SettingsView: View {
             }
         case .system:
             card("Ses ve parlaklık", "sun.max") {
-                Defaults.Toggle("Sistem göstergelerini Kıyı’da göster", key: .hudReplacement)
+                Defaults.Toggle(key: .hudReplacement) { Text("Sistem göstergelerini Kıyı’da göster") }
                 HStack {
-                    Label(MediaKeyInterceptor.shared.isAuthorized ? "Erişim izni verilmiş" : "Erişim izni gerekli", systemImage: MediaKeyInterceptor.shared.isAuthorized ? "checkmark.circle" : "lock")
+                    Label(KiyiL(MediaKeyInterceptor.shared.isAuthorized ? "Erişim izni verilmiş" : "Erişim izni gerekli"), systemImage: MediaKeyInterceptor.shared.isAuthorized ? "checkmark.circle" : "lock")
                     Spacer()
                     Button("İzni yönet") { MediaKeyInterceptor.shared.requestAccessibilityAuthorization() }
                 }
-                Defaults.Toggle("Göstergeyi çentiğin iki yanında göster", key: .inlineHUD)
-                Defaults.Toggle("Kapalı adada yüzde", key: .showClosedNotchHUDPercentage)
-                Defaults.Toggle("Açık panelde göster", key: .showOpenNotchHUD)
-                Defaults.Toggle("Açık panelde yüzde", key: .showOpenNotchHUDPercentage)
-                Defaults.Toggle("Geçişli dolgu", key: .enableGradient)
-                Defaults.Toggle("Dolguya vurgu rengini uygula", key: .systemEventIndicatorUseAccent)
-                Defaults.Toggle("Hafif parlama", key: .systemEventIndicatorShadow)
+                Defaults.Toggle(key: .inlineHUD) { Text("Göstergeyi çentiğin iki yanında göster") }
+                Defaults.Toggle(key: .showClosedNotchHUDPercentage) { Text("Kapalı adada yüzde") }
+                Defaults.Toggle(key: .showOpenNotchHUD) { Text("Açık panelde göster") }
+                Defaults.Toggle(key: .showOpenNotchHUDPercentage) { Text("Açık panelde yüzde") }
+                Defaults.Toggle(key: .enableGradient) { Text("Geçişli dolgu") }
+                Defaults.Toggle(key: .systemEventIndicatorUseAccent) { Text("Dolguya vurgu rengini uygula") }
+                Defaults.Toggle(key: .systemEventIndicatorShadow) { Text("Hafif parlama") }
                 Picker("Option tuşuyla ses/parlaklık", selection: $optionAction) {
                     Text("Sistem Ayarları’nı aç").tag(OptionKeyAction.openSettings)
                     Text("Göstergeyi aç").tag(OptionKeyAction.showHUD)
@@ -211,18 +225,18 @@ struct SettingsView: View {
                 }
             }
             card("Pil", "battery.100") {
-                Defaults.Toggle("Pil simgesi", key: .showBatteryIndicator)
-                Defaults.Toggle("Pil yüzdesi", key: .showBatteryPercentage)
-                Defaults.Toggle("Şarj durumu simgeleri", key: .showPowerStatusIcons)
-                Defaults.Toggle("Şarja takılınca bildirim", key: .showPowerStatusNotifications)
+                Defaults.Toggle(key: .showBatteryIndicator) { Text("Pil simgesi") }
+                Defaults.Toggle(key: .showBatteryPercentage) { Text("Pil yüzdesi") }
+                Defaults.Toggle(key: .showPowerStatusIcons) { Text("Şarj durumu simgeleri") }
+                Defaults.Toggle(key: .showPowerStatusNotifications) { Text("Şarja takılınca bildirim") }
             }
         case .lock:
             card("Kilit ekranındaki müzik", "lock") {
-                Defaults.Toggle("Kilit ekranında kartı göster", key: .adaLockMusic)
-                Defaults.Toggle("Parça yokken kartı gizle", key: .adaLockHideIdle)
-                Defaults.Toggle("Albüm kapağı", key: .adaLockArtwork)
-                Defaults.Toggle("Kapak büyüyünce bulanık arka plan", key: .adaLockArtworkBackdrop)
-                Defaults.Toggle("Şarkı sözleri", key: .adaLockLyrics)
+                Defaults.Toggle(key: .adaLockMusic) { Text("Kilit ekranında kartı göster") }
+                Defaults.Toggle(key: .adaLockHideIdle) { Text("Parça yokken kartı gizle") }
+                Defaults.Toggle(key: .adaLockArtwork) { Text("Albüm kapağı") }
+                Defaults.Toggle(key: .adaLockArtworkBackdrop) { Text("Kapak büyüyünce bulanık arka plan") }
+                Defaults.Toggle(key: .adaLockLyrics) { Text("Şarkı sözleri") }
                 AdaSettingSlider("Kapak boyutu", value: $lockCover, range: 120...280, step: 5)
                 AdaSettingSlider("Kart genişliği", value: $lockWidth, range: 300...480, step: 5)
                 AdaSettingSlider("Kart koyuluğu", value: $lockOpacity, range: 0...1, step: 0.05, percent: true)
@@ -231,12 +245,12 @@ struct SettingsView: View {
             }
         case .shelf:
             card("Dosyalar ve paylaşım", "tray") {
-                Defaults.Toggle("Dosya rafını aç", key: .boringShelf)
-                Defaults.Toggle("Dosya varsa doğrudan rafı aç", key: .openShelfByDefault)
-                Defaults.Toggle("Dokununca dosyayı aç", key: .shelfTapToOpen)
-                Defaults.Toggle("Sürüklerken kopyala", key: .copyOnDrag)
-                Defaults.Toggle("Sürükleme sonrası raftan kaldır", key: .autoRemoveShelfItems)
-                Defaults.Toggle("Geniş sürükleme algılama alanı", key: .expandedDragDetection)
+                Defaults.Toggle(key: .boringShelf) { Text("Dosya rafını aç") }
+                Defaults.Toggle(key: .openShelfByDefault) { Text("Dosya varsa doğrudan rafı aç") }
+                Defaults.Toggle(key: .shelfTapToOpen) { Text("Dokununca dosyayı aç") }
+                Defaults.Toggle(key: .copyOnDrag) { Text("Sürüklerken kopyala") }
+                Defaults.Toggle(key: .autoRemoveShelfItems) { Text("Sürükleme sonrası raftan kaldır") }
+                Defaults.Toggle(key: .expandedDragDetection) { Text("Geniş sürükleme algılama alanı") }
                     .onChange(of: Defaults[.expandedDragDetection]) { _, _ in NotificationCenter.default.post(name: .expandedDragDetectionChanged, object: nil) }
                 Picker("Hızlı paylaşım", selection: $shareProvider) {
                     ForEach(shares.availableProviders, id: \.id) { provider in Text(provider.id).tag(provider.id) }
@@ -246,11 +260,11 @@ struct SettingsView: View {
         case .extras:
             card("Kulaklıklar", "airpodspro") { AdaAirPodsView() }
             card("Takvim ve hatırlatıcılar", "calendar") {
-                Defaults.Toggle("Takvimi adada göster", key: .showCalendar)
-                Defaults.Toggle("Tamamlanan hatırlatıcıları gizle", key: .hideCompletedReminders)
-                Defaults.Toggle("Tüm gün etkinliklerini gizle", key: .hideAllDayEvents)
-                Defaults.Toggle("Sıradaki etkinliğe kaydır", key: .autoScrollToNextEvent)
-                Defaults.Toggle("Etkinlik başlığını tam göster", key: .showFullEventTitles)
+                Defaults.Toggle(key: .showCalendar) { Text("Takvimi adada göster") }
+                Defaults.Toggle(key: .hideCompletedReminders) { Text("Tamamlanan hatırlatıcıları gizle") }
+                Defaults.Toggle(key: .hideAllDayEvents) { Text("Tüm gün etkinliklerini gizle") }
+                Defaults.Toggle(key: .autoScrollToNextEvent) { Text("Sıradaki etkinliğe kaydır") }
+                Defaults.Toggle(key: .showFullEventTitles) { Text("Etkinlik başlığını tam göster") }
                 Button("Takvim ve hatırlatıcı izinlerini iste") {
                     Task { await calendars.checkCalendarAuthorization(); await calendars.checkReminderAuthorization() }
                 }
@@ -259,7 +273,7 @@ struct SettingsView: View {
                 }
             }
             card("Ayna", "web.camera") {
-                Defaults.Toggle("Kamera aynasını göster", key: .showMirror)
+                Defaults.Toggle(key: .showMirror) { Text("Kamera aynasını göster") }
                 Picker("Ayna şekli", selection: $mirrorShape) {
                     Text("Dikdörtgen").tag(MirrorShapeEnum.rectangle)
                     Text("Daire").tag(MirrorShapeEnum.circle)
@@ -290,7 +304,7 @@ struct SettingsView: View {
 
     private func card<C: View>(_ title: String, _ symbol: String, @ViewBuilder content: () -> C) -> some View {
         VStack(alignment: .leading, spacing: 18) {
-            Label(title, systemImage: symbol).font(.system(size: 14, weight: .semibold)).foregroundStyle(Color.effectiveAccent)
+            Label(KiyiL(title), systemImage: symbol).font(.system(size: 14, weight: .semibold)).foregroundStyle(Color.effectiveAccent)
             VStack(alignment: .leading, spacing: 15, content: content)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -329,7 +343,7 @@ private enum KiyiSettingsPage: String, CaseIterable, Identifiable {
         case .about: "kyrerdm tarafından geliştirilen kişisel macOS yardımcı uygulaması."
         }
     }
-    var search: String { rawValue + " " + subtitle + (self == .system ? " ses parlaklık pil izin" : self == .appearance ? " renk tema şeffaflık kapak bildirim" : self == .extras ? " airpods takvim kamera" : "") }
+    var search: String { KiyiL(rawValue) + " " + KiyiL(subtitle) + (self == .general ? " language Sprache dil " : "") + (self == .system ? " ses parlaklık pil izin" : self == .appearance ? " renk tema şeffaflık kapak bildirim" : self == .extras ? " airpods takvim kamera" : "") }
 }
 
 

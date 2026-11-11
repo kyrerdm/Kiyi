@@ -41,7 +41,7 @@ struct InlineHUD: View {
                     }
                 }
                 if showPercentage || type == .mic {
-                    Text(type == .mic ? (value == 0 ? "Kapalı" : "Açık") : "\(Int((value * 100).rounded()))%")
+                    Text(type == .mic ? KiyiL(value == 0 ? "Kapalı" : "Açık") : "\(Int((value * 100).rounded()))%")
                         .font(.system(size: 10, weight: .medium).monospacedDigit())
                         .foregroundStyle(.white.opacity(0.65))
                         .frame(width: 28, alignment: .trailing)
@@ -53,7 +53,7 @@ struct InlineHUD: View {
         .foregroundStyle(.white.opacity(0.92))
         .frame(height: max(24, vm.effectiveClosedNotchHeight + 2))
         .accessibilityElement(children: .contain)
-        .accessibilityLabel(title)
+        .accessibilityLabel(KiyiL(title))
     }
 
     private var title: String {

@@ -29,7 +29,7 @@ class MusicManager: ObservableObject {
     private var activeController: (any MediaControllerProtocol)?
 
     // Published properties for UI
-    @Published var songTitle: String = "Müzik bekleniyor"
+    @Published var songTitle: String = KiyiL("Müzik bekleniyor")
     @Published var artistName: String = ""
     @Published var albumArt: NSImage = defaultImage
     @Published var isPlaying = false

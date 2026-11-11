@@ -9,12 +9,13 @@ import AppKit
 
 @MainActor
 enum ApplicationRelauncher {
-    static func restart(onLaunchRequested: @escaping () -> Void) {
+    static func restart(showSettings: Bool = false, onLaunchRequested: @escaping () -> Void) {
+        if showSettings { UserDefaults.standard.set(true, forKey: "kiyiReopenSettings") }
         let configuration = NSWorkspace.OpenConfiguration()
         configuration.createsNewApplicationInstance = true
         configuration.activates = false
-        configuration.arguments = ["--kiyi-relaunch"]
+        configuration.arguments = ["--kiyi-relaunch"] + (showSettings ? ["--settings"] : [])
         NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: configuration)
-        onLaunchRequested()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: onLaunchRequested)
     }
 }

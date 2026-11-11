@@ -1617,8 +1617,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Der Zugriff auf Barrierefreiheit ist erforderlich, um das System HUD zu ersetzen."
+            "state": "translated",
+            "value": "Bedienungshilfen-Zugriff ist erforderlich, um die Systemanzeige zu ersetzen."
           }
         },
         "en": {
@@ -3318,8 +3318,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Batterie Informationen"
+            "state": "translated",
+            "value": "Batterieinformationen"
           }
         },
         "en": {
@@ -3418,8 +3418,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Batterie Einstellungen"
+            "state": "translated",
+            "value": "Batterieeinstellungen"
           }
         },
         "en": {
@@ -3518,8 +3518,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Batterie Status"
+            "state": "translated",
+            "value": "Batteriestatus"
           }
         },
         "en": {
@@ -3709,12 +3709,36 @@
             "state": "translated",
             "value": "Kıyı"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı"
+          }
         }
       }
     },
     "boring.notch": {
       "localizations": {
         "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı"
+          }
+        },
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Kıyı"
@@ -3838,8 +3862,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Kalender Zugriff verweigert. Bitte aktiviere es in den Systemeinstellungen."
+            "state": "translated",
+            "value": "Kalenderzugriff verweigert. Bitte erlaube den Zugriff in den Systemeinstellungen."
           }
         },
         "en": {
@@ -5338,8 +5362,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Closed Notch"
+            "state": "translated",
+            "value": "Geschlossene Insel"
           }
         },
         "en": {
@@ -8943,8 +8967,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Erweiterter Ziehen Erkennungsbereich"
+            "state": "translated",
+            "value": "Erweiterter Erkennungsbereich für Ziehgesten"
           }
         },
         "en": {
@@ -9744,8 +9768,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Gesten Empfindlichkeit"
+            "state": "translated",
+            "value": "Gestenempfindlichkeit"
           }
         },
         "en": {
@@ -11044,8 +11068,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Schwebeverzögerung"
+            "state": "translated",
+            "value": "Öffnungsverzögerung"
           }
         },
         "en": {
@@ -12845,8 +12869,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Medium"
+            "state": "translated",
+            "value": "Medien"
           }
         },
         "en": {
@@ -14045,8 +14069,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Muted"
+            "state": "translated",
+            "value": "Stummgeschaltet"
           }
         },
         "en": {
@@ -15446,8 +15470,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Open Notch"
+            "state": "translated",
+            "value": "Geöffnete Insel"
           }
         },
         "en": {
@@ -16246,8 +16270,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Progress bar style"
+            "state": "translated",
+            "value": "Stil der Fortschrittsanzeige"
           }
         },
         "en": {
@@ -16546,8 +16570,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Verlassen"
+            "state": "translated",
+            "value": "Beenden"
           }
         },
         "en": {
@@ -16646,8 +16670,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "App verlassen"
+            "state": "translated",
+            "value": "App beenden"
           }
         },
         "en": {
@@ -16946,8 +16970,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Erinnerungen Zugriff verweigert. Bitte aktiviere es in den Systemeinstellungen."
+            "state": "translated",
+            "value": "Zugriff auf Erinnerungen verweigert. Bitte erlaube den Zugriff in den Systemeinstellungen."
           }
         },
         "en": {
@@ -17346,8 +17370,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Replaces the standard macOS volume, display brightness, and keyboard brightness HUDs with a custom design."
+            "state": "translated",
+            "value": "Ersetzt die macOS-Anzeigen für Lautstärke, Bildschirm- und Tastaturhelligkeit durch die Kıyı-Anzeigen."
           }
         },
         "en": {
@@ -17747,8 +17771,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Boring Notch neu starten"
+            "state": "translated",
+            "value": "Kıyı neu starten"
           }
         },
         "en": {
@@ -18948,8 +18972,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Show HUD in open notch"
+            "state": "translated",
+            "value": "Anzeige in der geöffneten Insel zeigen"
           }
         },
         "en": {
@@ -19548,8 +19572,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Show percentage"
+            "state": "translated",
+            "value": "Prozent anzeigen"
           }
         },
         "en": {
@@ -19848,8 +19872,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Einstellungssymbol in Noch anzeigen"
+            "state": "translated",
+            "value": "Einstellungssymbol im Notch anzeigen"
           }
         },
         "en": {
@@ -21851,8 +21875,8 @@
         },
         "de": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "Unmuted"
+            "state": "translated",
+            "value": "Nicht stummgeschaltet"
           }
         },
         "en": {
@@ -23442,6 +23466,18 @@
             "state": "translated",
             "value": "İkisi de"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Both"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beide"
+          }
         }
       }
     },
@@ -23451,6 +23487,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "İndirme simgesi biçimi"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download icon style"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download-Symbolstil"
           }
         }
       }
@@ -23462,6 +23510,18 @@
             "state": "translated",
             "value": "İndirme göstergesi biçimi"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download indicator style"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download-Anzeigestil"
+          }
         }
       }
     },
@@ -23471,6 +23531,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "İndirme göstergeleri"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download indicators"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download-Anzeigen"
           }
         }
       }
@@ -23482,6 +23554,18 @@
             "state": "translated",
             "value": "Düzenle"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bearbeiten"
+          }
         }
       }
     },
@@ -23491,6 +23575,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Safari indirmelerini göster"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable Safari downloads"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safari-Downloads aktivieren"
           }
         }
       }
@@ -23502,6 +23598,18 @@
             "state": "translated",
             "value": "Uygulamaları hariç tut"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exclude apps"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apps ausschließen"
+          }
         }
       }
     },
@@ -23511,6 +23619,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Oturum açınca başlat"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Launch at login"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bei Anmeldung starten"
           }
         }
       }
@@ -23522,6 +23642,18 @@
             "state": "translated",
             "value": "Hariç tutulan uygulama yok"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No excluded apps"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine ausgeschlossenen Apps"
+          }
         }
       }
     },
@@ -23531,6 +23663,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Yalnız uygulama simgesi"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only app icon"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur App-Symbol"
           }
         }
       }
@@ -23542,6 +23686,18 @@
             "state": "translated",
             "value": "Yalnız indirme simgesi"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only download icon"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur Download-Symbol"
+          }
         }
       }
     },
@@ -23551,6 +23707,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Yüzde"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Percentage"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prozent"
           }
         }
       }
@@ -23562,6 +23730,18 @@
             "state": "translated",
             "value": "Oynatıcıyı kapak rengiyle renklendir"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Player tinting"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Player-Färbung"
+          }
         }
       }
     },
@@ -23571,6 +23751,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "İlerleme çubuğu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progress bar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortschrittsanzeige"
           }
         }
       }
@@ -23582,6 +23774,18 @@
             "state": "translated",
             "value": "İndirme ilerlemesini göster"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show download progress"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download-Fortschritt anzeigen"
+          }
         }
       }
     },
@@ -23591,6 +23795,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Karşılama penceresi"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome window"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Willkommensfenster"
           }
         }
       }
@@ -23602,6 +23818,18 @@
             "state": "translated",
             "value": "Şimdi çalınan"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Now Playing"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktuelle Wiedergabe"
+          }
         }
       }
     },
@@ -23611,6 +23839,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sistem Ayarları’nı aç"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open System Settings"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systemeinstellungen öffnen"
           }
         }
       }
@@ -23622,6 +23862,18 @@
             "state": "translated",
             "value": "Göstergeyi göster"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show indicator"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anzeige einblenden"
+          }
         }
       }
     },
@@ -23631,6 +23883,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "İşlem yapma"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No action"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Aktion"
           }
         }
       }
@@ -23642,6 +23906,18 @@
             "state": "translated",
             "value": "Beyaz"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "White"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiß"
+          }
         }
       }
     },
@@ -23651,6 +23927,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Albüm kapağına uydur"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Match album artwork"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An Albumcover anpassen"
           }
         }
       }
@@ -23662,6 +23950,18 @@
             "state": "translated",
             "value": "Kamera erişimi"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable camera access"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamerazugriff erlauben"
+          }
         }
       }
     },
@@ -23671,6 +23971,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Takvim erişimi"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable calendar access"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalenderzugriff erlauben"
           }
         }
       }
@@ -23682,6 +23994,18 @@
             "state": "translated",
             "value": "Hatırlatıcı erişimi"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable reminder access"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zugriff auf Erinnerungen erlauben"
+          }
         }
       }
     },
@@ -23691,6 +24015,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erişilebilirlik erişimi"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable accessibility access"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedienungshilfen-Zugriff erlauben"
           }
         }
       }
@@ -23702,6 +24038,18 @@
             "state": "translated",
             "value": "Kıyı’nın ayna özelliği, kameranın canlı görüntüsünü çentikte gösterir. Kamera erişimi yalnız bu özellik için gerekir. Aynayı istediğin zaman kapatabilirsin."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı includes a camera mirror in the notch. Camera access is used only for the live preview. You can turn the mirror off at any time."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı bietet einen Kameraspiegel im Notch. Kamerazugriff wird nur für die Live-Vorschau verwendet. Der Spiegel lässt sich jederzeit ausschalten."
+          }
         }
       }
     },
@@ -23711,6 +24059,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kamera iznin olmadan kullanılmaz. Görüntü kaydedilmez veya saklanmaz."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your camera is never used without your consent, and nothing is recorded or stored."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Kamera wird nicht ohne Zustimmung verwendet. Es wird nichts aufgezeichnet oder gespeichert."
           }
         }
       }
@@ -23722,6 +24082,18 @@
             "state": "translated",
             "value": "Kıyı yaklaşan etkinliklerini tek yerde gösterebilir. Bunun için takvim erişimi gerekir."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı can show your upcoming events. Calendar access is required to display your schedule."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı kann deine bevorstehenden Ereignisse anzeigen. Dafür ist Kalenderzugriff erforderlich."
+          }
         }
       }
     },
@@ -23731,6 +24103,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Takvim verileri yalnız etkinliklerini göstermek için kullanılır; paylaşılmaz."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your calendar data is only used to show your events and is never shared."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Kalenderdaten werden nur zur Anzeige deiner Ereignisse verwendet und nicht geteilt."
           }
         }
       }
@@ -23742,6 +24126,18 @@
             "state": "translated",
             "value": "Kıyı, hatırlatıcılarını takvim etkinliklerinin yanında gösterebilir. Bunun için Hatırlatıcılar erişimi gerekir."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı can show reminders alongside your calendar events. Reminders access is required to display them."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı kann Erinnerungen neben Kalenderereignissen anzeigen. Dafür ist Zugriff auf Erinnerungen erforderlich."
+          }
         }
       }
     },
@@ -23751,6 +24147,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hatırlatıcı verileri yalnız ekranda göstermek için kullanılır; paylaşılmaz."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your reminders data is only used to show your reminders and is never shared."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Erinnerungen werden nur zur Anzeige verwendet und nicht geteilt."
           }
         }
       }
@@ -23762,6 +24170,18 @@
             "state": "translated",
             "value": "Ses ve parlaklık tuşlarının sistem göstergesi yerine çentikte görünmesi için Erişilebilirlik izni gerekir."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accessibility access lets Kıyı handle volume and brightness keys and show its own indicators."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedienungshilfen-Zugriff erlaubt Kıyı, Lautstärke- und Helligkeitstasten zu verarbeiten und eigene Anzeigen einzublenden."
+          }
         }
       }
     },
@@ -23771,6 +24191,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Erişilebilirlik izni medya ve parlaklık göstergeleri için kullanılır. Bu özellik veri toplamaz veya paylaşmaz."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accessibility access is used only to improve media and brightness notifications. No data is collected or shared."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Zugriff wird nur für Medien- und Helligkeitsanzeigen verwendet. Es werden keine Daten gesammelt oder geteilt."
           }
         }
       }
@@ -23782,6 +24214,18 @@
             "state": "translated",
             "value": "Tarayıcılar dahil çoğu medya uygulamasında çalan içeriği algılar. macOS’un özel medya arayüzüne bağlıdır; sistem güncellemeleriyle değişebilir."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Works with many media apps, including browsers. Support depends on the macOS version."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Funktioniert mit vielen Medien-Apps und Browsern. Die Unterstützung hängt von der macOS-Version ab."
+          }
         }
       }
     },
@@ -23791,6 +24235,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Doğrudan Spotify uygulamasına bağlanır."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connects directly to the Spotify app."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindet sich direkt mit der Spotify-App."
           }
         }
       }
@@ -23802,6 +24258,18 @@
             "state": "translated",
             "value": "Doğrudan Apple Music uygulamasına bağlanır."
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connects directly to the Apple Music app."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindet sich direkt mit der Apple-Music-App."
+          }
         }
       }
     },
@@ -23811,6 +24279,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "API eklentisi açık bir üçüncü taraf istemci gerektirir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requires a third-party client with its API plugin enabled."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfordert einen Drittanbieter-Client mit aktiviertem API-Plugin."
           }
         }
       }
@@ -23822,6 +24302,18 @@
             "state": "translated",
             "value": "Sözler yükleniyor…"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading lyrics…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liedtext wird geladen …"
+          }
         }
       }
     },
@@ -23831,6 +24323,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bu parça için söz bulunamadı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No lyrics available"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Liedtexte verfügbar"
           }
         }
       }
@@ -23842,6 +24346,18 @@
             "state": "translated",
             "value": "Karıştır"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shuffle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zufallswiedergabe"
+          }
         }
       }
     },
@@ -23851,6 +24367,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Önceki"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previous"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zurück"
           }
         }
       }
@@ -23862,6 +24390,18 @@
             "state": "translated",
             "value": "Oynat / duraklat"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play/Pause"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiedergabe/Pause"
+          }
         }
       }
     },
@@ -23871,6 +24411,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sonraki"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiter"
           }
         }
       }
@@ -23882,6 +24434,18 @@
             "state": "translated",
             "value": "Tekrarla"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiederholen"
+          }
         }
       }
     },
@@ -23891,6 +24455,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Favori"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorite"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorit"
           }
         }
       }
@@ -23902,6 +24478,18 @@
             "state": "translated",
             "value": "Ses"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lautstärke"
+          }
         }
       }
     },
@@ -23911,6 +24499,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "15 saniye geri"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back 15 s"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 s zurück"
           }
         }
       }
@@ -23922,6 +24522,18 @@
             "state": "translated",
             "value": "15 saniye ileri"
           }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forward 15 s"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 s vor"
+          }
         }
       }
     },
@@ -23931,6 +24543,4902 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kaydırarak kapatmayı aç"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable close gestures"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schließgesten aktivieren"
+          }
+        }
+      }
+    },
+    "Sana göre şekillenir.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Made to fit you."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passt sich dir an."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sana göre şekillenir."
+          }
+        }
+      }
+    },
+    "Ayarlarda ara": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search settings"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen suchen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlarda ara"
+          }
+        }
+      }
+    },
+    "Ayarlar arasında ara": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search settings"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen durchsuchen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar arasında ara"
+          }
+        }
+      }
+    },
+    "Eşleşen bölüm yok": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No matching sections"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine passenden Bereiche"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eşleşen bölüm yok"
+          }
+        }
+      }
+    },
+    "Değişiklikler otomatik kaydedilir.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Changes are saved automatically."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Änderungen werden automatisch gespeichert."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Değişiklikler otomatik kaydedilir."
+          }
+        }
+      }
+    },
+    "Boyut, yüzey ve kapak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Size, surface and artwork"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Größe, Oberfläche und Cover"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boyut, yüzey ve kapak"
+          }
+        }
+      }
+    },
+    "Renk ve ayrıntılar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color and details"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbe und Details"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renk ve ayrıntılar"
+          }
+        }
+      }
+    },
+    "Sistem yerine kendi vurgu rengimi kullan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use a custom accent color"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigene Akzentfarbe verwenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem yerine kendi vurgu rengimi kullan"
+          }
+        }
+      }
+    },
+    "Vurgu rengi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accent color"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Akzentfarbe"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vurgu rengi"
+          }
+        }
+      }
+    },
+    "Panel gölgesi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panel shadow"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panelschatten"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panel gölgesi"
+          }
+        }
+      }
+    },
+    "Açık panelde yuvarlak köşeler": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rounded corners when expanded"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abgerundete Ecken im geöffneten Panel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık panelde yuvarlak köşeler"
+          }
+        }
+      }
+    },
+    "Çentikte ayarlar düğmesi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings button in the notch"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungstaste im Notch"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çentikte ayarlar düğmesi"
+          }
+        }
+      }
+    },
+    "Albüm rengine uygun oynatıcı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Match player to album colors"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Player an Albumfarben anpassen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Albüm rengine uygun oynatıcı"
+          }
+        }
+      }
+    },
+    "Kapak arkasında yumuşak ışık": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soft glow behind artwork"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sanftes Leuchten hinter dem Cover"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapak arkasında yumuşak ışık"
+          }
+        }
+      }
+    },
+    "Renkli ses animasyonu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colored audio animation"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbige Audioanimation"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renkli ses animasyonu"
+          }
+        }
+      }
+    },
+    "Oynatıcı çubuğu rengi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Player progress color"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbe der Fortschrittsanzeige"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oynatıcı çubuğu rengi"
+          }
+        }
+      }
+    },
+    "Albüm kapağı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Album artwork"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Albumcover"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Albüm kapağı"
+          }
+        }
+      }
+    },
+    "Ana ekran ve raf sekmelerini göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show Home and Shelf tabs"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start- und Ablage-Tabs anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ana ekran ve raf sekmelerini göster"
+          }
+        }
+      }
+    },
+    "Mac ile birlikte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With your Mac"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit deinem Mac"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac ile birlikte"
+          }
+        }
+      }
+    },
+    "Oturum açınca Kıyı’yı başlat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Launch Kıyı at login"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı bei der Anmeldung starten"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oturum açınca Kıyı’yı başlat"
+          }
+        }
+      }
+    },
+    "Menü çubuğunda Kıyı simgesi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show Kıyı in the menu bar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı in der Menüleiste anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menü çubuğunda Kıyı simgesi"
+          }
+        }
+      }
+    },
+    "Tüm ekranlarda göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show on all displays"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf allen Bildschirmen anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tüm ekranlarda göster"
+          }
+        }
+      }
+    },
+    "Etkin ekranı takip et": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Follow the active display"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dem aktiven Bildschirm folgen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etkin ekranı takip et"
+          }
+        }
+      }
+    },
+    "Tercih edilen ekran": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferred display"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bevorzugter Bildschirm"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tercih edilen ekran"
+          }
+        }
+      }
+    },
+    "Ayarlar açıkken Dock simgesi görünür. ⌘Q ayarları kapatır; tam çıkış menü çubuğundandır.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Dock icon appears while settings are open. ⌘Q closes settings; quit Kıyı from the menu bar."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Dock-Symbol erscheint bei geöffneten Einstellungen. ⌘Q schließt die Einstellungen; Kıyı wird über die Menüleiste beendet."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar açıkken Dock simgesi görünür. ⌘Q ayarları kapatır; tam çıkış menü çubuğundandır."
+          }
+        }
+      }
+    },
+    "Etkileşim": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interaction"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interaktion"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etkileşim"
+          }
+        }
+      }
+    },
+    "Fareyle üzerine gelince aç": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expand on hover"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Darüberfahren öffnen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fareyle üzerine gelince aç"
+          }
+        }
+      }
+    },
+    "Dokunsal geri bildirim": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptic feedback"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptisches Feedback"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dokunsal geri bildirim"
+          }
+        }
+      }
+    },
+    "Trackpad hareketleri": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trackpad gestures"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trackpad-Gesten"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trackpad hareketleri"
+          }
+        }
+      }
+    },
+    "Yukarı kaydırınca kapat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close with an upward swipe"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit Wischen nach oben schließen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yukarı kaydırınca kapat"
+          }
+        }
+      }
+    },
+    "Hareket eşiği": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesture threshold"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gestenschwelle"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hareket eşiği"
+          }
+        }
+      }
+    },
+    "Tam ekranda": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In full screen"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Im Vollbild"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tam ekranda"
+          }
+        }
+      }
+    },
+    "Daima gizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Always hide"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Immer ausblenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daima gizle"
+          }
+        }
+      }
+    },
+    "Medya uygulamasında gizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide in media apps"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In Medien-Apps ausblenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medya uygulamasında gizle"
+          }
+        }
+      }
+    },
+    "Görünür kalsın": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep visible"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sichtbar lassen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Görünür kalsın"
+          }
+        }
+      }
+    },
+    "Ekran kaydında paneli gizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide the panel in screen recordings"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panel bei Bildschirmaufnahmen ausblenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran kaydında paneli gizle"
+          }
+        }
+      }
+    },
+    "Üst pencere başlık alanını koru": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protect the window title area"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fenstertitelbereich freihalten"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Üst pencere başlık alanını koru"
+          }
+        }
+      }
+    },
+    "Ekrana uyum": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Display fit"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildschirmanpassung"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekrana uyum"
+          }
+        }
+      }
+    },
+    "Çentikli ekran yüksekliği": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Height on notched displays"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Höhe auf Bildschirmen mit Notch"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çentikli ekran yüksekliği"
+          }
+        }
+      }
+    },
+    "Fiziksel çentik": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Physical notch"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Physischer Notch"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiziksel çentik"
+          }
+        }
+      }
+    },
+    "Menü çubuğu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menu bar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menüleiste"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menü çubuğu"
+          }
+        }
+      }
+    },
+    "Özel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Benutzerdefiniert"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Özel"
+          }
+        }
+      }
+    },
+    "Özel çentik yüksekliği": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom notch height"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigene Notch-Höhe"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Özel çentik yüksekliği"
+          }
+        }
+      }
+    },
+    "Çentiksiz ekran yüksekliği": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Height on displays without a notch"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Höhe auf Bildschirmen ohne Notch"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çentiksiz ekran yüksekliği"
+          }
+        }
+      }
+    },
+    "Özel çentiksiz yükseklik": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom height without a notch"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigene Höhe ohne Notch"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Özel çentiksiz yükseklik"
+          }
+        }
+      }
+    },
+    "Müzik kaynağı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music source"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musikquelle"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik kaynağı"
+          }
+        }
+      }
+    },
+    "Sistem oynatıcısı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System player"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systemplayer"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem oynatıcısı"
+          }
+        }
+      }
+    },
+    "Kapalı adada müzik bilgisi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music in the collapsed island"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musik in der geschlossenen Insel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapalı adada müzik bilgisi"
+          }
+        }
+      }
+    },
+    "Şarkı değişiminde bildirim kartı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Track change notifications"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Benachrichtigungen bei Titelwechsel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şarkı değişiminde bildirim kartı"
+          }
+        }
+      }
+    },
+    "Şarkı sözleri": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lyrics"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liedtexte"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şarkı sözleri"
+          }
+        }
+      }
+    },
+    "Bildirim boyutları ve şeffaflığı Görünüm bölümünde ayarlanır. Şarkı sözleri kaynağın ve parçanın desteğine bağlıdır.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notification size and transparency are in Appearance. Lyrics depend on the source and track."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Größe und Transparenz der Benachrichtigung stehen unter Darstellung. Liedtexte hängen von Quelle und Titel ab."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirim boyutları ve şeffaflığı Görünüm bölümünde ayarlanır. Şarkı sözleri kaynağın ve parçanın desteğine bağlıdır."
+          }
+        }
+      }
+    },
+    "Oynatıcı düğmeleri": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Player controls"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Player-Steuerung"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oynatıcı düğmeleri"
+          }
+        }
+      }
+    },
+    "Klavye kestirmeleri": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keyboard shortcuts"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tastenkürzel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klavye kestirmeleri"
+          }
+        }
+      }
+    },
+    "Adanın açılıp kapanması": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toggle the island"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insel öffnen oder schließen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adanın açılıp kapanması"
+          }
+        }
+      }
+    },
+    "Şarkı bilgisini göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show track information"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Titelinformationen anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şarkı bilgisini göster"
+          }
+        }
+      }
+    },
+    "Ses ve parlaklık": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume and brightness"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lautstärke und Helligkeit"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ses ve parlaklık"
+          }
+        }
+      }
+    },
+    "Sistem göstergelerini Kıyı’da göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show system indicators in Kıyı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systemanzeigen in Kıyı anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem göstergelerini Kıyı’da göster"
+          }
+        }
+      }
+    },
+    "Erişim izni verilmiş": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Access granted"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zugriff erlaubt"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erişim izni verilmiş"
+          }
+        }
+      }
+    },
+    "Erişim izni gerekli": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Access required"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zugriff erforderlich"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erişim izni gerekli"
+          }
+        }
+      }
+    },
+    "İzni yönet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manage access"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zugriff verwalten"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzni yönet"
+          }
+        }
+      }
+    },
+    "Göstergeyi çentiğin iki yanında göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show indicators beside the notch"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anzeigen neben dem Notch einblenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Göstergeyi çentiğin iki yanında göster"
+          }
+        }
+      }
+    },
+    "Kapalı adada yüzde": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Percentage when collapsed"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prozent im geschlossenen Zustand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapalı adada yüzde"
+          }
+        }
+      }
+    },
+    "Açık panelde göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show when expanded"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Im geöffneten Panel anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık panelde göster"
+          }
+        }
+      }
+    },
+    "Açık panelde yüzde": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Percentage when expanded"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prozent im geöffneten Panel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık panelde yüzde"
+          }
+        }
+      }
+    },
+    "Geçişli dolgu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gradient fill"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farbverlauf"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geçişli dolgu"
+          }
+        }
+      }
+    },
+    "Dolguya vurgu rengini uygula": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use accent color for the fill"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Akzentfarbe für die Füllung verwenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dolguya vurgu rengini uygula"
+          }
+        }
+      }
+    },
+    "Hafif parlama": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtle glow"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dezentes Leuchten"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hafif parlama"
+          }
+        }
+      }
+    },
+    "Option tuşuyla ses/parlaklık": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume/brightness with Option"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lautstärke/Helligkeit mit Option"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Option tuşuyla ses/parlaklık"
+          }
+        }
+      }
+    },
+    "Sistem Ayarları’nı aç": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open System Settings"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systemeinstellungen öffnen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem Ayarları’nı aç"
+          }
+        }
+      }
+    },
+    "Göstergeyi aç": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the indicator"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anzeige einblenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Göstergeyi aç"
+          }
+        }
+      }
+    },
+    "İşlem yapma": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Do nothing"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Aktion"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İşlem yapma"
+          }
+        }
+      }
+    },
+    "Pil": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battery"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batterie"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pil"
+          }
+        }
+      }
+    },
+    "Pil simgesi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battery icon"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batteriesymbol"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pil simgesi"
+          }
+        }
+      }
+    },
+    "Pil yüzdesi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battery percentage"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batterieprozent"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pil yüzdesi"
+          }
+        }
+      }
+    },
+    "Şarj durumu simgeleri": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Charging status icons"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ladestatussymbole"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şarj durumu simgeleri"
+          }
+        }
+      }
+    },
+    "Şarja takılınca bildirim": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notify when connected to power"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Anschließen ans Stromnetz benachrichtigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şarja takılınca bildirim"
+          }
+        }
+      }
+    },
+    "Kilit ekranındaki müzik": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lock screen music"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musik auf dem Sperrbildschirm"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilit ekranındaki müzik"
+          }
+        }
+      }
+    },
+    "Kilit ekranında kartı göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the lock screen card"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Karte auf dem Sperrbildschirm anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilit ekranında kartı göster"
+          }
+        }
+      }
+    },
+    "Parça yokken kartı gizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide when no track is available"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ohne Titel ausblenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parça yokken kartı gizle"
+          }
+        }
+      }
+    },
+    "Kapak büyüyünce bulanık arka plan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blur background when artwork expands"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hintergrund bei vergrößertem Cover weichzeichnen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapak büyüyünce bulanık arka plan"
+          }
+        }
+      }
+    },
+    "Kapak boyutu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Artwork size"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Covergröße"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapak boyutu"
+          }
+        }
+      }
+    },
+    "Kart genişliği": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card width"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kartenbreite"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kart genişliği"
+          }
+        }
+      }
+    },
+    "Kart koyuluğu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card darkness"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kartenabdunklung"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kart koyuluğu"
+          }
+        }
+      }
+    },
+    "Masaüstünde önizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview on the desktop"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf dem Schreibtisch ansehen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masaüstünde önizle"
+          }
+        }
+      }
+    },
+    "Kullanıcı oturumu kilitlendiğinde çalışır. Kapağa tıklayarak büyük görünümü açabilirsin.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appears when your session is locked. Click the artwork to expand it."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erscheint beim Sperren deiner Sitzung. Klicke auf das Cover, um es zu vergrößern."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kullanıcı oturumu kilitlendiğinde çalışır. Kapağa tıklayarak büyük görünümü açabilirsin."
+          }
+        }
+      }
+    },
+    "Dosyalar ve paylaşım": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Files and sharing"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateien und Teilen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dosyalar ve paylaşım"
+          }
+        }
+      }
+    },
+    "Dosya rafını aç": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable the file shelf"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateiablage aktivieren"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dosya rafını aç"
+          }
+        }
+      }
+    },
+    "Dosya varsa doğrudan rafı aç": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open the shelf first when it contains files"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ablage bei vorhandenen Dateien zuerst öffnen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dosya varsa doğrudan rafı aç"
+          }
+        }
+      }
+    },
+    "Dokununca dosyayı aç": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open files on click"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateien beim Klicken öffnen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dokununca dosyayı aç"
+          }
+        }
+      }
+    },
+    "Sürüklerken kopyala": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy when dragging"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Ziehen kopieren"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüklerken kopyala"
+          }
+        }
+      }
+    },
+    "Sürükleme sonrası raftan kaldır": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove from the shelf after dragging"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach dem Ziehen aus der Ablage entfernen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürükleme sonrası raftan kaldır"
+          }
+        }
+      }
+    },
+    "Geniş sürükleme algılama alanı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extended drag detection area"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erweiterter Bereich für Ziehgesten"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geniş sürükleme algılama alanı"
+          }
+        }
+      }
+    },
+    "Hızlı paylaşım": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick sharing"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schnell teilen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hızlı paylaşım"
+          }
+        }
+      }
+    },
+    "AirDrop ve diğer paylaşım hedefleri macOS paylaşım menüsünden seçilir.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose AirDrop and other destinations from the macOS share menu."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AirDrop und andere Ziele lassen sich im macOS-Teilen-Menü auswählen."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AirDrop ve diğer paylaşım hedefleri macOS paylaşım menüsünden seçilir."
+          }
+        }
+      }
+    },
+    "Kulaklıklar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Headphones"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopfhörer"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kulaklıklar"
+          }
+        }
+      }
+    },
+    "Takvim ve hatırlatıcılar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calendar and reminders"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalender und Erinnerungen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takvim ve hatırlatıcılar"
+          }
+        }
+      }
+    },
+    "Takvimi adada göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show calendar in the island"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalender in der Insel anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takvimi adada göster"
+          }
+        }
+      }
+    },
+    "Tamamlanan hatırlatıcıları gizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide completed reminders"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erledigte Erinnerungen ausblenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamamlanan hatırlatıcıları gizle"
+          }
+        }
+      }
+    },
+    "Tüm gün etkinliklerini gizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide all-day events"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganztägige Ereignisse ausblenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tüm gün etkinliklerini gizle"
+          }
+        }
+      }
+    },
+    "Sıradaki etkinliğe kaydır": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scroll to the next event"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zum nächsten Ereignis scrollen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sıradaki etkinliğe kaydır"
+          }
+        }
+      }
+    },
+    "Etkinlik başlığını tam göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show full event titles"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vollständige Ereignistitel anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etkinlik başlığını tam göster"
+          }
+        }
+      }
+    },
+    "Takvim ve hatırlatıcı izinlerini iste": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Request calendar and reminder access"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zugriff auf Kalender und Erinnerungen anfordern"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takvim ve hatırlatıcı izinlerini iste"
+          }
+        }
+      }
+    },
+    "Kamera aynasını göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable the camera mirror"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kameraspiegel aktivieren"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamera aynasını göster"
+          }
+        }
+      }
+    },
+    "Ayna şekli": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mirror shape"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spiegelform"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayna şekli"
+          }
+        }
+      }
+    },
+    "Dikdörtgen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rectangle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechteck"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dikdörtgen"
+          }
+        }
+      }
+    },
+    "Daire": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Circle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kreis"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daire"
+          }
+        }
+      }
+    },
+    "Ayna için macOS kamera izni gerekir. Kamera yalnız ayna açıldığında kullanılır.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The mirror requires camera permission. The camera is used only while the mirror is open."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Spiegel benötigt Kamerazugriff. Die Kamera wird nur bei geöffnetem Spiegel verwendet."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayna için macOS kamera izni gerekir. Kamera yalnız ayna açıldığında kullanılır."
+          }
+        }
+      }
+    },
+    "Ekranının kıyısında.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At the edge of your screen."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Am Rand deines Bildschirms."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekranının kıyısında."
+          }
+        }
+      }
+    },
+    "Tasarım ve geliştirme · kyrerdm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Design and development · kyrerdm"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Design und Entwicklung · kyrerdm"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasarım ve geliştirme · kyrerdm"
+          }
+        }
+      }
+    },
+    "kyrerdm / Kiyi · Kaynak kodu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kyrerdm / Kiyi · Source code"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kyrerdm / Kiyi · Quellcode"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kyrerdm / Kiyi · Kaynak kodu"
+          }
+        }
+      }
+    },
+    "Açık kaynak ve lisanslar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open source and licenses"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Source und Lizenzen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık kaynak ve lisanslar"
+          }
+        }
+      }
+    },
+    "Kıyı, TheBoredTeam / Boring Notch kaynak kodu üzerine geliştirilmiştir. Kıyı’ya ait arayüz ve ek özellikler kyrerdm tarafından hazırlanır. Özgün katkı sahiplerinin telif bildirimleri ve GPL-3.0 lisansı korunur.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı builds on TheBoredTeam / Boring Notch. The Kıyı interface and additional features are developed by kyrerdm. Original copyright notices and the GPL-3.0 license are preserved."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı basiert auf TheBoredTeam / Boring Notch. Die Kıyı-Oberfläche und zusätzliche Funktionen werden von kyrerdm entwickelt. Ursprüngliche Urheberrechtshinweise und die GPL-3.0-Lizenz bleiben erhalten."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı, TheBoredTeam / Boring Notch kaynak kodu üzerine geliştirilmiştir. Kıyı’ya ait arayüz ve ek özellikler kyrerdm tarafından hazırlanır. Özgün katkı sahiplerinin telif bildirimleri ve GPL-3.0 lisansı korunur."
+          }
+        }
+      }
+    },
+    "Boring Notch · Özgün proje": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boring Notch · Original project"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boring Notch · Ursprüngliches Projekt"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boring Notch · Özgün proje"
+          }
+        }
+      }
+    },
+    "Kıyı lisansı ve kaynak bildirimleri": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı license and attribution"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı-Lizenz und Quellenhinweise"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı lisansı ve kaynak bildirimleri"
+          }
+        }
+      }
+    },
+    "Görünüm": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appearance"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Darstellung"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Görünüm"
+          }
+        }
+      }
+    },
+    "Davranış": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Behavior"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verhalten"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Davranış"
+          }
+        }
+      }
+    },
+    "Müzik": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musik"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik"
+          }
+        }
+      }
+    },
+    "Sistem": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem"
+          }
+        }
+      }
+    },
+    "Kilit ekranı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lock screen"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sperrbildschirm"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilit ekranı"
+          }
+        }
+      }
+    },
+    "Dosya rafı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File shelf"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateiablage"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dosya rafı"
+          }
+        }
+      }
+    },
+    "Bağlantılar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connections"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindungen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantılar"
+          }
+        }
+      }
+    },
+    "Kıyı hakkında": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About Kıyı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Über Kıyı"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı hakkında"
+          }
+        }
+      }
+    },
+    "Boyutları, yüzeyi ve bildirimlerini kendi ritmine uyarla.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adjust size, surface and notifications to your rhythm."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passe Größe, Oberfläche und Benachrichtigungen deinem Rhythmus an."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boyutları, yüzeyi ve bildirimlerini kendi ritmine uyarla."
+          }
+        }
+      }
+    },
+    "Kıyı’nın ne zaman ve nasıl görüneceğini belirle.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose when and how Kıyı appears."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bestimme, wann und wie Kıyı erscheint."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı’nın ne zaman ve nasıl görüneceğini belirle."
+          }
+        }
+      }
+    },
+    "Şarkıların, oynatıcın ve elinin altındaki kontroller.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your tracks, player and controls within reach."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Titel, dein Player und alle wichtigen Bedienelemente."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şarkıların, oynatıcın ve elinin altındaki kontroller."
+          }
+        }
+      }
+    },
+    "Ses, parlaklık ve pil bilgisi; ihtiyacın olduğunda.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume, brightness and battery information when you need it."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lautstärke, Helligkeit und Batterieinfos, wenn du sie brauchst."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ses, parlaklık ve pil bilgisi; ihtiyacın olduğunda."
+          }
+        }
+      }
+    },
+    "Müziğin kilit ekranında da seninle.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your music stays with you on the lock screen."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Musik begleitet dich auf dem Sperrbildschirm."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müziğin kilit ekranında da seninle."
+          }
+        }
+      }
+    },
+    "Dosyalarını kısa süreliğine bırak, sürükle ve paylaş.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drop files temporarily, drag them out and share."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dateien kurz ablegen, herausziehen und teilen."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dosyalarını kısa süreliğine bırak, sürükle ve paylaş."
+          }
+        }
+      }
+    },
+    "Kulaklıklarını, takvimini ve kameranı Kıyı’ya bağla.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect your headphones, calendar and camera to Kıyı."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbinde Kopfhörer, Kalender und Kamera mit Kıyı."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kulaklıklarını, takvimini ve kameranı Kıyı’ya bağla."
+          }
+        }
+      }
+    },
+    "kyrerdm tarafından geliştirilen kişisel macOS yardımcı uygulaması.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A personal macOS utility developed by kyrerdm."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine persönliche macOS-Hilfs-App von kyrerdm."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kyrerdm tarafından geliştirilen kişisel macOS yardımcı uygulaması."
+          }
+        }
+      }
+    },
+    "Ayarlar…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen …"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar…"
+          }
+        }
+      }
+    },
+    "Yeniden başlat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restart"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neu starten"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeniden başlat"
+          }
+        }
+      }
+    },
+    "Kıyı’yı kapat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit Kıyı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı beenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı’yı kapat"
+          }
+        }
+      }
+    },
+    "Kıyı Ayarları": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Settings"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı-Einstellungen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Ayarları"
+          }
+        }
+      }
+    },
+    "Uygulama dili": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App language"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App-Sprache"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulama dili"
+          }
+        }
+      }
+    },
+    "Dil": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprache"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dil"
+          }
+        }
+      }
+    },
+    "Dil değişince Kıyı yeniden açılır; ayarların korunur.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı restarts when the language changes. Your settings are preserved."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı startet beim Sprachwechsel neu. Deine Einstellungen bleiben erhalten."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dil değişince Kıyı yeniden açılır; ayarların korunur."
+          }
+        }
+      }
+    },
+    "Müzik bekleniyor": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for music"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warte auf Musik"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik bekleniyor"
+          }
+        }
+      }
+    },
+    "Kilit ekranı önizlemesi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lock screen preview"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sperrbildschirm-Vorschau"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilit ekranı önizlemesi"
+          }
+        }
+      }
+    },
+    "Albüm kapağını küçült": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collapse artwork"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cover verkleinern"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Albüm kapağını küçült"
+          }
+        }
+      }
+    },
+    "Albüm kapağını büyüt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expand artwork"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cover vergrößern"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Albüm kapağını büyüt"
+          }
+        }
+      }
+    },
+    "Örnek parça": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sample track"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beispieltitel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Örnek parça"
+          }
+        }
+      }
+    },
+    "Bir parça çaldığında burada görünür": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your music will appear here"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Musik erscheint hier"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir parça çaldığında burada görünür"
+          }
+        }
+      }
+    },
+    "Şarkı sözleri burada görünür": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lyrics appear here"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hier erscheinen Liedtexte"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şarkı sözleri burada görünür"
+          }
+        }
+      }
+    },
+    "Sözler yükleniyor…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading lyrics…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liedtext wird geladen …"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sözler yükleniyor…"
+          }
+        }
+      }
+    },
+    "Eşzamanlı söz bulunamadı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No synced lyrics available"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine synchronisierten Liedtexte verfügbar"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eşzamanlı söz bulunamadı"
+          }
+        }
+      }
+    },
+    "Beğen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorite"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorit"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beğen"
+          }
+        }
+      }
+    },
+    "Önceki parça": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previous track"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorheriger Titel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önceki parça"
+          }
+        }
+      }
+    },
+    "Sonraki parça": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next track"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nächster Titel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonraki parça"
+          }
+        }
+      }
+    },
+    "Oynatma konumu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Playback position"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiedergabeposition"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oynatma konumu"
+          }
+        }
+      }
+    },
+    "Müzik kartı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music card"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musikkarte"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik kartı"
+          }
+        }
+      }
+    },
+    "Kilit ekranında göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show on the lock screen"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf dem Sperrbildschirm anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilit ekranında göster"
+          }
+        }
+      }
+    },
+    "Parça yoksa kartı gizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide card when no track is available"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Karte ohne verfügbaren Titel ausblenden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parça yoksa kartı gizle"
+          }
+        }
+      }
+    },
+    "Eşzamanlı şarkı sözlerini göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show synced lyrics"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Synchronisierte Liedtexte anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eşzamanlı şarkı sözlerini göster"
+          }
+        }
+      }
+    },
+    "Albüm kapağını göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show artwork"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cover anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Albüm kapağını göster"
+          }
+        }
+      }
+    },
+    "Kapak büyüyünce arka planı bulanıklaştır": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blur the background when artwork expands"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hintergrund bei vergrößertem Cover weichzeichnen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapak büyüyünce arka planı bulanıklaştır"
+          }
+        }
+      }
+    },
+    "Önizlemeyi aç veya kapat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toggle preview"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorschau öffnen oder schließen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önizlemeyi aç veya kapat"
+          }
+        }
+      }
+    },
+    "Kart, açık kullanıcı oturumu kilitlendiğinde çalışır. Önizleme 18 saniye açık kalır.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The card appears when your session is locked. The preview lasts 18 seconds."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Karte erscheint beim Sperren deiner Sitzung. Die Vorschau bleibt 18 Sekunden geöffnet."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kart, açık kullanıcı oturumu kilitlendiğinde çalışır. Önizleme 18 saniye açık kalır."
+          }
+        }
+      }
+    },
+    "Kilit Ekranı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lock Screen"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sperrbildschirm"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kilit Ekranı"
+          }
+        }
+      }
+    },
+    "Açık genişlik": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expanded width"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Breite im geöffneten Zustand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık genişlik"
+          }
+        }
+      }
+    },
+    "Açık yükseklik": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expanded height"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Höhe im geöffneten Zustand"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık yükseklik"
+          }
+        }
+      }
+    },
+    "Alt yüzey şeffaflığı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Surface transparency"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oberflächentransparenz"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alt yüzey şeffaflığı"
+          }
+        }
+      }
+    },
+    "Müzik kapağı boyutu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Player artwork size"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Covergröße im Player"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik kapağı boyutu"
+          }
+        }
+      }
+    },
+    "Kapak konumu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Artwork position"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coverposition"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapak konumu"
+          }
+        }
+      }
+    },
+    "Sol": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Left"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Links"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sol"
+          }
+        }
+      }
+    },
+    "Sağ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Right"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechts"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sağ"
+          }
+        }
+      }
+    },
+    "Şarkı değişimi bildirimi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Track change notification"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Benachrichtigung bei Titelwechsel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şarkı değişimi bildirimi"
+          }
+        }
+      }
+    },
+    "Şarkı bildirimlerini göster": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show track notifications"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Titelbenachrichtigungen anzeigen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şarkı bildirimlerini göster"
+          }
+        }
+      }
+    },
+    "Bildirim genişliği": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notification width"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Benachrichtigungsbreite"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirim genişliği"
+          }
+        }
+      }
+    },
+    "Bildirim kapağı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notification artwork"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Benachrichtigungscover"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirim kapağı"
+          }
+        }
+      }
+    },
+    "Bildirim yazı boyutu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notification text size"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schriftgröße der Benachrichtigung"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirim yazı boyutu"
+          }
+        }
+      }
+    },
+    "Kapak altında hafif ışık": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtle glow under artwork"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dezentes Leuchten unter dem Cover"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapak altında hafif ışık"
+          }
+        }
+      }
+    },
+    "Bildirim geçiş animasyonu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notification transition animation"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Übergangsanimation der Benachrichtigung"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirim geçiş animasyonu"
+          }
+        }
+      }
+    },
+    "Bildirim şeffaflığı Alt yüzey şeffaflığı ile eşzamanlı değişir.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notification transparency follows Surface transparency."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Benachrichtigung folgt der Oberflächentransparenz."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildirim şeffaflığı Alt yüzey şeffaflığı ile eşzamanlı değişir."
+          }
+        }
+      }
+    },
+    "Kompakt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compact"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompakt"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompakt"
+          }
+        }
+      }
+    },
+    "Geniş": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spacious"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geräumig"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geniş"
+          }
+        }
+      }
+    },
+    "Mat siyah": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matte black"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mattschwarz"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mat siyah"
+          }
+        }
+      }
+    },
+    "AirPods Pro · Önizleme": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AirPods Pro · Preview"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AirPods Pro · Vorschau"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AirPods Pro · Önizleme"
+          }
+        }
+      }
+    },
+    "Bağlandı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbunden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlandı"
+          }
+        }
+      }
+    },
+    "AirPods bağlantı ve pil bilgisi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AirPods connection and battery"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AirPods-Verbindung und Batterie"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AirPods bağlantı ve pil bilgisi"
+          }
+        }
+      }
+    },
+    "Kulaklık": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Headphones"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopfhörer"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kulaklık"
+          }
+        }
+      }
+    },
+    "Bağlı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbunden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlı"
+          }
+        }
+      }
+    },
+    "Bağlı değil": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnected"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht verbunden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlı değil"
+          }
+        }
+      }
+    },
+    "Cihazları yenile": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refresh devices"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geräte aktualisieren"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cihazları yenile"
+          }
+        }
+      }
+    },
+    "Yenileniyor…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refreshing…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird aktualisiert …"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yenileniyor…"
+          }
+        }
+      }
+    },
+    "Bağlantı animasyonunu önizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview connection animation"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindungsanimation ansehen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantı animasyonunu önizle"
+          }
+        }
+      }
+    },
+    "Pil değerleri macOS tarafından raporlanıyorsa gösterilir.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battery levels are shown when reported by macOS."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batteriestände werden angezeigt, wenn macOS sie meldet."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pil değerleri macOS tarafından raporlanıyorsa gösterilir."
+          }
+        }
+      }
+    },
+    "Ses çıkışı bulunamadı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No audio outputs found"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Audioausgänge gefunden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ses çıkışı bulunamadı"
+          }
+        }
+      }
+    },
+    "Ses çıkışı değiştirilemedi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not change audio output"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audioausgang konnte nicht geändert werden"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ses çıkışı değiştirilemedi"
+          }
+        }
+      }
+    },
+    "Ses çıkışını seç": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose audio output"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audioausgang auswählen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ses çıkışını seç"
+          }
+        }
+      }
+    },
+    "Ses çıkışı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audio output"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audioausgang"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ses çıkışı"
+          }
+        }
+      }
+    },
+    "Müzik uygulamasını aç": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open music app"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Musik-App öffnen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik uygulamasını aç"
+          }
+        }
+      }
+    },
+    "Kapalı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Off"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapalı"
+          }
+        }
+      }
+    },
+    "Açık": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık"
+          }
+        }
+      }
+    },
+    "Sistem sesi": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System volume"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systemlautstärke"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem sesi"
+          }
+        }
+      }
+    },
+    "Ekran parlaklığı": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Display brightness"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildschirmhelligkeit"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran parlaklığı"
+          }
+        }
+      }
+    },
+    "Klavye aydınlatması": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keyboard brightness"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tastaturbeleuchtung"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klavye aydınlatması"
+          }
+        }
+      }
+    },
+    "Mikrofon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Microphone"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mikrofon"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mikrofon"
+          }
+        }
+      }
+    },
+    "Beyaz": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "White"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiß"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beyaz"
+          }
+        }
+      }
+    },
+    "Takvim": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calendar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalender"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takvim"
+          }
+        }
+      }
+    },
+    "Ayna": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mirror"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spiegel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayna"
+          }
+        }
+      }
+    },
+    "Kaynaklar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sources"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quellen"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaynaklar"
+          }
+        }
+      }
+    },
+    "Önizle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vorschau"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Önizle"
+          }
+        }
+      }
+    },
+    "Duraklat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duraklat"
+          }
+        }
+      }
+    },
+    "Oynat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiedergabe"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oynat"
+          }
+        }
+      }
+    },
+    "Kıyı burada.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı is here."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı ist da."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı burada."
+          }
+        }
+      }
+    },
+    "Kutu": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Case"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Case"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kutu"
+          }
+        }
+      }
+    },
+    "Açılma beklemesi · %@ sn": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hover delay · %@ s"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffnungsverzögerung · %@ s"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açılma beklemesi · %@ sn"
+          }
+        }
+      }
+    },
+    "Duraklatınca gizleme beklemesi · %lld sn": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide after pausing · %lld s"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach dem Pausieren ausblenden · %lld s"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duraklatınca gizleme beklemesi · %lld sn"
+          }
+        }
+      }
+    },
+    "Görünme süresi: %@ sn": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Display duration: %@ s"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anzeigedauer: %@ s"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Görünme süresi: %@ sn"
+          }
+        }
+      }
+    },
+    "Sürüm %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüm %@"
+          }
+        }
+      }
+    },
+    "Empty slot": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empty slot"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leerer Platz"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empty slot"
+          }
+        }
+      }
+    },
+    "Kıyı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı"
+          }
+        }
+      }
+    },
+    "kyrerdm · Kıyı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kyrerdm · Kıyı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kyrerdm · Kıyı"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kyrerdm · Kıyı"
+          }
+        }
+      }
+    },
+    "GitHub · kyrerdm": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub · kyrerdm"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub · kyrerdm"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub · kyrerdm"
+          }
+        }
+      }
+    },
+    "Spotify": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spotify"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spotify"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spotify"
+          }
+        }
+      }
+    },
+    "Apple Music": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Music"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Music"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Music"
+          }
+        }
+      }
+    },
+    "YouTube Music": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YouTube Music"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YouTube Music"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YouTube Music"
+          }
+        }
+      }
+    },
+    "Kıyı Kapak Önizleme Arka Planı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Kapak Önizleme Arka Planı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Artwork Preview Background"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı-Covervorschauhintergrund"
+          }
+        }
+      }
+    },
+    "Kıyı Kapak Arka Planı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Kapak Arka Planı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Artwork Background"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı-Coverhintergrund"
+          }
+        }
+      }
+    },
+    "Kıyı Kilit Kartı Önizleme": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Kilit Kartı Önizleme"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Lock Card Preview"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı-Sperrkartenvorschau"
+          }
+        }
+      }
+    },
+    "Kıyı Kilit Kartı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Kilit Kartı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı Lock Card"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı-Sperrkarte"
           }
         }
       }

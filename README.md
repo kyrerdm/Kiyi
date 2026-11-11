@@ -46,3 +46,13 @@ Güncelleme altyapısı upstream güncellemelerini otomatik kurmaz. Bu depo hen�
 ## Lisans
 
 [GPL-3.0](LICENSE), [upstream lisansı](App/LICENSE) ve [üçüncü taraf bildirimleri](App/THIRD_PARTY_LICENSES). Ayrıntılı köken bilgisi için [NOTICE](NOTICE.md).
+
+## Dil seçenekleri
+
+Davranış → Uygulama dili bölümünde Türkçe, English ve Deutsch seçilebilir. Dil değişiminde Kıyı otomatik yeniden açılır ve mevcut ayarlar korunur. Menü çubuğu paneli, bildirimler, kilit kartı, erişilebilirlik etiketleri ve uygulamaya ait izin açıklamaları aynı seçimi kullanır. Sistem tarafından sağlanan ekran/cihaz adları ile şarkı ve sanatçı adları çevrilmez.
+
+```sh
+python3 Tests/check-localization.py
+```
+
+Bu kontrol üç dilin çeviri kaynaklarını, biçimlendirme parametrelerini ve derlenmiş `.strings` dosyalarını karşılaştırır. Menü çubuğundaki panel Kıyı için yeniden tasarlanmıştır; kilit ekranı önizlemesi bu menüde bulunmaz.

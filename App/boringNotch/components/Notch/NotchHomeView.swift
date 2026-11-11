@@ -160,7 +160,7 @@ struct MusicControlsView: View {
                 .truncationMode(.tail)
             if Defaults[.enableLyrics] {
                 TimelineView(.periodic(from: .now, by: 0.5)) { timeline in
-                    Text(musicManager.isFetchingLyrics ? "Sözler yükleniyor…"
+                    Text(musicManager.isFetchingLyrics ? KiyiL("Sözler yükleniyor…")
                          : musicManager.lyricLine(at: musicManager.estimatedPlaybackPosition(at: timeline.date)))
                         .font(.system(size: 10))
                         .foregroundStyle(.white.opacity(0.45))

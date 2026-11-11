@@ -33,6 +33,7 @@ struct DynamicNotchApp: App {
                 exit(0)
             }
         }
+        UserDefaults.standard.set([Defaults[.kiyiLanguage]], forKey: "AppleLanguages")
         migrateKiyiPreferences()
         updaterController = SPUStandardUpdaterController(
             startingUpdater: false, updaterDelegate: nil, userDriverDelegate: nil)
@@ -43,36 +44,16 @@ struct DynamicNotchApp: App {
 
     var body: some Scene {
         MenuBarExtra(isInserted: $showMenuBarIcon) {
-            Button {
-                DispatchQueue.main.async {
-                    SettingsWindowController.shared.showWindow()
-                }
-            } label: {
-                Label("Ayarlar…", systemImage: "gearshape")
-            }
-            .keyboardShortcut(KeyEquivalent(","), modifiers: .command)
-            Divider()
-            Button { AdaLockScreen.shared.preview() } label: {
-                Label("Kilit ekranını önizle", systemImage: "lock")
-            }
-            Divider()
-            Button {
-                ApplicationRelauncher.restart { appDelegate.quitFromMenuBar() }
-            } label: {
-                Label("Yeniden başlat", systemImage: "arrow.clockwise")
-            }
-            Button(role: .destructive) {
-                appDelegate.quitFromMenuBar()
-            } label: {
-                Label("Kıyı’yı kapat", systemImage: "power")
-            }
-
+            KiyiMenuBarPanel(
+                openSettings: { SettingsWindowController.shared.showWindow() },
+                restart: { ApplicationRelauncher.restart { appDelegate.quitFromMenuBar() } },
+                quit: { appDelegate.quitFromMenuBar() })
         } label: {
             Image("KiyiMenuBar")
                 .renderingMode(.template)
                 .accessibilityLabel("Kıyı")
         }
-        .menuBarExtraStyle(.menu)
+        .menuBarExtraStyle(.window)
     }
 }
 
@@ -502,6 +483,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.setupDragDetectors()
             }
         DistributedNotificationCenter.default().addObserver(forName: Notification.Name("kiyi.showSettings"), object: nil, queue: .main) { _ in SettingsWindowController.shared.showWindow() }
+        NotificationCenter.default.addObserver(forName: Notification.Name("kiyi.languageChanged"), object: nil, queue: .main) { [weak self] _ in
+            ApplicationRelauncher.restart(showSettings: true) { self?.quitFromMenuBar() }
+        }
         AdaAirPods.shared.start()
         AdaLockScreen.shared.start()
         if Defaults[.hudReplacement] && !MediaKeyInterceptor.shared.isAuthorized
@@ -509,7 +493,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "kiyiHUDPermissionRequestedV1")
             MediaKeyInterceptor.shared.requestAccessibilityAuthorization()
         }
-        if CommandLine.arguments.contains("--settings") && !coordinator.firstLaunch { SettingsWindowController.shared.showWindow() }
+        if (CommandLine.arguments.contains("--settings") || UserDefaults.standard.bool(forKey: "kiyiReopenSettings")) && !coordinator.firstLaunch {
+            UserDefaults.standard.set(false, forKey: "kiyiReopenSettings")
+            SettingsWindowController.shared.showWindow()
+        }
         previousScreens = NSScreen.screens
     }
 

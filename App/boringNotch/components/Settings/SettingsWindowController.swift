@@ -41,7 +41,7 @@ class SettingsWindowController: NSWindowController {
     private func setupWindow() {
         guard let window = window else { return }
         
-        window.title = "Kıyı Ayarları"
+        window.title = KiyiL("Kıyı Ayarları")
         window.minSize = NSSize(width: 880, height: 640)
         window.titlebarAppearsTransparent = true
         window.titleVisibility = .hidden

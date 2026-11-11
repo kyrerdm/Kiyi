@@ -228,6 +228,7 @@ struct ContentView: View {
         )
         .animation(.smooth, value: gestureProgress)
         .background(dragDetector)
+        .environment(\.locale, Locale(identifier: Defaults[.kiyiLanguage]))
         .preferredColorScheme(.dark)
         .tint(useCustomAccent && accentData != nil ? .effectiveAccent : .accentColor)
         .environmentObject(vm)
