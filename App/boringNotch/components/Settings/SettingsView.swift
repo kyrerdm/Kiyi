@@ -140,7 +140,7 @@ struct SettingsView: View {
                     UserDefaults.standard.set([code], forKey: "AppleLanguages")
                     NotificationCenter.default.post(name: Notification.Name("kiyi.languageChanged"), object: nil)
                 }
-                Text("Dil değişince Kıyı yeniden açılır; ayarların korunur.").font(.callout).foregroundStyle(.secondary)
+                Text("Dil değişikliği anında uygulanır.").font(.callout).foregroundStyle(.secondary)
             }
             card("Mac ile birlikte", "desktopcomputer") {
                 LaunchAtLogin.Toggle { Text("Oturum açınca Kıyı’yı başlat") }

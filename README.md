@@ -49,7 +49,7 @@ Güncelleme altyapısı upstream güncellemelerini otomatik kurmaz. Bu depo hen�
 
 ## Dil seçenekleri
 
-Davranış → Uygulama dili bölümünde Türkçe, English ve Deutsch seçilebilir. Dil değişiminde Kıyı otomatik yeniden açılır ve mevcut ayarlar korunur. Menü çubuğu paneli, bildirimler, kilit kartı, erişilebilirlik etiketleri ve uygulamaya ait izin açıklamaları aynı seçimi kullanır. Sistem tarafından sağlanan ekran/cihaz adları ile şarkı ve sanatçı adları çevrilmez.
+Davranış → Uygulama dili bölümünde Türkçe, English ve Deutsch seçilebilir. Dil değişimi uygulama kapanmadan anında uygulanır ve mevcut ayarlar korunur. Menü çubuğu paneli, bildirimler, kilit kartı, erişilebilirlik etiketleri ve uygulamaya ait izin açıklamaları aynı seçimi kullanır. Sistem tarafından sağlanan ekran/cihaz adları ile şarkı ve sanatçı adları çevrilmez.
 
 ```sh
 python3 Tests/check-localization.py

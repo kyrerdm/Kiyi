@@ -483,8 +483,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.setupDragDetectors()
             }
         DistributedNotificationCenter.default().addObserver(forName: Notification.Name("kiyi.showSettings"), object: nil, queue: .main) { _ in SettingsWindowController.shared.showWindow() }
-        NotificationCenter.default.addObserver(forName: Notification.Name("kiyi.languageChanged"), object: nil, queue: .main) { [weak self] _ in
-            ApplicationRelauncher.restart(showSettings: true) { self?.quitFromMenuBar() }
+        NotificationCenter.default.addObserver(forName: Notification.Name("kiyi.languageChanged"), object: nil, queue: .main) { _ in
+            SettingsWindowController.shared.window?.title = KiyiL("Kıyı Ayarları")
+            if MusicManager.shared.isPlayerIdle { MusicManager.shared.songTitle = KiyiL("Müzik bekleniyor") }
+            AdaLockScreen.shared.refresh()
+            updateKiyiNativeMenuLanguage()
         }
         AdaAirPods.shared.start()
         AdaLockScreen.shared.start()

@@ -377,6 +377,7 @@ private final class AdaLockArtworkBackdrop: NSView {
 }
 
 private struct AdaLockPresentation: View {
+    @Default(.kiyiLanguage) private var languageCode
     var preview: Bool
     var width: CGFloat
     var height: CGFloat
@@ -389,6 +390,7 @@ private struct AdaLockPresentation: View {
             .frame(width: width, height: height)
             .scaleEffect(scale)
             .frame(width: width * scale, height: height * scale)
+            .environment(\.locale, Locale(identifier: languageCode))
             .environment(\.colorScheme, .dark)
     }
 }
@@ -969,7 +971,7 @@ struct KiyiTrackChangeCard: View {
 }
 
 // Explicit language selection is shared by SwiftUI and native strings.
-// Relaunching refreshes cached macOS menus and accessibility strings as well.
+// Explicit locale propagation updates the interface without terminating the app.
 func KiyiL(_ key: String) -> String {
     let code = Defaults[.kiyiLanguage]
     guard let path = Bundle.main.path(forResource: code, ofType: "lproj"),
@@ -978,6 +980,7 @@ func KiyiL(_ key: String) -> String {
 }
 
 struct KiyiMenuBarPanel: View {
+    @Default(.kiyiLanguage) private var languageCode
     var openSettings: () -> Void
     var restart: () -> Void
     var quit: () -> Void
@@ -998,10 +1001,10 @@ struct KiyiMenuBarPanel: View {
             KiyiMenuAction(title: "Yeniden başlat", icon: "arrow.clockwise") { dismiss(); restart() }
             Divider()
             KiyiMenuAction(title: "Kıyı’yı kapat", icon: "power") { dismiss(); quit() }
-            Text("kyrerdm · Kıyı").font(.system(size: 10)).foregroundStyle(.tertiary).padding(.horizontal, 8)
         }
         .padding(14).frame(width: 262)
-        .environment(\.locale, Locale(identifier: Defaults[.kiyiLanguage]))
+        .id(languageCode)
+        .environment(\.locale, Locale(identifier: languageCode))
     }
 }
 
@@ -1026,5 +1029,31 @@ private struct KiyiMenuAction: View {
         }
         .buttonStyle(.plain).onHover { hovered = $0 }
         .accessibilityLabel(KiyiL(title))
+    }
+}
+
+
+@MainActor func updateKiyiNativeMenuLanguage() {
+    let topLevel = [
+        "Edit": ["Edit", "Düzen", "Bearbeiten"],
+        "View": ["View", "Görüntü", "Darstellung"],
+        "Window": ["Window", "Pencere", "Fenster"],
+        "Help": ["Help", "Yardım", "Hilfe"]
+    ]
+    let actions = ["copy:": "Copy", "cut:": "Cut", "paste:": "Paste", "selectAll:": "Select All", "undo:": "Undo", "redo:": "Redo", "performClose:": "Close", "performMiniaturize:": "Minimize", "performZoom:": "Zoom"]
+    func update(_ menu: NSMenu) {
+        for item in menu.items {
+            if let action = item.action, let key = actions[NSStringFromSelector(action)] { item.title = KiyiL(key) }
+            if let child = item.submenu { update(child) }
+        }
+    }
+    if let menu = NSApp.mainMenu {
+        for item in menu.items {
+            if let key = topLevel.first(where: { $0.value.contains(item.title) })?.key {
+                item.title = KiyiL(key)
+                item.submenu?.title = item.title
+            }
+        }
+        update(menu)
     }
 }

@@ -37,6 +37,7 @@ struct ContentView: View {
     @Default(.useMusicVisualizer) var useMusicVisualizer
 
     @Default(.showNotHumanFace) var showNotHumanFace
+    @Default(.kiyiLanguage) private var languageCode
     @Default(.kiyiNoticeWidth) private var noticeWidth
     @Default(.inlineHUD) private var inlineHUD
     @Default(.useCustomAccentColor) private var useCustomAccent
@@ -228,7 +229,7 @@ struct ContentView: View {
         )
         .animation(.smooth, value: gestureProgress)
         .background(dragDetector)
-        .environment(\.locale, Locale(identifier: Defaults[.kiyiLanguage]))
+        .environment(\.locale, Locale(identifier: languageCode))
         .preferredColorScheme(.dark)
         .tint(useCustomAccent && accentData != nil ? .effectiveAccent : .accentColor)
         .environmentObject(vm)
