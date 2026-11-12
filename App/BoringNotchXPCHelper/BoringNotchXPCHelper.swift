@@ -6,12 +6,21 @@
 //
 
 import Foundation
+import AppKit
 import ApplicationServices
 import IOKit
 import CoreGraphics
 
 class BoringNotchXPCHelper: NSObject, BoringNotchXPCHelperProtocol {
     
+    @objc func spotifyFavorite(_ track: String, with reply: @escaping (NSNumber?) -> Void) {
+        Task { reply(await SpotifyFavoriteBridge.readFavorite(track: track).map { NSNumber(value: $0) }) }
+    }
+
+    @objc func setSpotifyFavorite(_ favorite: Bool, track: String, with reply: @escaping (NSNumber?) -> Void) {
+        Task { reply(await SpotifyFavoriteBridge.setFavorite(favorite, track: track).map { NSNumber(value: $0) }) }
+    }
+
     @objc func audioAccessories(with reply: @escaping (String) -> Void) {
         DispatchQueue.global(qos: .utility).async {
             let p = Process(); p.executableURL = URL(fileURLWithPath: "/usr/sbin/system_profiler"); p.arguments = ["SPBluetoothDataType", "-json"]
@@ -213,5 +222,96 @@ class BoringNotchXPCHelper: NSObject, BoringNotchXPCHelperProtocol {
             }
             return nil
         }()
+    }
+}
+
+// Keep Accessibility IPC off the UI thread. Only Spotify's current-track group is
+// inspected; library and playlist buttons must never be mistaken for this control.
+private enum SpotifyFavoriteBridge {
+    private static let queue = DispatchQueue(label: "local.kiyi.spotify-favorite", qos: .userInitiated)
+
+    static func readFavorite(track: String) async -> Bool? {
+        await withCheckedContinuation { continuation in
+            queue.async { continuation.resume(returning: currentControl(track: track)?.saved) }
+        }
+    }
+
+    static func setFavorite(_ favorite: Bool, track: String) async -> Bool? {
+        let sent: Bool = await withCheckedContinuation { continuation in
+            queue.async {
+                guard let control = currentControl(track: track) else {
+                    continuation.resume(returning: false)
+                    return
+                }
+                if control.saved == favorite {
+                    continuation.resume(returning: true)
+                    return
+                }
+                if favorite {
+                    continuation.resume(returning: AXUIElementPerformAction(control.element, kAXPressAction as CFString) == .success)
+                } else {
+                    // Spotify's documented Like/Dislike shortcut. Target Spotify
+                    // directly so Kıyı never steals focus or types into another app.
+                    guard let down = CGEvent(keyboardEventSource: nil, virtualKey: 11, keyDown: true),
+                          let up = CGEvent(keyboardEventSource: nil, virtualKey: 11, keyDown: false) else {
+                        continuation.resume(returning: false)
+                        return
+                    }
+                    down.flags = [.maskAlternate, .maskShift]
+                    up.flags = [.maskAlternate, .maskShift]
+                    down.postToPid(control.pid)
+                    up.postToPid(control.pid)
+                    continuation.resume(returning: true)
+                }
+            }
+        }
+        guard sent else { return nil }
+        // Publish only the state confirmed by Spotify, including asynchronous UI updates.
+        for _ in 0..<8 {
+            try? await Task.sleep(for: .milliseconds(150))
+            if let saved = await readFavorite(track: track), saved == favorite { return saved }
+        }
+        return await readFavorite(track: track)
+    }
+
+    private static func attribute(_ element: AXUIElement, _ name: String) -> CFTypeRef? {
+        var value: CFTypeRef?
+        guard AXUIElementCopyAttributeValue(element, name as CFString, &value) == .success else { return nil }
+        return value
+    }
+
+    private static func label(_ element: AXUIElement) -> String {
+        [kAXTitleAttribute, kAXDescriptionAttribute, kAXHelpAttribute]
+            .compactMap { attribute(element, $0) as? String }.joined(separator: " ").lowercased()
+    }
+
+    private static func currentControl(track: String) -> (element: AXUIElement, saved: Bool, pid: pid_t)? {
+        guard AXIsProcessTrusted(), !track.isEmpty,
+              let app = NSRunningApplication.runningApplications(withBundleIdentifier: "com.spotify.client").first else { return nil }
+        let root = AXUIElementCreateApplication(app.processIdentifier)
+        AXUIElementSetMessagingTimeout(root, 0.15)
+        var pending: [(AXUIElement, Int)] = [(root, 0)]
+        var visited = 0
+        let playingLabels = ["şu anda çalan:", "now playing:", "aktuelle wiedergabe:", "wird abgespielt:"]
+        let unsavedLabels = ["beğenilen şarkılar çalma listesine ekle", "add to liked songs", "zu lieblingssongs hinzufügen"]
+        let savedLabels = ["çalma listesine ekle", "add to playlist", "zur playlist hinzufügen", "zu einer playlist hinzufügen", "remove from liked songs", "aus lieblingssongs entfernen"]
+        while let (element, depth) = pending.popLast(), visited < 2500 {
+            visited += 1
+            let text = label(element)
+            if playingLabels.contains(where: { text.contains($0) }), text.contains(track.lowercased()) {
+                let children = attribute(element, kAXChildrenAttribute) as? [AXUIElement] ?? []
+                for child in children {
+                    guard attribute(child, kAXRoleAttribute) as? String == kAXButtonRole else { continue }
+                    let buttonLabel = label(child)
+                    if unsavedLabels.contains(where: { buttonLabel.contains($0) }) { return (child, false, app.processIdentifier) }
+                    if savedLabels.contains(where: { buttonLabel.contains($0) }) { return (child, true, app.processIdentifier) }
+                }
+            }
+            if depth < 30 {
+                let children = attribute(element, kAXChildrenAttribute) as? [AXUIElement] ?? []
+                pending.append(contentsOf: children.reversed().map { ($0, depth + 1) })
+            }
+        }
+        return nil
     }
 }

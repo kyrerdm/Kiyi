@@ -547,7 +547,6 @@ struct ContentView: View {
             }
             
             guard vm.notchState == .closed,
-                  !coordinator.sneakPeek.show,
                   Defaults[.openNotchOnHover] else { return }
             
             hoverTask = Task {
@@ -556,8 +555,7 @@ struct ContentView: View {
                 
                 await MainActor.run {
                     guard self.vm.notchState == .closed,
-                          self.isHovering,
-                          !self.coordinator.sneakPeek.show else { return }
+                          self.isHovering else { return }
                     
                     self.doOpen()
                 }

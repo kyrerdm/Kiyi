@@ -9,6 +9,8 @@ import Foundation
 
 /// The protocol that this service will vend as its API. This protocol will also need to be visible to the process hosting the service.
 @objc protocol BoringNotchXPCHelperProtocol {
+    func spotifyFavorite(_ track: String, with reply: @escaping (NSNumber?) -> Void)
+    func setSpotifyFavorite(_ favorite: Bool, track: String, with reply: @escaping (NSNumber?) -> Void)
     func audioAccessories(with reply: @escaping (String) -> Void)
     func isAccessibilityAuthorized(with reply: @escaping (Bool) -> Void)
     func requestAccessibilityAuthorization()

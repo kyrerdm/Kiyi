@@ -188,6 +188,11 @@ class BoringViewModel: NSObject, ObservableObject {
     }
 
     func open() {
+        // A track notification is a shortcut into the player, even if Shelf was last used.
+        if coordinator.sneakPeek.show && coordinator.sneakPeek.type == .music {
+            coordinator.currentView = .home
+            coordinator.sneakPeek.show = false
+        }
         self.notchSize = openNotchSize
         self.notchState = .open
         

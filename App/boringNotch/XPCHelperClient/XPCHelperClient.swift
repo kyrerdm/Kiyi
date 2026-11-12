@@ -95,6 +95,26 @@ final class XPCHelperClient: NSObject {
         return monitoringTask != nil
     }
     
+    nonisolated func spotifyFavorite(track: String) async -> Bool? {
+        do {
+            let service = await MainActor.run { ensureRemoteService() }
+            let result: NSNumber? = try await service.withContinuation { service, continuation in
+                service.spotifyFavorite(track) { continuation.resume(returning: $0) }
+            }
+            return result?.boolValue
+        } catch { return nil }
+    }
+
+    nonisolated func setSpotifyFavorite(_ favorite: Bool, track: String) async -> Bool? {
+        do {
+            let service = await MainActor.run { ensureRemoteService() }
+            let result: NSNumber? = try await service.withContinuation { service, continuation in
+                service.setSpotifyFavorite(favorite, track: track) { continuation.resume(returning: $0) }
+            }
+            return result?.boolValue
+        } catch { return nil }
+    }
+
     nonisolated func audioAccessories() async -> String {
         do {
             let service = await MainActor.run { ensureRemoteService() }

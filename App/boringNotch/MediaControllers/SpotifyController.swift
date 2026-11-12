@@ -11,7 +11,14 @@ import SwiftUI
 
 class SpotifyController: MediaControllerProtocol {
     func setFavorite(_ favorite: Bool) async {
-        //Placeholder
+        guard !favoriteCommandInFlight else { return }
+        favoriteCommandInFlight = true
+        defer { favoriteCommandInFlight = false }
+        let track = playbackState.title
+        let result = await XPCHelperClient.shared.setSpotifyFavorite(favorite, track: track)
+        guard playbackState.title == track else { return }
+        if let result { playbackState.isFavorite = result }
+        else { await MainActor.run { NSSound.beep() } }
     }
     
     // MARK: - Properties
@@ -27,7 +34,9 @@ class SpotifyController: MediaControllerProtocol {
         return true
     }
 
-    var supportsFavorite: Bool { false }
+    var supportsFavorite: Bool { true }
+
+    private var favoriteCommandInFlight = false
 
     private var notificationTask: Task<Void, Never>?
     
@@ -127,6 +136,11 @@ class SpotifyController: MediaControllerProtocol {
             volume: Double(volumePercentage) / 100.0
         )
 
+        // Spotify's scripting dictionary has no writable favorite property.
+        // Read the actual desktop player's control instead of an optimistic local flag.
+        state.isFavorite = await XPCHelperClient.shared.spotifyFavorite(track: currentTrack)
+            ?? (currentTrack == playbackState.title && playbackState.isFavorite)
+
         if artworkURL == lastArtworkURL, let existingArtwork = self.playbackState.artwork {
             state.artwork = existingArtwork
         }
@@ -145,7 +159,9 @@ class SpotifyController: MediaControllerProtocol {
 
                     await MainActor.run { [weak self] in
                         guard let self = self else { return }
-                        var updatedState = currentState
+                        guard self.playbackState.title == currentState.title,
+                              self.playbackState.artist == currentState.artist else { return }
+                        var updatedState = self.playbackState
                         updatedState.artwork = data
                         self.playbackState = updatedState
                         self.lastArtworkURL = artworkURL
