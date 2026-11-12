@@ -187,6 +187,7 @@ struct MusicControlsView: View {
             ) { newValue in
                 MusicManager.shared.seek(to: newValue)
             }
+            .id(musicManager.songTitle + musicManager.artistName)
             .frame(height: 15)
         }
     }
@@ -471,6 +472,7 @@ struct MusicSliderView: View {
             CustomSlider(
                 value: $sliderValue,
                 range: 0...max(1, duration),
+                allowsTrackpadSeeking: true,
                 color: Defaults[.sliderColor] == .albumArt
                     ? Color(nsColor: color).ensureMinimumBrightness(factor: 0.8)
                     : Defaults[.sliderColor] == .accent ? .effectiveAccent : .white,
@@ -511,8 +513,11 @@ struct MusicSliderView: View {
 }
 
 struct CustomSlider: View {
+    @State private var scrollCommit: Task<Void, Never>?
+    @State private var scrollOwnsDrag = false
     @Binding var value: Double
     var range: ClosedRange<Double>
+    var allowsTrackpadSeeking = false
     var color: Color = .white
     @Binding var dragging: Bool
     @Binding var lastDragged: Date
@@ -543,7 +548,9 @@ struct CustomSlider: View {
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { gesture in
-                        dragging = abs(gesture.translation.width) > 2
+                        scrollCommit?.cancel()
+                        scrollOwnsDrag = false
+                        dragging = true
                         let newValue = range.lowerBound + Double(gesture.location.x / width) * rangeSpan
                         value = min(max(newValue, range.lowerBound), range.upperBound)
                         onDragChange?(value)
@@ -554,6 +561,26 @@ struct CustomSlider: View {
                         lastDragged = Date()
                     }
             )
+            .background(KiyiTrackpadSeek(active: allowsTrackpadSeeking) { delta in
+                guard rangeSpan > 0 else { return }
+                scrollCommit?.cancel()
+                scrollOwnsDrag = true
+                dragging = true
+                value = min(range.upperBound, max(range.lowerBound, value + delta))
+                lastDragged = Date()
+                onDragChange?(value)
+                scrollCommit = Task { @MainActor in
+                    do { try await Task.sleep(for: .milliseconds(120)) } catch { return }
+                    onValueChange?(value)
+                    lastDragged = Date()
+                    dragging = false
+                    scrollOwnsDrag = false
+                }
+            })
+            .onDisappear {
+                scrollCommit?.cancel()
+                if scrollOwnsDrag { dragging = false; scrollOwnsDrag = false }
+            }
             .animation(.easeOut(duration: 0.14), value: dragging)
             .accessibilityRepresentation {
                 Slider(value: Binding(get: { value }, set: { selected in

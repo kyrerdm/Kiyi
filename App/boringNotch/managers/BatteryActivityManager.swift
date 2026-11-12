@@ -75,13 +75,13 @@ class BatteryActivityManager {
             return
         }
         batterySource = powerSource
-        CFRunLoopAddSource(CFRunLoopGetCurrent(), powerSource, .defaultMode)
+        CFRunLoopAddSource(CFRunLoopGetMain(), powerSource, .commonModes)
     }
 
     /// Stops monitoring battery changes
     private func stopMonitoring() {
         if let powerSource = batterySource {
-            CFRunLoopRemoveSource(CFRunLoopGetCurrent(), powerSource, .defaultMode)
+            CFRunLoopRemoveSource(CFRunLoopGetMain(), powerSource, .commonModes)
             batterySource = nil
         }
     }
@@ -180,7 +180,7 @@ class BatteryActivityManager {
         isProcessingNotifications = true
         
         let event = notificationQueue.removeFirst()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+        DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.notifyObservers(event: event)
             self.isProcessingNotifications = false

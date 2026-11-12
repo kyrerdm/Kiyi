@@ -516,12 +516,13 @@ struct AdaLockCard: View {
         return HStack(spacing: 6) {
             Text(formatTime(position)).frame(minWidth: 25, alignment: .leading)
             CustomSlider(value: Binding(get: { position }, set: { draft = $0 }),
-                         range: 0...max(1, duration), color: .white.opacity(0.82),
+                         range: 0...max(1, duration), allowsTrackpadSeeking: true, color: .white.opacity(0.82),
                          dragging: $isScrubbing, lastDragged: .constant(.distantPast),
                          onValueChange: { value in
                              music.seek(to: value)
                              draft = nil
                          })
+                .id(music.songTitle + music.artistName)
                 .frame(height: 10).disabled(!hasTrack)
                 .accessibilityLabel("Oynatma konumu")
             Text("−" + formatTime(max(0, duration - position))).frame(minWidth: 29, alignment: .trailing)
@@ -1056,4 +1057,47 @@ private struct KiyiMenuAction: View {
         }
         update(menu)
     }
+}
+
+
+// Listen only inside this slider, leaving vertical page scrolling and mouse drags alone.
+struct KiyiTrackpadSeek: NSViewRepresentable {
+    var active: Bool
+    @Environment(\.isEnabled) private var enabled
+    var onSeek: (Double) -> Void
+
+    func makeNSView(context: Context) -> KiyiTrackpadSeekView { KiyiTrackpadSeekView() }
+    func updateNSView(_ view: KiyiTrackpadSeekView, context: Context) {
+        view.enabled = enabled && active
+        view.onSeek = onSeek
+    }
+    static func dismantleNSView(_ view: KiyiTrackpadSeekView, coordinator: ()) { view.stop() }
+}
+
+final class KiyiTrackpadSeekView: NSView {
+    var enabled = true
+    var onSeek: ((Double) -> Void)?
+    private var monitor: Any?
+
+    override func hitTest(_ point: NSPoint) -> NSView? { nil }
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        stop()
+        guard window != nil else { return }
+        monitor = NSEvent.addLocalMonitorForEvents(matching: .scrollWheel) { [weak self] event in
+            guard let self, self.enabled, let window = self.window, event.window === window,
+                  event.hasPreciseScrollingDeltas,
+                  self.bounds.insetBy(dx: 0, dy: -8).contains(self.convert(event.locationInWindow, from: nil)),
+                  abs(event.scrollingDeltaX) > abs(event.scrollingDeltaY) * 1.2,
+                  abs(event.scrollingDeltaX) > 0.01 else { return event }
+            // Do not continue seeking on inertia after the fingers leave the trackpad.
+            guard event.momentumPhase.isEmpty else { return nil }
+            let direction = event.isDirectionInvertedFromDevice ? 1.0 : -1.0
+            let seconds = max(-4, min(4, Double(event.scrollingDeltaX) * direction * 0.12))
+            self.onSeek?(seconds)
+            return nil
+        }
+    }
+    func stop() { if let monitor { NSEvent.removeMonitor(monitor) }; monitor = nil }
+    deinit { stop() }
 }
