@@ -23,10 +23,6 @@ struct DynamicNotchApp: App {
     init() {
         if let identifier = Bundle.main.bundleIdentifier,
            let existing = NSRunningApplication.runningApplications(withBundleIdentifier: identifier).first(where: { $0.processIdentifier != ProcessInfo.processInfo.processIdentifier && !$0.isTerminated }) {
-            if CommandLine.arguments.contains("--kiyi-relaunch") {
-                let deadline = Date().addingTimeInterval(2)
-                while !existing.isTerminated && Date() < deadline { Thread.sleep(forTimeInterval: 0.05) }
-            }
             if !existing.isTerminated {
                 DistributedNotificationCenter.default().postNotificationName(Notification.Name("kiyi.showSettings"), object: nil, userInfo: nil, deliverImmediately: true)
                 existing.activate(options: [.activateAllWindows, .activateIgnoringOtherApps])
@@ -46,7 +42,6 @@ struct DynamicNotchApp: App {
         MenuBarExtra(isInserted: $showMenuBarIcon) {
             KiyiMenuBarPanel(
                 openSettings: { SettingsWindowController.shared.showWindow() },
-                restart: { ApplicationRelauncher.restart { appDelegate.quitFromMenuBar() } },
                 quit: { appDelegate.quitFromMenuBar() })
         } label: {
             Image("KiyiMenuBar")
@@ -496,8 +491,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "kiyiHUDPermissionRequestedV1")
             MediaKeyInterceptor.shared.requestAccessibilityAuthorization()
         }
-        if (CommandLine.arguments.contains("--settings") || UserDefaults.standard.bool(forKey: "kiyiReopenSettings")) && !coordinator.firstLaunch {
-            UserDefaults.standard.set(false, forKey: "kiyiReopenSettings")
+        if CommandLine.arguments.contains("--settings") && !coordinator.firstLaunch {
             SettingsWindowController.shared.showWindow()
         }
         previousScreens = NSScreen.screens

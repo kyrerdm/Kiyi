@@ -231,18 +231,26 @@ private enum SpotifyFavoriteBridge {
     private static let queue = DispatchQueue(label: "local.kiyi.spotify-favorite", qos: .userInitiated)
 
     static func readFavorite(track: String) async -> Bool? {
-        await withCheckedContinuation { continuation in
-            queue.async { continuation.resume(returning: currentControl(track: track)?.saved) }
+        await findControl(track: track)?.saved
+    }
+
+    private static func findControl(track: String) async -> (element: AXUIElement, saved: Bool, pid: pid_t)? {
+        // Spotify builds its accessibility tree asynchronously after we enable it.
+        // Retry reads only: a library-changing command must never be sent twice.
+        for attempt in 0..<4 {
+            let control = await withCheckedContinuation { continuation in
+                queue.async { continuation.resume(returning: currentControl(track: track)) }
+            }
+            if let control { return control }
+            if attempt < 3 { try? await Task.sleep(for: .milliseconds(120)) }
         }
+        return nil
     }
 
     static func setFavorite(_ favorite: Bool, track: String) async -> Bool? {
+        guard let control = await findControl(track: track) else { return nil }
         let sent: Bool = await withCheckedContinuation { continuation in
             queue.async {
-                guard let control = currentControl(track: track) else {
-                    continuation.resume(returning: false)
-                    return
-                }
                 if control.saved == favorite {
                     continuation.resume(returning: true)
                     return
@@ -290,6 +298,11 @@ private enum SpotifyFavoriteBridge {
               let app = NSRunningApplication.runningApplications(withBundleIdentifier: "com.spotify.client").first else { return nil }
         let root = AXUIElementCreateApplication(app.processIdentifier)
         AXUIElementSetMessagingTimeout(root, 0.15)
+        // Request the desktop player's tree on every connection. This is
+        // process-local in Electron/Chromium and is lost when Spotify relaunches.
+        // See https://www.electronjs.org/docs/latest/tutorial/accessibility
+        AXUIElementSetAttributeValue(root, "AXManualAccessibility" as CFString, kCFBooleanTrue)
+        AXUIElementSetAttributeValue(root, "AXEnhancedUserInterface" as CFString, kCFBooleanTrue)
         var pending: [(AXUIElement, Int)] = [(root, 0)]
         var visited = 0
         let playingLabels = ["şu anda çalan:", "now playing:", "aktuelle wiedergabe:", "wird abgespielt:"]

@@ -983,7 +983,6 @@ func KiyiL(_ key: String) -> String {
 struct KiyiMenuBarPanel: View {
     @Default(.kiyiLanguage) private var languageCode
     var openSettings: () -> Void
-    var restart: () -> Void
     var quit: () -> Void
     @Environment(\.dismiss) private var dismiss
 
@@ -999,7 +998,6 @@ struct KiyiMenuBarPanel: View {
             }.padding(.horizontal, 6).padding(.top, 4)
             Divider()
             KiyiMenuAction(title: "Ayarlar…", icon: "slider.horizontal.3", shortcut: "⌘,") { dismiss(); openSettings() }
-            KiyiMenuAction(title: "Yeniden başlat", icon: "arrow.clockwise") { dismiss(); restart() }
             Divider()
             KiyiMenuAction(title: "Kıyı’yı kapat", icon: "power") { dismiss(); quit() }
         }
