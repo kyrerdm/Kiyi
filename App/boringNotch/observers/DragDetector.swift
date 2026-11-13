@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-import UniformTypeIdentifiers
 
 final class DragDetector {
 
@@ -38,14 +37,14 @@ final class DragDetector {
 
     // MARK: - Private Helpers
     
-    /// Checks if the drag pasteboard contains valid content types that can be dropped on the shelf
-    private func hasValidDragContent() -> Bool {
-        let validTypes: [NSPasteboard.PasteboardType] = [
-            .fileURL,
-            NSPasteboard.PasteboardType(UTType.url.identifier),
-            .string
-        ]
-        return dragPasteboard.types?.contains(where: validTypes.contains) ?? false
+    /// Background activation is reserved for files. Browser tab/window moves can
+    /// advertise text/URLs too; those remain supported by the explicit drop target.
+    static func hasFileContent(on pasteboard: NSPasteboard) -> Bool {
+        (pasteboard.pasteboardItems ?? []).contains { item in
+            guard let value = item.string(forType: .fileURL),
+                  let url = URL(string: value) else { return false }
+            return url.isFileURL
+        }
     }
 
     func startMonitoring() {
@@ -65,11 +64,14 @@ final class DragDetector {
             guard let self = self else { return }
             guard self.isDragging else { return }
 
-            let newContent = self.dragPasteboard.changeCount != self.pasteboardChangeCount
-            
-            // Detect if actual content is being dragged AND it's valid content
-            if newContent && !self.isContentDragging && self.hasValidDragContent() {
-                self.isContentDragging = true
+            let changeCount = self.dragPasteboard.changeCount
+            if changeCount != self.pasteboardChangeCount {
+                self.pasteboardChangeCount = changeCount
+                self.isContentDragging = Self.hasFileContent(on: self.dragPasteboard)
+                if !self.isContentDragging && self.hasEnteredNotchRegion {
+                    self.hasEnteredNotchRegion = false
+                    self.onDragExitsNotchRegion?()
+                }
             }
 
             // Only process position when content is being dragged
