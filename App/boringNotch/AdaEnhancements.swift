@@ -5,6 +5,8 @@ import Defaults
 import Combine
 import OSLog
 import CoreImage
+import IOKit.pwr_mgt
+import QuartzCore
 
 extension Defaults.Keys {
     static let kiyiLanguage = Key<String>("kiyiLanguage", default: "tr")
@@ -22,6 +24,8 @@ extension Defaults.Keys {
     static let adaTransparency = Key<Double>("adaTransparency", default: 0.24)
     static let adaAirPods = Key<Bool>("adaAirPods", default: true)
     static let adaLockMusic = Key<Bool>("adaLockMusic", default: true)
+    static let kiyiLockHidePaused = Key<Bool>("kiyiLockHidePaused", default: true)
+    static let kiyiLockKeepAwake = Key<Bool>("kiyiLockKeepAwake", default: true)
     static let adaLockHideIdle = Key<Bool>("adaLockHideIdle", default: true)
     static let adaLockArtwork = Key<Bool>("adaLockArtwork", default: true)
     static let adaLockArtworkBackdrop = Key<Bool>("adaLockArtworkBackdrop", default: true)
@@ -50,6 +54,10 @@ private final class AdaLockExpansion: ObservableObject {
     private let previewExpansion = AdaLockExpansion()
     private var bridge: LockBridge?
     private var locked = false
+    private var pausedPlayerHidden = false
+    private var lockFadeToken: UUID?
+    private var pauseTimeout: Task<Void, Never>?
+    private var displayAssertion: IOPMAssertionID?
     private var wakeObserver: NSObjectProtocol?
     private var retry: Task<Void, Never>?
     private var previewTimeout: Task<Void, Never>?
@@ -66,11 +74,14 @@ private final class AdaLockExpansion: ObservableObject {
             }
         }
         Defaults.publisher(keys: .adaLockMusic, .adaLockArtwork, .adaLockLyrics, .adaLockCoverSize,
-                           .adaLockCardWidth, .adaLockHideIdle, .adaLockArtworkBackdrop, .hideFromScreenRecording, options: [])
+                           .adaLockCardWidth, .adaLockHideIdle, .adaLockArtworkBackdrop, .hideFromScreenRecording,
+                           .kiyiLockHidePaused, .kiyiLockKeepAwake, options: [])
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.refresh() }
             .store(in: &subscriptions)
-        music.$songDuration.map { $0.isFinite && $0 > 0 }.removeDuplicates()
+        music.$isPlaying.combineLatest(music.$songDuration)
+            .map { ($0, $1.isFinite && $1 > 0) }
+            .removeDuplicates { $0 == $1 }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in self?.refresh() }
             .store(in: &subscriptions)
@@ -81,6 +92,7 @@ private final class AdaLockExpansion: ObservableObject {
 
     func setLocked(_ value: Bool) {
         locked = value
+        updatePlaybackPolicy()
         retry?.cancel()
         dismissPreview()
         if value {
@@ -104,8 +116,49 @@ private final class AdaLockExpansion: ObservableObject {
     }
 
     func refresh() {
+        updatePlaybackPolicy()
         if locked { present(preview: false) }
         if previewPanel?.isVisible == true { present(preview: true) }
+    }
+
+    private func updatePlaybackPolicy() {
+        let music = MusicManager.shared
+        let active = locked && Defaults[.adaLockMusic]
+        let keepDisplay = active && music.hasLockTrack && music.isPlaying && Defaults[.kiyiLockKeepAwake]
+        if keepDisplay && displayAssertion == nil {
+            var assertion: IOPMAssertionID = 0
+            let result = IOPMAssertionCreateWithName(
+                kIOPMAssertionTypePreventUserIdleDisplaySleep as CFString,
+                IOPMAssertionLevel(kIOPMAssertionLevelOn),
+                "Kiyi lock-screen music playback" as CFString, &assertion)
+            if result == kIOReturnSuccess {
+                displayAssertion = assertion
+                log.info("Lock music display sleep prevention enabled")
+            } else {
+                log.error("Display sleep assertion failed: \(result)")
+            }
+        } else if !keepDisplay, let assertion = displayAssertion {
+            IOPMAssertionRelease(assertion)
+            displayAssertion = nil
+            log.info("Lock music display sleep prevention released")
+        }
+
+        guard active, Defaults[.kiyiLockHidePaused], !music.isPlaying else {
+            pauseTimeout?.cancel()
+            pauseTimeout = nil
+            pausedPlayerHidden = false
+            return
+        }
+        // Metadata, artwork and wake refreshes must not restart the countdown.
+        guard pauseTimeout == nil, !pausedPlayerHidden else { return }
+        pauseTimeout = Task { [weak self] in
+            do { try await Task.sleep(for: .seconds(15)) } catch { return }
+            guard let self, self.locked, Defaults[.adaLockMusic],
+                  Defaults[.kiyiLockHidePaused], !MusicManager.shared.isPlaying else { return }
+            self.pauseTimeout = nil
+            self.pausedPlayerHidden = true
+            self.dismissLockCard(animated: true)
+        }
     }
 
     private func dismissPreview() {
@@ -116,7 +169,24 @@ private final class AdaLockExpansion: ObservableObject {
         dismissBackdrop(preview: true)
     }
 
-    private func dismissLockCard() {
+    private func dismissLockCard(animated: Bool = false) {
+        if animated, let window = panel, window.isVisible {
+            let token = UUID()
+            lockFadeToken = token
+            NSAnimationContext.runAnimationGroup { context in
+                context.duration = 0.28
+                context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+                window.animator().alphaValue = 0
+                backdrop?.animator().alphaValue = 0
+            } completionHandler: { [weak self] in
+                Task { @MainActor in
+                    guard let self, self.lockFadeToken == token, self.pausedPlayerHidden else { return }
+                    self.dismissLockCard()
+                }
+            }
+            return
+        }
+        lockFadeToken = nil
         if panel?.isVisible == true { log.info("Lock card dismissed") }
         panel?.orderOut(nil)
         panel = nil
@@ -146,6 +216,8 @@ private final class AdaLockExpansion: ObservableObject {
                 return
             }
         }
+        // A refresh during the fade must not destroy the window prematurely.
+        if !preview && pausedPlayerHidden { return }
         guard let screen = NSScreen.screens.first else { return }
 
         let state = preview ? previewExpansion : expansion
@@ -163,6 +235,15 @@ private final class AdaLockExpansion: ObservableObject {
 
         let existing = preview ? previewPanel : panel
         let window = existing ?? makePanel(preview: preview)
+        if !preview && lockFadeToken != nil {
+            lockFadeToken = nil
+            NSAnimationContext.runAnimationGroup { context in
+                context.duration = 0.18
+                context.timingFunction = CAMediaTimingFunction(name: .easeOut)
+                window.animator().alphaValue = 1
+                backdrop?.animator().alphaValue = 1
+            }
+        }
         let root = AdaLockPresentation(preview: preview, width: width, height: height, scale: scale,
                                        expansion: state) { [weak self] in self?.toggleArtwork(preview: preview) }
         if let host = window.contentView as? NSHostingView<AdaLockPresentation> {

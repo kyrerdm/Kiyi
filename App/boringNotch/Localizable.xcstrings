@@ -29706,6 +29706,72 @@
           }
         }
       }
+    },
+    "Müzik durunca 15 saniye sonra gizle": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik durunca 15 saniye sonra gizle"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide 15 seconds after music stops"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "15 Sekunden nach Musikstopp ausblenden"
+          }
+        }
+      }
+    },
+    "Müzik çalarken ekranı açık tut": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Müzik çalarken ekranı açık tut"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep the display awake while music plays"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildschirm bei Musikwiedergabe eingeschaltet lassen"
+          }
+        }
+      }
+    },
+    "Yalnızca kilit ekranında etkindir. Müzik durunca veya kilidi açınca normal ekran süresi geri gelir.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yalnızca kilit ekranında etkindir. Müzik durunca veya kilidi açınca normal ekran süresi geri gelir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only active on the lock screen. Normal display sleep resumes when music stops or you unlock your Mac."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur auf dem Sperrbildschirm aktiv. Bei Musikstopp oder nach dem Entsperren gilt wieder die normale Bildschirmruhezeit."
+          }
+        }
+      }
     }
   },
   "version": "1.0"

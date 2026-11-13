@@ -234,6 +234,10 @@ struct SettingsView: View {
             card("Kilit ekranındaki müzik", "lock") {
                 Defaults.Toggle(key: .adaLockMusic) { Text("Kilit ekranında kartı göster") }
                 Defaults.Toggle(key: .adaLockHideIdle) { Text("Parça yokken kartı gizle") }
+                Defaults.Toggle(key: .kiyiLockHidePaused) { Text("Müzik durunca 15 saniye sonra gizle") }
+                Defaults.Toggle(key: .kiyiLockKeepAwake) { Text("Müzik çalarken ekranı açık tut") }
+                Text("Yalnızca kilit ekranında etkindir. Müzik durunca veya kilidi açınca normal ekran süresi geri gelir.")
+                    .font(.callout).foregroundStyle(.secondary)
                 Defaults.Toggle(key: .adaLockArtwork) { Text("Albüm kapağı") }
                 Defaults.Toggle(key: .adaLockArtworkBackdrop) { Text("Kapak büyüyünce bulanık arka plan") }
                 Defaults.Toggle(key: .adaLockLyrics) { Text("Şarkı sözleri") }
