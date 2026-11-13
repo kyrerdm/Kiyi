@@ -24,6 +24,10 @@ extension Defaults.Keys {
     static let adaTransparency = Key<Double>("adaTransparency", default: 0.24)
     static let adaAirPods = Key<Bool>("adaAirPods", default: true)
     static let adaLockMusic = Key<Bool>("adaLockMusic", default: true)
+    static let kiyiLockPauseDelay = Key<Double>("kiyiLockPauseDelay", default: 15)
+    static let kiyiLockDismissStyle = Key<String>("kiyiLockDismissStyle", default: "fade")
+    static let kiyiLockAnimationMS = Key<Double>("kiyiLockAnimationMS", default: 280)
+    static let kiyiLockVerticalOffset = Key<Double>("kiyiLockVerticalOffset", default: 0)
     static let kiyiLockHidePaused = Key<Bool>("kiyiLockHidePaused", default: true)
     static let kiyiLockKeepAwake = Key<Bool>("kiyiLockKeepAwake", default: true)
     static let adaLockHideIdle = Key<Bool>("adaLockHideIdle", default: true)
@@ -41,6 +45,7 @@ final class AdaPassivePanel: NSPanel {
 }
 private final class AdaLockExpansion: ObservableObject {
     @Published var expanded = false
+    @Published var dismissing = false
 }
 
 @MainActor final class AdaLockScreen {
@@ -75,7 +80,7 @@ private final class AdaLockExpansion: ObservableObject {
         }
         Defaults.publisher(keys: .adaLockMusic, .adaLockArtwork, .adaLockLyrics, .adaLockCoverSize,
                            .adaLockCardWidth, .adaLockHideIdle, .adaLockArtworkBackdrop, .hideFromScreenRecording,
-                           .kiyiLockHidePaused, .kiyiLockKeepAwake, options: [])
+                           .kiyiLockHidePaused, .kiyiLockKeepAwake, .kiyiLockVerticalOffset, options: [])
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.refresh() }
             .store(in: &subscriptions)
@@ -151,8 +156,9 @@ private final class AdaLockExpansion: ObservableObject {
         }
         // Metadata, artwork and wake refreshes must not restart the countdown.
         guard pauseTimeout == nil, !pausedPlayerHidden else { return }
+        let delay = min(60, max(5, Defaults[.kiyiLockPauseDelay]))
         pauseTimeout = Task { [weak self] in
-            do { try await Task.sleep(for: .seconds(15)) } catch { return }
+            do { try await Task.sleep(for: .seconds(delay)) } catch { return }
             guard let self, self.locked, Defaults[.adaLockMusic],
                   Defaults[.kiyiLockHidePaused], !MusicManager.shared.isPlaying else { return }
             self.pauseTimeout = nil
@@ -161,20 +167,46 @@ private final class AdaLockExpansion: ObservableObject {
         }
     }
 
+    func previewDismissal() {
+        guard !locked else { return }
+        dismissPreview()
+        present(preview: true)
+        previewTimeout = Task { [weak self] in
+            do { try await Task.sleep(for: .milliseconds(600)) } catch { return }
+            guard let self, let window = self.previewPanel else { return }
+            self.previewExpansion.dismissing = true
+            let duration = self.dismissalDuration
+            NSAnimationContext.runAnimationGroup({ context in
+                context.duration = duration
+                context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+                window.animator().alphaValue = 0
+                self.previewBackdrop?.animator().alphaValue = 0
+            }, completionHandler: nil)
+            do { try await Task.sleep(for: .seconds(duration + 0.05)) } catch { return }
+            self.dismissPreview()
+        }
+    }
+
+    private var dismissalDuration: Double {
+        Defaults[.kiyiLockDismissStyle] == "none" ? 0 : min(650, max(180, Defaults[.kiyiLockAnimationMS])) / 1000
+    }
+
     private func dismissPreview() {
         previewTimeout?.cancel()
         previewPanel?.orderOut(nil)
         previewPanel = nil
         previewExpansion.expanded = false
+        previewExpansion.dismissing = false
         dismissBackdrop(preview: true)
     }
 
     private func dismissLockCard(animated: Bool = false) {
-        if animated, let window = panel, window.isVisible {
+        if animated, dismissalDuration > 0, let window = panel, window.isVisible {
             let token = UUID()
             lockFadeToken = token
+            expansion.dismissing = true
             NSAnimationContext.runAnimationGroup { context in
-                context.duration = 0.28
+                context.duration = dismissalDuration
                 context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
                 window.animator().alphaValue = 0
                 backdrop?.animator().alphaValue = 0
@@ -191,6 +223,7 @@ private final class AdaLockExpansion: ObservableObject {
         panel?.orderOut(nil)
         panel = nil
         expansion.expanded = false
+        expansion.dismissing = false
         dismissBackdrop(preview: false)
         bridge?.hide()
     }
@@ -230,13 +263,17 @@ private final class AdaLockExpansion: ObservableObject {
                               width: max(1, screen.frame.width - 32), height: screen.frame.height * 0.60)
         let scale = min(1, safeArea.width / width, safeArea.height / height)
         let size = CGSize(width: width * scale, height: height * scale)
-        let frame = CGRect(x: safeArea.midX - size.width / 2, y: safeArea.midY - size.height / 2,
+        let offset = min(160, max(-160, Defaults[.kiyiLockVerticalOffset]))
+        let proposedY = safeArea.midY - size.height / 2 - offset
+        let y = min(safeArea.maxY - size.height, max(safeArea.minY, proposedY))
+        let frame = CGRect(x: safeArea.midX - size.width / 2, y: y,
                            width: size.width, height: size.height)
 
         let existing = preview ? previewPanel : panel
         let window = existing ?? makePanel(preview: preview)
         if !preview && lockFadeToken != nil {
             lockFadeToken = nil
+            expansion.dismissing = false
             NSAnimationContext.runAnimationGroup { context in
                 context.duration = 0.18
                 context.timingFunction = CAMediaTimingFunction(name: .easeOut)
@@ -458,6 +495,8 @@ private final class AdaLockArtworkBackdrop: NSView {
 }
 
 private struct AdaLockPresentation: View {
+    @Default(.kiyiLockDismissStyle) private var dismissalStyle
+    @Default(.kiyiLockAnimationMS) private var animationMS
     @Default(.kiyiLanguage) private var languageCode
     var preview: Bool
     var width: CGFloat
@@ -471,6 +510,9 @@ private struct AdaLockPresentation: View {
             .frame(width: width, height: height)
             .scaleEffect(scale)
             .frame(width: width * scale, height: height * scale)
+            .scaleEffect(expansion.dismissing && dismissalStyle == "shrink" ? 0.94 : 1)
+            .offset(y: expansion.dismissing && dismissalStyle == "slide" ? 14 : 0)
+            .animation(.easeInOut(duration: expansion.dismissing ? min(650, max(180, animationMS)) / 1000 : 0.18), value: expansion.dismissing)
             .environment(\.locale, Locale(identifier: languageCode))
             .environment(\.colorScheme, .dark)
     }
@@ -750,13 +792,15 @@ struct AdaSettingSlider: View {
     var range: ClosedRange<Double>
     var step: Double
     var percent: Bool
+    var unit: String
 
-    init(_ title: String, value: Binding<Double>, range: ClosedRange<Double>, step: Double, percent: Bool = false) {
+    init(_ title: String, value: Binding<Double>, range: ClosedRange<Double>, step: Double, percent: Bool = false, unit: String = "pt") {
         self.title = title
         _value = value
         self.range = range
         self.step = step
         self.percent = percent
+        self.unit = unit
     }
 
     var body: some View {
@@ -764,7 +808,7 @@ struct AdaSettingSlider: View {
             HStack {
                 Text(KiyiL(title))
                 Spacer()
-                Text(percent ? "\(Int((value * 100).rounded()))%" : "\(Int(value.rounded())) pt")
+                Text(percent ? "\(Int((value * 100).rounded()))%" : "\(Int(value.rounded())) \(KiyiL(unit))")
                     .foregroundStyle(.secondary).monospacedDigit()
             }
             Slider(value: $value, in: range, step: step).labelsHidden()

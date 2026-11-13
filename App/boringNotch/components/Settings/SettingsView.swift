@@ -30,6 +30,10 @@ struct SettingsView: View {
     @Default(.adaLockCoverSize) private var lockCover
     @Default(.adaLockCardWidth) private var lockWidth
     @Default(.adaLockOpacity) private var lockOpacity
+    @Default(.kiyiLockPauseDelay) private var lockPauseDelay
+    @Default(.kiyiLockDismissStyle) private var lockDismissStyle
+    @Default(.kiyiLockAnimationMS) private var lockAnimationMS
+    @Default(.kiyiLockVerticalOffset) private var lockVerticalOffset
     @Default(.notchHeightMode) private var notchMode
     @Default(.nonNotchHeightMode) private var plainMode
     @Default(.notchHeight) private var notchHeight
@@ -234,16 +238,32 @@ struct SettingsView: View {
             card("Kilit ekranındaki müzik", "lock") {
                 Defaults.Toggle(key: .adaLockMusic) { Text("Kilit ekranında kartı göster") }
                 Defaults.Toggle(key: .adaLockHideIdle) { Text("Parça yokken kartı gizle") }
-                Defaults.Toggle(key: .kiyiLockHidePaused) { Text("Müzik durunca 15 saniye sonra gizle") }
                 Defaults.Toggle(key: .kiyiLockKeepAwake) { Text("Müzik çalarken ekranı açık tut") }
                 Text("Yalnızca kilit ekranında etkindir. Müzik durunca veya kilidi açınca normal ekran süresi geri gelir.")
                     .font(.callout).foregroundStyle(.secondary)
+            }
+            card("Gizlenme ve animasyon", "sparkles") {
+                Defaults.Toggle(key: .kiyiLockHidePaused) { Text("Müzik durunca otomatik gizle") }
+                AdaSettingSlider("Gizlenmeden önce bekle", value: $lockPauseDelay, range: 5...60, step: 1, unit: "sn")
+                Picker("Kapanış animasyonu", selection: $lockDismissStyle) {
+                    Text("Yumuşak solma").tag("fade")
+                    Text("Aşağı süzülme").tag("slide")
+                    Text("Hafif küçülme").tag("shrink")
+                    Text("Animasyonsuz").tag("none")
+                }.pickerStyle(.menu)
+                AdaSettingSlider("Animasyon süresi", value: $lockAnimationMS, range: 180...650, step: 10, unit: "ms")
+                    .disabled(lockDismissStyle == "none")
+                Button("Animasyonu dene") { AdaLockScreen.shared.previewDismissal() }.buttonStyle(.bordered)
+            }
+            card("Kart ve kapak", "rectangle.on.rectangle") {
                 Defaults.Toggle(key: .adaLockArtwork) { Text("Albüm kapağı") }
                 Defaults.Toggle(key: .adaLockArtworkBackdrop) { Text("Kapak büyüyünce bulanık arka plan") }
                 Defaults.Toggle(key: .adaLockLyrics) { Text("Şarkı sözleri") }
                 AdaSettingSlider("Kapak boyutu", value: $lockCover, range: 120...280, step: 5)
                 AdaSettingSlider("Kart genişliği", value: $lockWidth, range: 300...480, step: 5)
                 AdaSettingSlider("Kart koyuluğu", value: $lockOpacity, range: 0...1, step: 0.05, percent: true)
+                AdaSettingSlider("Dikey konum", value: $lockVerticalOffset, range: -160...160, step: 5)
+                Text("Eksi değerler kartı yukarı, artı değerler aşağı taşır.").font(.callout).foregroundStyle(.secondary)
                 Button("Masaüstünde önizle") { AdaLockScreen.shared.preview() }.buttonStyle(.bordered)
                 Text("Kullanıcı oturumu kilitlendiğinde çalışır. Kapağa tıklayarak büyük görünümü açabilirsin.").font(.callout).foregroundStyle(.secondary)
             }
