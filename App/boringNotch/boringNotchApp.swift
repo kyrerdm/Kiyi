@@ -116,6 +116,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @MainActor
     func onScreenLocked(_ notification: Notification) {
         isScreenLocked = true
+        KiyiGelgitController.shared.setLocked(true)
         AdaAirPods.shared.dismissConnection()
         MediaKeyInterceptor.shared.stop()
         AdaLockScreen.shared.setLocked(true)
@@ -129,6 +130,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @MainActor
     func onScreenUnlocked(_ notification: Notification) {
         isScreenLocked = false
+        KiyiGelgitController.shared.setLocked(false)
         MediaKeyInterceptor.shared.start()
         AdaLockScreen.shared.setLocked(false)
         disableSkyLightOnAllWindows()

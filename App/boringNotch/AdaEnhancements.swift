@@ -1232,12 +1232,14 @@ final class KiyiTrackpadSeekView: NSView {
 @MainActor final class KiyiGelgitController: ObservableObject {
     static let shared = KiyiGelgitController()
     @Published private(set) var active = false
+    private var screenLocked = false
     private var foregroundPID: Int32 = 0
     private var monitoring: Task<Void, Never>?
     private var subscriptions = Set<AnyCancellable>()
 
     func start() {
         guard monitoring == nil else { return }
+        screenLocked = (CGSessionCopyCurrentDictionary() as? [String: Any])?["CGSSessionScreenIsLocked"] as? Bool == true
         foregroundPID = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
         NSWorkspace.shared.notificationCenter.publisher(for: NSWorkspace.didActivateApplicationNotification)
             .receive(on: DispatchQueue.main)
@@ -1258,8 +1260,12 @@ final class KiyiTrackpadSeekView: NSView {
             }
         }
     }
+    func setLocked(_ value: Bool) {
+        screenLocked = value
+        Task { await synchronize() }
+    }
     private func synchronize() async {
-        active = await XPCHelperClient.shared.configureGelgit(enabled: Defaults[.kiyiGelgitEnabled],
+        active = await XPCHelperClient.shared.configureGelgit(enabled: Defaults[.kiyiGelgitEnabled] && !screenLocked,
             allWindows: Defaults[.kiyiGelgitAllWindows], includeFinder: Defaults[.kiyiGelgitFinder], frontmostPID: foregroundPID)
     }
 }
