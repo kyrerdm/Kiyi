@@ -13,6 +13,14 @@ import CoreGraphics
 
 class BoringNotchXPCHelper: NSObject, BoringNotchXPCHelperProtocol {
     
+    private let gelgit = KiyiGelgit()
+
+    @objc func configureGelgit(_ enabled: Bool, allWindows: Bool, includeFinder: Bool, frontmostPID: Int32, with reply: @escaping (Bool) -> Void) {
+        DispatchQueue.main.async { [self] in
+            reply(gelgit.configure(enabled: enabled, allWindows: allWindows, includeFinder: includeFinder, frontmostPID: frontmostPID))
+        }
+    }
+
     @objc func spotifyFavorite(_ track: String, with reply: @escaping (NSNumber?) -> Void) {
         Task { reply(await SpotifyFavoriteBridge.readFavorite(track: track).map { NSNumber(value: $0) }) }
     }

@@ -30102,6 +30102,292 @@
           }
         }
       }
+    },
+    "Gelgit": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit"
+          }
+        }
+      }
+    },
+    "Dock’a bir dokunuşla küçült, bir dokunuşla geri getir.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dock’a bir dokunuşla küçült, bir dokunuşla geri getir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One Dock click to minimize, another to bring it back."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Dock-Klick zum Minimieren, ein weiterer zum Wiederherstellen."
+          }
+        }
+      }
+    },
+    "Gelgit · Dock denetimi": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit · Dock denetimi"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit · Dock controls"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit · Dock-Steuerung"
+          }
+        }
+      }
+    },
+    "Gelgit’i etkinleştir": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit’i etkinleştir"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable Gelgit"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit aktivieren"
+          }
+        }
+      }
+    },
+    "Dock’ta öndeki uygulamaya tekrar tıkla: penceresi küçülsün. Yeniden tıkla: geri gelsin.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dock’ta öndeki uygulamaya tekrar tıkla: penceresi küçülsün. Yeniden tıkla: geri gelsin."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click the active app in the Dock to minimize its window. Click again to restore it."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klicke im Dock auf die aktive App, um ihr Fenster zu minimieren. Ein weiterer Klick stellt es wieder her."
+          }
+        }
+      }
+    },
+    "Gelgit kapalı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit kapalı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit is off"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit ist ausgeschaltet"
+          }
+        }
+      }
+    },
+    "Gelgit hazır": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit hazır"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit is ready"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit ist bereit"
+          }
+        }
+      }
+    },
+    "Gelgit için aygıt denetimi izni gerekiyor": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit için aygıt denetimi izni gerekiyor"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit needs device control permission"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelgit benötigt die Berechtigung zur Gerätesteuerung"
+          }
+        }
+      }
+    },
+    "Pencere davranışı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pencere davranışı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Window behavior"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fensterverhalten"
+          }
+        }
+      }
+    },
+    "Uygulamanın tüm pencerelerini küçült ve geri getir": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulamanın tüm pencerelerini küçült ve geri getir"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minimize and restore all windows of the app"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle Fenster der App minimieren und wiederherstellen"
+          }
+        }
+      }
+    },
+    "Finder’da da kullan": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finder’da da kullan"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Also use in Finder"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auch im Finder verwenden"
+          }
+        }
+      }
+    },
+    "Varsayılan olarak yalnızca öndeki pencere küçülür. Sağ tık, simge sürükleme, yardımcı tuşlar ve tam ekran pencereler etkilenmez.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Varsayılan olarak yalnızca öndeki pencere küçülür. Sağ tık, simge sürükleme, yardımcı tuşlar ve tam ekran pencereler etkilenmez."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "By default, only the front window is minimized. Right-clicks, icon drags, modifier keys and full-screen windows keep their normal behavior."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standardmäßig wird nur das vorderste Fenster minimiert. Rechtsklicks, das Ziehen von Symbolen, Sondertasten und Vollbildfenster bleiben unverändert."
+          }
+        }
+      }
+    },
+    "İzin ayarlarını aç": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin ayarlarını aç"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open permission settings"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berechtigungseinstellungen öffnen"
+          }
+        }
+      }
     }
   },
   "version": "1.0"

@@ -21,6 +21,7 @@ struct SettingsView: View {
     @Default(.kiyiLanguage) private var languageCode
     @ObservedObject private var coordinator = BoringViewCoordinator.shared
     @ObservedObject private var calendars = CalendarManager.shared
+    @ObservedObject private var gelgit = KiyiGelgitController.shared
     @ObservedObject private var shares = QuickShareService.shared
     @Default(.mediaController) private var source
     @Default(.hideNotchOption) private var fullscreen
@@ -267,6 +268,26 @@ struct SettingsView: View {
                 Button("Masaüstünde önizle") { AdaLockScreen.shared.preview() }.buttonStyle(.bordered)
                 Text("Kullanıcı oturumu kilitlendiğinde çalışır. Kapağa tıklayarak büyük görünümü açabilirsin.").font(.callout).foregroundStyle(.secondary)
             }
+        case .gelgit:
+            card("Gelgit · Dock denetimi", "dock.rectangle") {
+                Defaults.Toggle(key: .kiyiGelgitEnabled) { Text("Gelgit’i etkinleştir") }
+                Text("Dock’ta öndeki uygulamaya tekrar tıkla: penceresi küçülsün. Yeniden tıkla: geri gelsin.")
+                    .font(.callout).foregroundStyle(.secondary)
+                Label(KiyiL(!Defaults[.kiyiGelgitEnabled] ? "Gelgit kapalı" : gelgit.active ? "Gelgit hazır" : "Gelgit için aygıt denetimi izni gerekiyor"),
+                      systemImage: gelgit.active ? "checkmark.circle" : "info.circle")
+                    .font(.callout).foregroundStyle(.secondary)
+                if Defaults[.kiyiGelgitEnabled] && !gelgit.active {
+                    Button("İzin ayarlarını aç") {
+                        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
+                    }.buttonStyle(.bordered)
+                }
+            }
+            card("Pencere davranışı", "macwindow.on.rectangle") {
+                Defaults.Toggle(key: .kiyiGelgitAllWindows) { Text("Uygulamanın tüm pencerelerini küçült ve geri getir") }
+                Defaults.Toggle(key: .kiyiGelgitFinder) { Text("Finder’da da kullan") }
+                Text("Varsayılan olarak yalnızca öndeki pencere küçülür. Sağ tık, simge sürükleme, yardımcı tuşlar ve tam ekran pencereler etkilenmez.")
+                    .font(.callout).foregroundStyle(.secondary)
+            }
         case .shelf:
             card("Dosyalar ve paylaşım", "tray") {
                 Defaults.Toggle(key: .boringShelf) { Text("Dosya rafını aç") }
@@ -341,7 +362,7 @@ struct SettingsView: View {
 }
 
 private enum KiyiSettingsPage: String, CaseIterable, Identifiable {
-    case appearance = "Görünüm", general = "Davranış", music = "Müzik", system = "Sistem", lock = "Kilit ekranı", shelf = "Dosya rafı", extras = "Bağlantılar", about = "Kıyı hakkında"
+    case appearance = "Görünüm", general = "Davranış", music = "Müzik", system = "Sistem", lock = "Kilit ekranı", gelgit = "Gelgit", shelf = "Dosya rafı", extras = "Bağlantılar", about = "Kıyı hakkında"
     var id: Self { self }
     var symbol: String {
         switch self {
@@ -349,6 +370,7 @@ private enum KiyiSettingsPage: String, CaseIterable, Identifiable {
         case .general: "cursorarrow.motionlines"
         case .music: "music.note"
         case .system: "slider.horizontal.3"
+        case .gelgit: "dock.rectangle"
         case .lock: "lock"
         case .shelf: "tray"
         case .extras: "square.stack.3d.up"
@@ -361,13 +383,14 @@ private enum KiyiSettingsPage: String, CaseIterable, Identifiable {
         case .general: "Kıyı’nın ne zaman ve nasıl görüneceğini belirle."
         case .music: "Şarkıların, oynatıcın ve elinin altındaki kontroller."
         case .system: "Ses, parlaklık ve pil bilgisi; ihtiyacın olduğunda."
+        case .gelgit: "Dock’a bir dokunuşla küçült, bir dokunuşla geri getir."
         case .lock: "Müziğin kilit ekranında da seninle."
         case .shelf: "Dosyalarını kısa süreliğine bırak, sürükle ve paylaş."
         case .extras: "Kulaklıklarını, takvimini ve kameranı Kıyı’ya bağla."
         case .about: "kyrerdm tarafından geliştirilen kişisel macOS yardımcı uygulaması."
         }
     }
-    var search: String { KiyiL(rawValue) + " " + KiyiL(subtitle) + (self == .general ? " language Sprache dil " : "") + (self == .system ? " ses parlaklık pil izin" : self == .appearance ? " renk tema şeffaflık kapak bildirim" : self == .extras ? " airpods takvim kamera" : "") }
+    var search: String { KiyiL(rawValue) + " " + KiyiL(subtitle) + (self == .gelgit ? " Dock dock minimize restore küçült geri getir Windows " : self == .general ? " language Sprache dil " : "") + (self == .system ? " ses parlaklık pil izin" : self == .appearance ? " renk tema şeffaflık kapak bildirim" : self == .extras ? " airpods takvim kamera" : "") }
 }
 
 

@@ -95,6 +95,17 @@ final class XPCHelperClient: NSObject {
         return monitoringTask != nil
     }
     
+    nonisolated func configureGelgit(enabled: Bool, allWindows: Bool, includeFinder: Bool, frontmostPID: Int32) async -> Bool {
+        do {
+            let service = await MainActor.run { ensureRemoteService() }
+            return try await service.withContinuation { service, continuation in
+                service.configureGelgit(enabled, allWindows: allWindows, includeFinder: includeFinder, frontmostPID: frontmostPID) {
+                    continuation.resume(returning: $0)
+                }
+            }
+        } catch { return false }
+    }
+
     nonisolated func spotifyFavorite(track: String) async -> Bool? {
         do {
             let service = await MainActor.run { ensureRemoteService() }

@@ -488,6 +488,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         AdaAirPods.shared.start()
         AdaLockScreen.shared.start()
+        KiyiGelgitController.shared.start()
         if Defaults[.hudReplacement] && !MediaKeyInterceptor.shared.isAuthorized
             && !UserDefaults.standard.bool(forKey: "kiyiHUDPermissionRequestedV1") {
             UserDefaults.standard.set(true, forKey: "kiyiHUDPermissionRequestedV1")

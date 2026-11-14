@@ -15,3 +15,7 @@ Kıyı değişiklikleri — kyrerdm, Kasım 2026:
 kyrerdm tarafından yapılması, upstream katkılarının ona ait olduğu anlamına gelmez.
 GPL-3.0 metni LICENSE ve App/LICENSE dosyalarındadır. Bağımlılıklar kendi
 lisanslarını korur; App/THIRD_PARTY_LICENSES ve THIRD_PARTY_LICENSES dosyalarına bakın.
+
+## WinMin
+
+Gelgit’s Dock hover observation is adapted from WinMin by the WinMin Contributors (Copyright 2025), under the MIT License: https://github.com/Bittabola/winmin. The complete license is preserved in `App/BoringNotchXPCHelper/WinMin-LICENSE.txt` and included in the helper’s application resources.

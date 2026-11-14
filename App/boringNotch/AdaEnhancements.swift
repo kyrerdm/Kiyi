@@ -9,6 +9,9 @@ import IOKit.pwr_mgt
 import QuartzCore
 
 extension Defaults.Keys {
+    static let kiyiGelgitEnabled = Key<Bool>("kiyiGelgitEnabled", default: true)
+    static let kiyiGelgitAllWindows = Key<Bool>("kiyiGelgitAllWindows", default: false)
+    static let kiyiGelgitFinder = Key<Bool>("kiyiGelgitFinder", default: true)
     static let kiyiLanguage = Key<String>("kiyiLanguage", default: "tr")
     static let kiyiNoticeWidth = Key<Double>("kiyiNoticeWidth", default: 320)
     static let kiyiNoticeCover = Key<Double>("kiyiNoticeCover", default: 56)
@@ -1223,4 +1226,40 @@ final class KiyiTrackpadSeekView: NSView {
     }
     func stop() { if let monitor { NSEvent.removeMonitor(monitor) }; monitor = nil }
     deinit { stop() }
+}
+
+
+@MainActor final class KiyiGelgitController: ObservableObject {
+    static let shared = KiyiGelgitController()
+    @Published private(set) var active = false
+    private var foregroundPID: Int32 = 0
+    private var monitoring: Task<Void, Never>?
+    private var subscriptions = Set<AnyCancellable>()
+
+    func start() {
+        guard monitoring == nil else { return }
+        foregroundPID = NSWorkspace.shared.frontmostApplication?.processIdentifier ?? 0
+        NSWorkspace.shared.notificationCenter.publisher(for: NSWorkspace.didActivateApplicationNotification)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] notification in
+                guard let self, let app = notification.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication,
+                      app.bundleIdentifier != "com.apple.dock" else { return }
+                self.foregroundPID = app.processIdentifier
+                Task { await self.synchronize() }
+            }.store(in: &subscriptions)
+        Defaults.publisher(keys: .kiyiGelgitEnabled, .kiyiGelgitAllWindows, .kiyiGelgitFinder, options: [])
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in Task { await self?.synchronize() } }
+            .store(in: &subscriptions)
+        monitoring = Task { [weak self] in
+            while !Task.isCancelled {
+                await self?.synchronize()
+                do { try await Task.sleep(for: .seconds(3)) } catch { return }
+            }
+        }
+    }
+    private func synchronize() async {
+        active = await XPCHelperClient.shared.configureGelgit(enabled: Defaults[.kiyiGelgitEnabled],
+            allWindows: Defaults[.kiyiGelgitAllWindows], includeFinder: Defaults[.kiyiGelgitFinder], frontmostPID: foregroundPID)
+    }
 }
