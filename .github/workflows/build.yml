@@ -1,0 +1,26 @@
+name: Build portable Kiyi
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  universal:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show toolchain
+        run: xcodebuild -version
+      - name: Regression checks
+        run: bash scripts/test.sh
+      - name: Universal Release and distribution checks
+        run: bash scripts/release.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Kiyi-universal
+          path: |
+            build/releases/**/*.dmg
+            build/releases/**/*.zip
+            build/releases/**/SHA256SUMS.txt
+          if-no-files-found: error

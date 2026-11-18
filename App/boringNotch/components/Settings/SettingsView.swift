@@ -135,6 +135,12 @@ struct SettingsView: View {
                 Toggle("Ana ekran ve raf sekmelerini göster", isOn: $coordinator.alwaysShowTabs)
             }
         case .general:
+            if let updater = updaterController?.updater {
+                card("Software updates", "arrow.triangle.2.circlepath") {
+                    UpdaterSettingsView(updater: updater)
+                    CheckForUpdatesView(updater: updater)
+                }
+            }
             card("Dil", "globe") {
                 Picker("Uygulama dili", selection: $languageCode) {
                     Text(verbatim: "Türkçe").tag("tr")

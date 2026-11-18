@@ -65,3 +65,15 @@ struct UpdaterSettingsView: View {
         }
     }
 }
+
+// Keep the normal Cmd-Q behavior, while allowing Sparkle's verified installer to quit.
+final class KiyiUpdateDelegate: NSObject, SPUUpdaterDelegate {
+    static let shared = KiyiUpdateDelegate()
+    var installing = false
+    func updater(_ updater: SPUUpdater, willInstallUpdate item: SUAppcastItem) {
+        installing = true
+    }
+    func updater(_ updater: SPUUpdater, didAbortWithError error: Error) {
+        installing = false
+    }
+}

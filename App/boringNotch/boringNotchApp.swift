@@ -32,7 +32,7 @@ struct DynamicNotchApp: App {
         UserDefaults.standard.set([Defaults[.kiyiLanguage]], forKey: "AppleLanguages")
         migrateKiyiPreferences()
         updaterController = SPUStandardUpdaterController(
-            startingUpdater: false, updaterDelegate: nil, userDriverDelegate: nil)
+            startingUpdater: true, updaterDelegate: KiyiUpdateDelegate.shared, userDriverDelegate: nil)
 
         // Initialize the settings window controller with the updater controller
         SettingsWindowController.shared.setUpdaterController(updaterController)
@@ -79,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        if explicitMenuBarQuit { return .terminateNow }
+        if explicitMenuBarQuit || KiyiUpdateDelegate.shared.installing { return .terminateNow }
         SettingsWindowController.shared.close()
         return .terminateCancel
     }
