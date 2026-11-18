@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
-  <channel><title>Kıyı Updates</title><link>https://github.com/kyrerdm/Kiyi</link><description>Signed Kıyı updates</description><language>tr</language></channel>
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>Kıyı Updates</title>
+    <link>https://github.com/kyrerdm/Kiyi</link>
+    <description>Signed Kıyı updates</description>
+    <item>
+      <title>Kıyı 2.7.4</title>
+      <pubDate>Wed, 18 Nov 2026 23:14:20 GMT</pubDate>
+      <sparkle:version>272</sparkle:version>
+      <sparkle:shortVersionString>2.7.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/kyrerdm/Kiyi/releases/download/v2.7.4/Kiyi-2.7.4-universal.dmg" length="12125037" type="application/octet-stream" sparkle:edSignature="K+92b80roF0NvgzuizaReBMJzvsNUAM6iKVMWEjwAHXo0aE64VSmnAxSR0K78xF7rXelzcKXoRWO3QTEtP1/Cg==" />
+    </item>
+  </channel>
 </rss>

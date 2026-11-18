@@ -22,6 +22,8 @@ Geliştiren: **[kyrerdm](https://github.com/kyrerdm)** · [Kurulum rehberi](docs
 
 ## Kurulum
 
+**[Hazır kurulum paketini indir — GitHub Releases](https://github.com/kyrerdm/Kiyi/releases/latest)**
+
 1. Paylaşılan `Kiyi-…-universal.dmg` dosyasını aç. Depoda derleme varsa [Actions](https://github.com/kyrerdm/Kiyi/actions) bölümündeki **Build portable Kiyi** çalışmasının paketini de indirebilirsin (artifact indirmek GitHub oturumu gerektirebilir).
 2. **Kıyı.app** dosyasını **Applications / Uygulamalar** klasörüne sürükle. DMG’yi çıkar, uygulamayı Uygulamalar’dan aç. ZIP kullanıyorsan içindeki `payload/Kıyı.app` dosyasını taşı.
 3. Geliştirici doğrulanamıyorsa yalnız kaynağına güvendiğin pakette Sistem Ayarları → Gizlilik ve Güvenlik → **Yine de Aç** yolunu kullan. Bu paket noter onaylı değildir. [Apple’ın açıklaması](https://support.apple.com/en-us/102445). Gatekeeper’ı/SIP’i kapatma; Terminal’den toplu izin veya karantina silme komutları çalıştırma.
