@@ -88,6 +88,50 @@
           }
         }
       }
+    },
+    "NSCalendarsFullAccessUsageDescription": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takvim etkinliklerini çentikte göstermek için erişim ister."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı requests calendar access to display events in the notch."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı benötigt Kalenderzugriff, um Ereignisse im Notch anzuzeigen."
+          }
+        }
+      }
+    },
+    "NSRemindersFullAccessUsageDescription": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hatırlatıcılarını takvimde göstermek için erişim ister."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı requests access to show your reminders alongside calendar events."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kıyı benötigt Zugriff, um Erinnerungen neben Kalenderereignissen anzuzeigen."
+          }
+        }
+      }
     }
   },
   "version": "1.0"

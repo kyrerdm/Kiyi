@@ -30542,6 +30542,578 @@
           }
         }
       }
+    },
+    "İzinler": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzinler"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permissions"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berechtigungen"
+          }
+        }
+      }
+    },
+    "Erişim durumunu kontrol et ve gereken izinleri yönet.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erişim durumunu kontrol et ve gereken izinleri yönet."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check access status and manage required permissions."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zugriffsstatus prüfen und erforderliche Berechtigungen verwalten."
+          }
+        }
+      }
+    },
+    "Aygıt denetimi ve erişilebilirlik": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aygıt denetimi ve erişilebilirlik"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Device control and accessibility"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gerätesteuerung und Bedienungshilfen"
+          }
+        }
+      }
+    },
+    "Ses/parlaklık tuşları, Gelgit ve Spotify beğeni kontrolü için gerekir. Ana uygulama ve yardımcı ayrı kontrol edilir.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ses/parlaklık tuşları, Gelgit ve Spotify beğeni kontrolü için gerekir. Ana uygulama ve yardımcı ayrı kontrol edilir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Required for volume/brightness keys, Gelgit and Spotify likes. The app and helper are checked separately."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Für Lautstärke-/Helligkeitstasten, Gelgit und Spotify-Likes erforderlich. App und Hilfsdienst werden getrennt geprüft."
+          }
+        }
+      }
+    },
+    "Kamera": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamera"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamera"
+          }
+        }
+      }
+    },
+    "Hatırlatıcılar": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hatırlatıcılar"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reminders"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erinnerungen"
+          }
+        }
+      }
+    },
+    "Spotify otomasyonu": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spotify otomasyonu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spotify automation"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spotify-Automatisierung"
+          }
+        }
+      }
+    },
+    "Apple Music otomasyonu": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Music otomasyonu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple Music automation"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple-Music-Automatisierung"
+          }
+        }
+      }
+    },
+    "Yalnızca kamera aynasını kullanmak istersen gerekir.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yalnızca kamera aynasını kullanmak istersen gerekir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only needed if you use the camera mirror."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur für den Kameraspiegel erforderlich."
+          }
+        }
+      }
+    },
+    "Takvim etkinliklerini göstermek için tam okuma erişimi gerekir.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takvim etkinliklerini göstermek için tam okuma erişimi gerekir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full access is required to read and display calendar events."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zum Lesen und Anzeigen von Kalenderereignissen ist Vollzugriff erforderlich."
+          }
+        }
+      }
+    },
+    "Hatırlatıcılarını göstermek istersen gerekir.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hatırlatıcılarını göstermek istersen gerekir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Needed if you want to display your reminders."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erforderlich, um deine Erinnerungen anzuzeigen."
+          }
+        }
+      }
+    },
+    "Parça bilgisini okumak ve oynatmayı denetlemek için gerekir. Durum uygulamaya özeldir.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parça bilgisini okumak ve oynatmayı denetlemek için gerekir. Durum uygulamaya özeldir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Required to read track information and control playback. Status is specific to each app."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zum Lesen von Titelinformationen und Steuern der Wiedergabe erforderlich. Der Status gilt jeweils für eine App."
+          }
+        }
+      }
+    },
+    "İzin verilmiş": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin verilmiş"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allowed"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erlaubt"
+          }
+        }
+      }
+    },
+    "İzin gerekli": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin gerekli"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permission needed"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berechtigung erforderlich"
+          }
+        }
+      }
+    },
+    "İzin reddedilmiş": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin reddedilmiş"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denied"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abgelehnt"
+          }
+        }
+      }
+    },
+    "Sistem tarafından kısıtlanmış": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem tarafından kısıtlanmış"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restricted by the system"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vom System eingeschränkt"
+          }
+        }
+      }
+    },
+    "Doğrulanamadı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doğrulanamadı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not verified"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht bestätigt"
+          }
+        }
+      }
+    },
+    "Uygulama kapalı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulama kapalı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App is not running"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App ist nicht geöffnet"
+          }
+        }
+      }
+    },
+    "Uygulama yüklü değil": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulama yüklü değil"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App is not installed"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App ist nicht installiert"
+          }
+        }
+      }
+    },
+    "Kısmi erişim": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kısmi erişim"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partial access"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teilweiser Zugriff"
+          }
+        }
+      }
+    },
+    "Ana uygulama": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ana uygulama"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Main app"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haupt-App"
+          }
+        }
+      }
+    },
+    "Yardımcı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yardımcı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Helper"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hilfsdienst"
+          }
+        }
+      }
+    },
+    "Uygulamayı aç": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulamayı aç"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open app"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App öffnen"
+          }
+        }
+      }
+    },
+    "İzin iste": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin iste"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Request permission"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berechtigung anfordern"
+          }
+        }
+      }
+    },
+    "Yalnızca kullanacağın özelliklere izin ver. Durumlar bu kurulu sürüm için kontrol edilir; izin onaylarını macOS üzerinden sen verirsin.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yalnızca kullanacağın özelliklere izin ver. Durumlar bu kurulu sürüm için kontrol edilir; izin onaylarını macOS üzerinden sen verirsin."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow only the features you use. Status is checked for this installed version; you approve permissions in macOS."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erlaube nur die Funktionen, die du nutzt. Der Status gilt für diese installierte Version; du bestätigst Berechtigungen in macOS."
+          }
+        }
+      }
+    },
+    "Ad-hoc imzalı bir güncellemeden sonra macOS izni tekrar isteyebilir. Yardımcı durumu doğrulanamıyorsa Kıyı’yı menüden kapatıp yeniden açmayı dene.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ad-hoc imzalı bir güncellemeden sonra macOS izni tekrar isteyebilir. Yardımcı durumu doğrulanamıyorsa Kıyı’yı menüden kapatıp yeniden açmayı dene."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After an ad-hoc signed update, macOS may request permission again. If helper status cannot be verified, quit Kıyı from its menu and reopen it."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach einem Ad-hoc-signierten Update kann macOS erneut nach Berechtigungen fragen. Ist der Hilfsdienststatus nicht bestätigt, beende Kıyı über das Menü und öffne es erneut."
+          }
+        }
+      }
     }
   },
   "version": "1.0"

@@ -25,5 +25,9 @@
 	<true/>
 	<key>SUScheduledCheckInterval</key>
 	<integer>7200</integer>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Takvim etkinliklerini Kıyı’da göstermek için erişim ister.</string>
+	<key>NSRemindersFullAccessUsageDescription</key>
+	<string>Hatırlatıcılarını Kıyı’da göstermek için erişim ister.</string>
 </dict>
 </plist>

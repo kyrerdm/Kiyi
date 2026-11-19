@@ -327,6 +327,8 @@ struct SettingsView: View {
                 }
                 Text("Ayna için macOS kamera izni gerekir. Kamera yalnız ayna açıldığında kullanılır.").font(.callout).foregroundStyle(.secondary)
             }
+        case .permissions:
+            KiyiPermissionsView()
         case .updates:
             if let updater = updaterController?.updater {
                 card("Software updates", "arrow.triangle.2.circlepath") {
@@ -370,7 +372,7 @@ struct SettingsView: View {
 }
 
 private enum KiyiSettingsPage: String, CaseIterable, Identifiable {
-    case appearance = "Görünüm", general = "Davranış", music = "Müzik", system = "Sistem", lock = "Kilit ekranı", gelgit = "Gelgit", shelf = "Dosya rafı", extras = "Bağlantılar", updates = "Güncellemeler", about = "Kıyı hakkında"
+    case appearance = "Görünüm", general = "Davranış", music = "Müzik", system = "Sistem", lock = "Kilit ekranı", gelgit = "Gelgit", shelf = "Dosya rafı", extras = "Bağlantılar", updates = "Güncellemeler", permissions = "İzinler", about = "Kıyı hakkında"
     var id: Self { self }
     var symbol: String {
         switch self {
@@ -382,6 +384,7 @@ private enum KiyiSettingsPage: String, CaseIterable, Identifiable {
         case .lock: "lock"
         case .shelf: "tray"
         case .extras: "square.stack.3d.up"
+        case .permissions: "hand.raised"
         case .updates: "arrow.triangle.2.circlepath"
         case .about: "water.waves"
         }
@@ -396,11 +399,12 @@ private enum KiyiSettingsPage: String, CaseIterable, Identifiable {
         case .lock: "Müziğin kilit ekranında da seninle."
         case .shelf: "Dosyalarını kısa süreliğine bırak, sürükle ve paylaş."
         case .extras: "Kulaklıklarını, takvimini ve kameranı Kıyı’ya bağla."
+        case .permissions: "Erişim durumunu kontrol et ve gereken izinleri yönet."
         case .updates: "Kontrol sıklığı, otomatik indirme ve yeni sürümler."
         case .about: "kyrerdm tarafından geliştirilen kişisel macOS yardımcı uygulaması."
         }
     }
-    var search: String { (self == .updates ? " update download automatic interval güncelleme süre indirme Aktualisierung " : "") + KiyiL(rawValue) + " " + KiyiL(subtitle) + (self == .gelgit ? " Dock dock minimize restore küçült geri getir Windows " : self == .general ? " language Sprache dil " : "") + (self == .system ? " ses parlaklık pil izin" : self == .appearance ? " renk tema şeffaflık kapak bildirim" : self == .extras ? " airpods takvim kamera" : "") }
+    var search: String { (self == .permissions ? " permission privacy kamera erişim aygıt otomasyon calendar Berechtigung " : "") + (self == .updates ? " update download automatic interval güncelleme süre indirme Aktualisierung " : "") + KiyiL(rawValue) + " " + KiyiL(subtitle) + (self == .gelgit ? " Dock dock minimize restore küçült geri getir Windows " : self == .general ? " language Sprache dil " : "") + (self == .system ? " ses parlaklık pil izin" : self == .appearance ? " renk tema şeffaflık kapak bildirim" : self == .extras ? " airpods takvim kamera" : "") }
 }
 
 
