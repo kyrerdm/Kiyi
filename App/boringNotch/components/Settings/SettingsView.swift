@@ -150,7 +150,7 @@ struct SettingsView: View {
                 Text("Dil değişikliği anında uygulanır.").font(.callout).foregroundStyle(.secondary)
             }
             card("Mac ile birlikte", "desktopcomputer") {
-                LaunchAtLogin.Toggle { Text("Oturum açınca Kıyı’yı başlat") }
+                KiyiLoginItemSettingsView()
                 Defaults.Toggle(key: .menubarIcon) { Text("Menü çubuğunda Kıyı simgesi") }
                 Defaults.Toggle(key: .showOnAllDisplays) { Text("Tüm ekranlarda göster") }
                 Defaults.Toggle(key: .automaticallySwitchDisplay) { Text("Etkin ekranı takip et") }

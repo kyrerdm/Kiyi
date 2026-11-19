@@ -534,7 +534,7 @@ struct ContentView: View {
     // MARK: - Hover Management
 
     private func handleHover(_ hovering: Bool) {
-        if coordinator.firstLaunch { return }
+        // Onboarding is optional guidance; it must not disable the main panel.
         hoverTask?.cancel()
         
         if hovering {

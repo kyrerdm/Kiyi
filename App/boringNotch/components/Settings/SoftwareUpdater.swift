@@ -297,3 +297,60 @@ struct KiyiPermissionsView: View {
         }
     }
 }
+
+import ServiceManagement
+
+@MainActor private final class KiyiLoginItemModel: ObservableObject {
+    @Published private(set) var status = SMAppService.mainApp.status
+    @Published private(set) var busy = false
+    @Published private(set) var error: String?
+    func refresh() { status = SMAppService.mainApp.status }
+    func setEnabled(_ enabled: Bool) {
+        guard !busy else { return }
+        busy = true
+        error = nil
+        defer { refresh(); busy = false }
+        do {
+            if enabled {
+                if SMAppService.mainApp.status != .enabled && SMAppService.mainApp.status != .requiresApproval {
+                    try SMAppService.mainApp.register()
+                }
+                if SMAppService.mainApp.status == .requiresApproval {
+                    SMAppService.openSystemSettingsLoginItems()
+                }
+            } else if SMAppService.mainApp.status != .notRegistered {
+                try SMAppService.mainApp.unregister()
+            }
+        } catch {
+            self.error = error.localizedDescription
+        }
+    }
+}
+
+struct KiyiLoginItemSettingsView: View {
+    @StateObject private var model = KiyiLoginItemModel()
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Toggle("Oturum açınca Kıyı’yı başlat", isOn: Binding(
+                get: { model.status == .enabled }, set: { model.setEnabled($0) }))
+                .disabled(model.busy)
+            if model.status == .requiresApproval {
+                Text("macOS onayı gerekiyor. Oturum Açma Öğeleri bölümünde Kıyı’ya izin ver.")
+                    .foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                Button("Sistem Ayarları’nı aç") { SMAppService.openSystemSettingsLoginItems() }
+            }
+            if model.status == .notFound {
+                Text("Başlatma kaydı bulunamadı. Kıyı’yı Uygulamalar klasöründen çalıştır.")
+                    .foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+            }
+            if let error = model.error {
+                Text("Başlatma kaydı güncellenemedi.").foregroundStyle(.secondary)
+                Text(verbatim: error).font(.caption).foregroundStyle(.secondary)
+                    .textSelection(.enabled).fixedSize(horizontal: false, vertical: true)
+                Button("Sistem Ayarları’nı aç") { SMAppService.openSystemSettingsLoginItems() }
+            }
+        }
+        .onAppear { model.refresh() }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in model.refresh() }
+    }
+}

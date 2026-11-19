@@ -31114,6 +31114,72 @@
           }
         }
       }
+    },
+    "macOS onayı gerekiyor. Oturum Açma Öğeleri bölümünde Kıyı’ya izin ver.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS onayı gerekiyor. Oturum Açma Öğeleri bölümünde Kıyı’ya izin ver."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS approval is required. Allow Kıyı in Login Items."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine macOS-Bestätigung ist erforderlich. Erlaube Kıyı unter Anmeldeobjekte."
+          }
+        }
+      }
+    },
+    "Başlatma kaydı bulunamadı. Kıyı’yı Uygulamalar klasöründen çalıştır.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlatma kaydı bulunamadı. Kıyı’yı Uygulamalar klasöründen çalıştır."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The login item could not be found. Run Kıyı from Applications."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Anmeldeobjekt wurde nicht gefunden. Starte Kıyı aus dem Programme-Ordner."
+          }
+        }
+      }
+    },
+    "Başlatma kaydı güncellenemedi.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlatma kaydı güncellenemedi."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The login item could not be updated."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Anmeldeobjekt konnte nicht aktualisiert werden."
+          }
+        }
+      }
     }
   },
   "version": "1.0"
