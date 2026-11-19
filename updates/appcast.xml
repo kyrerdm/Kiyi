@@ -5,12 +5,12 @@
     <link>https://github.com/kyrerdm/Kiyi</link>
     <description>Signed Kıyı updates</description>
     <item>
-      <title>Kıyı 2.7.5</title>
-      <pubDate>Thu, 19 Nov 2026 20:54:23 GMT</pubDate>
-      <sparkle:version>273</sparkle:version>
-      <sparkle:shortVersionString>2.7.5</sparkle:shortVersionString>
+      <title>Kıyı 2.7.6</title>
+      <pubDate>Thu, 19 Nov 2026 20:59:03 GMT</pubDate>
+      <sparkle:version>274</sparkle:version>
+      <sparkle:shortVersionString>2.7.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <enclosure url="https://github.com/kyrerdm/Kiyi/releases/download/v2.7.5/Kiyi-2.7.5-universal.dmg" length="12145452" type="application/octet-stream" sparkle:edSignature="nyxXV4iWp3F29xxfUNk+ece/jCNHhE4XLuxCt9/XNaI8JAQuirlJAlTSIM8KUZ0beiNLxzvvb2KvjeYAclGCCg==" />
+      <enclosure url="https://github.com/kyrerdm/Kiyi/releases/download/v2.7.6/Kiyi-2.7.6-universal.dmg" length="12147017" type="application/octet-stream" sparkle:edSignature="a7TnnHT5UtH+gQ99eaTLqhqptnNgfHAB+xooJdkQPi86ywwongN2ieeA+mUqNmpPsnRkxsFolJKuuN0f7bl/DQ==" />
     </item>
   </channel>
 </rss>
