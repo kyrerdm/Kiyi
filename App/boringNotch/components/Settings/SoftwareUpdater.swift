@@ -34,34 +34,71 @@ struct CheckForUpdatesView: View {
     }
 }
 
-struct UpdaterSettingsView: View {
-    private let updater: SPUUpdater
-    
-    @State private var automaticallyChecksForUpdates: Bool
-    @State private var automaticallyDownloadsUpdates: Bool
-    
+final class KiyiUpdaterSettingsModel: ObservableObject {
+    let updater: SPUUpdater
+    @Published private(set) var checks: Bool
+    @Published private(set) var downloads: Bool
+    @Published private(set) var interval: TimeInterval
+    @Published private(set) var lastCheck: Date?
+    @Published private(set) var canCheck: Bool
+
     init(updater: SPUUpdater) {
         self.updater = updater
-        self.automaticallyChecksForUpdates = updater.automaticallyChecksForUpdates
-        self.automaticallyDownloadsUpdates = updater.automaticallyDownloadsUpdates
+        checks = updater.automaticallyChecksForUpdates
+        downloads = updater.automaticallyDownloadsUpdates
+        interval = updater.updateCheckInterval
+        lastCheck = updater.lastUpdateCheckDate
+        canCheck = updater.canCheckForUpdates
+        // Observe Sparkle too: its update dialogs can change these preferences.
+        updater.publisher(for: \.automaticallyChecksForUpdates).receive(on: RunLoop.main).assign(to: &$checks)
+        updater.publisher(for: \.automaticallyDownloadsUpdates).receive(on: RunLoop.main).assign(to: &$downloads)
+        updater.publisher(for: \.updateCheckInterval).receive(on: RunLoop.main).assign(to: &$interval)
+        updater.publisher(for: \.lastUpdateCheckDate).receive(on: RunLoop.main).assign(to: &$lastCheck)
+        updater.publisher(for: \.canCheckForUpdates).receive(on: RunLoop.main).assign(to: &$canCheck)
     }
-    
+    func setChecks(_ value: Bool) { checks = value; updater.automaticallyChecksForUpdates = value }
+    func setDownloads(_ value: Bool) { downloads = value; updater.automaticallyDownloadsUpdates = value }
+    func setHours(_ value: Int) {
+        interval = TimeInterval(min(168, max(1, value))) * 3600
+        updater.updateCheckInterval = interval
+    }
+}
+
+struct UpdaterSettingsView: View {
+    @StateObject private var model: KiyiUpdaterSettingsModel
+    init(updater: SPUUpdater) {
+        _model = StateObject(wrappedValue: KiyiUpdaterSettingsModel(updater: updater))
+    }
     var body: some View {
-        Section {
-            Toggle("Automatically check for updates", isOn: $automaticallyChecksForUpdates)
-                .onChange(of: automaticallyChecksForUpdates) { _, newValue in
-                    updater.automaticallyChecksForUpdates = newValue
+        VStack(alignment: .leading, spacing: 18) {
+            Toggle("Automatically check for updates", isOn: Binding(get: { model.checks }, set: model.setChecks))
+            Toggle("Automatically download updates", isOn: Binding(get: { model.downloads }, set: model.setDownloads))
+                .disabled(!model.checks)
+            Stepper(value: Binding(get: { Int(model.interval / 3600) }, set: model.setHours), in: 1...168) {
+                HStack {
+                    Text("Kontrol aralığı")
+                    Spacer()
+                    Text("\(Int(model.interval / 3600)) h").monospacedDigit().foregroundStyle(.secondary)
                 }
-            
-            Toggle("Automatically download updates", isOn: $automaticallyDownloadsUpdates)
-                .disabled(!automaticallyChecksForUpdates)
-                .onChange(of: automaticallyDownloadsUpdates) { _, newValue in
-                    updater.automaticallyDownloadsUpdates = newValue
-                }
-        } header: {
-            HStack {
-                Text("Software updates")
             }
+            .disabled(!model.checks)
+            Text("1–168 saat arasında seçebilirsin. Kontroller Kıyı açıkken yapılır.")
+                .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+            Divider()
+            HStack(alignment: .firstTextBaseline) {
+                Text("Son kontrol").foregroundStyle(.secondary)
+                Spacer()
+                if let date = model.lastCheck {
+                    Text(date, format: .dateTime.day().month().hour().minute())
+                        .multilineTextAlignment(.trailing)
+                } else {
+                    Text("Henüz kontrol edilmedi").foregroundStyle(.secondary)
+                }
+            }
+            Button("Check for Updates…", action: model.updater.checkForUpdates)
+                .disabled(!model.canCheck)
+            Text("Yeni sürüm imzası doğrulandıktan sonra indirilir ve uygun kapanışta kurulur. macOS gerektiğinde onay isteyebilir.")
+                .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
         }
     }
 }

@@ -30388,6 +30388,160 @@
           }
         }
       }
+    },
+    "Güncellemeler": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeler"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
+          }
+        }
+      }
+    },
+    "Kontrol sıklığı, otomatik indirme ve yeni sürümler.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kontrol sıklığı, otomatik indirme ve yeni sürümler."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check frequency, automatic downloads and new versions."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prüfintervall, automatische Downloads und neue Versionen."
+          }
+        }
+      }
+    },
+    "Kontrol aralığı": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kontrol aralığı"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check interval"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prüfintervall"
+          }
+        }
+      }
+    },
+    "1–168 saat arasında seçebilirsin. Kontroller Kıyı açıkken yapılır.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1–168 saat arasında seçebilirsin. Kontroller Kıyı açıkken yapılır."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose between 1 and 168 hours. Checks run while Kıyı is open."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wähle zwischen 1 und 168 Stunden. Die Prüfung erfolgt, während Kıyı geöffnet ist."
+          }
+        }
+      }
+    },
+    "Son kontrol": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son kontrol"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last checked"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt geprüft"
+          }
+        }
+      }
+    },
+    "Henüz kontrol edilmedi": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz kontrol edilmedi"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not checked yet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch nicht geprüft"
+          }
+        }
+      }
+    },
+    "Yeni sürüm imzası doğrulandıktan sonra indirilir ve uygun kapanışta kurulur. macOS gerektiğinde onay isteyebilir.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni sürüm imzası doğrulandıktan sonra indirilir ve uygun kapanışta kurulur. macOS gerektiğinde onay isteyebilir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New versions are verified, downloaded and installed on a suitable quit. macOS may request approval."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neue Versionen werden geprüft, heruntergeladen und beim nächsten geeigneten Beenden installiert. macOS kann eine Bestätigung anfordern."
+          }
+        }
+      }
     }
   },
   "version": "1.0"

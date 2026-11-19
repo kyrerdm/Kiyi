@@ -2,12 +2,14 @@
 # Build a portable, ad-hoc signed Universal app without touching the installed app.
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# Ad-hoc builds have no Team ID: hardened library validation rejects their embedded frameworks.
+# Developer ID/notarized releases need a separate properly signed hardened build.
 mkdir -p build
 kiyi_derived="$PWD/build/ReleaseDerived"
 xcodebuild -project App/boringNotch.xcodeproj -scheme boringNotch \
   -configuration Release -destination 'generic/platform=macOS' \
   -derivedDataPath "$kiyi_derived" -clonedSourcePackagesDirPath build/SourcePackages \
-  ARCHS='arm64 x86_64' ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual \
+  ARCHS='arm64 x86_64' ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual ENABLE_HARDENED_RUNTIME=NO \
   build > build/release-build.log 2>&1 || { tail -n 60 build/release-build.log; exit 1; }
 kiyi_app="$kiyi_derived/Build/Products/Release/Kıyı.app"
 python3 scripts/verify-release.py "$kiyi_app"

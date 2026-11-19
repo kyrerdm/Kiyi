@@ -49,7 +49,7 @@ AirPods göstergesi bağlı cihazın macOS tarafından bildirilen verilerine ba�
 
 ## 5. Güncelleme ve sorun giderme
 
-Uygulama açıkken yaklaşık iki saatte bir GitHub güncelleme akışı kontrol edilir. Yeni imzalı sürüm otomatik indirilir ve uygun kapanışta kurulur; macOS gerektiğinde onay isteyebilir. Ayarlar → Davranış → Yazılım güncellemeleri bölümünden kontrol ve indirme ayrı ayrı kapatılabilir. Yayıncı yalnız kaynak kodunu güncellerse güncelleme gelmez; imzalı dağıtım paketi ve güncelleme akışı gerekir.
+Uygulama açıkken yaklaşık iki saatte bir GitHub güncelleme akışı kontrol edilir. Yeni imzalı sürüm otomatik indirilir ve uygun kapanışta kurulur; macOS gerektiğinde onay isteyebilir. Ayarlar → Güncellemeler bölümünden kontrol ve indirme ayrı ayrı kapatılabilir. Yayıncı yalnız kaynak kodunu güncellerse güncelleme gelmez; imzalı dağıtım paketi ve güncelleme akışı gerekir.
 
 Elle güncellemek için önce menüden Kıyı’yı kapat, eski uygulamayı yedekle ve yeni Kıyı.app’i aynı Uygulamalar konumuna koy. Tercihler korunur. Ad-hoc imza değiştiğinde macOS izin kaydını yenilemeni isteyebilir; Sistem Ayarları’ndan eski Kıyı kaydını kaldırıp kurulu yeni Kıyı’yı yeniden ekle. İzin veritabanını elle düzenleme.
 
@@ -65,3 +65,5 @@ Sorunu https://github.com/kyrerdm/Kiyi/issues adresine macOS sürümü, işlemci
 ## 6. Kaldırma
 
 Menüden Kıyı’yı kapat. Uygulamalar/Kıyı.app’i Çöp Sepeti’ne taşı. Giriş öğesi etkinse Sistem Ayarları → Genel → Giriş Öğeleri’nden kapat. Gizlilik izinlerindeki Kıyı kaydını kaldırabilirsin. Tercihleri silmek zorunda değilsin; yeniden kurulum için kalabilir.
+
+Güncellemeler bölümünde kontrol aralığı **1–168 saat** arasında değiştirilebilir (varsayılan 2 saat). Otomatik kontrol ve indirme ayrı seçeneklerdir. Son kontrol zamanı ve elle kontrol düğmesi aynı bölümde yer alır; değişiklikler yeniden açılışta korunur.

@@ -1,5 +1,6 @@
 """Validate supported locales, format arguments and resources in the built app."""
 import json
+import os
 import subprocess
 import re
 from pathlib import Path
@@ -17,7 +18,7 @@ for filename in ('Localizable.xcstrings', 'InfoPlist.xcstrings'):
         assert all(value == arguments[0] for value in arguments), (key, arguments)
     compiled_name = filename.replace('.xcstrings', '.strings')
     for code in locales:
-        path = root / 'build/Kıyı.app/Contents/Resources' / (code + '.lproj') / compiled_name
+        path = Path(os.environ.get('KIYI_TEST_APP', str(root / 'build/Kıyı.app'))) / 'Contents/Resources' / (code + '.lproj') / compiled_name
         if not path.exists():
             raise AssertionError(f'Missing built language resource: {path}')
         data = json.loads(subprocess.check_output(['plutil', '-convert', 'json', '-o', '-', str(path)]))

@@ -37,5 +37,7 @@ for path in app.rglob('*'):
         name = library.strip().split(' (')[0]
         assert name.startswith(('@', '/System/Library/', '/usr/lib/')), (path, name)
 assert count >= 3, 'Expected app, helper and embedded frameworks'
+signature = run('/usr/bin/codesign', '-d', '--verbose=4', str(app))
+assert 'runtime' not in signature.split('flags=')[-1].splitlines()[0], 'Ad-hoc release cannot load non-platform frameworks with library validation'
 run('/usr/bin/codesign', '--verify', '--deep', '--strict', str(app))
 print(f'PASS: Universal arm64+x86_64, {count} Mach-O files, portable libraries, identity, licenses, resources and signature')

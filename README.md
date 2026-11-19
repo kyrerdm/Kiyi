@@ -90,7 +90,7 @@ bash scripts/release.sh               # Release, arm64+x86_64, DMG+ZIP+SHA256
 
 Release çıktısı `build/releases/Kiyi-<sürüm>-<zaman>/` altındadır; log `build/release-build.log`. Paketin içinde karşılık gelen kaynak kodu `Kiyi-source.tar.gz` olarak da bulunur. Script, çalışan yerel uygulamayı veya izinlerini değiştirmez. Tam Xcode dışında Homebrew, Python paketleri veya ücretli hesap gerekmez; test/paket kontrolleri için `python3` gerekir. Gömülü Perl medya yardımcısı `/usr/bin/perl` kullanır. Sadece Terminal komut satırı araçları uygulamayı derlemek için yeterli değildir.
 
-Gerçek Developer ID dağıtımı için Apple Developer hesabı, tüm iç bileşenleri doğru imzalama, noter onayı ve staple adımları ayrıca gerekir; mevcut script bunları yaptığını iddia etmez. Kıyı, GitHub’daki kendi Sparkle akışını uygulama açıkken yaklaşık iki saatte bir kontrol eder. Otomatik indirme varsayılan olarak açıktır; doğrulanan paket Sparkle tarafından uygun kapanışta kurulur, gerektiğinde kurulum onayı istenir. Ayarlar → Davranış → Yazılım güncellemeleri bölümünden kapatılabilir veya elle kontrol edilebilir. Upstream Boring Notch güncelleme akışı kullanılmaz. Yeni sürümün çalışması için yayıncının DMG’yi Releases’a yüklemesi ve imzalı `updates/appcast.xml` girdisini yayımlaması gerekir; yalnız kaynak koda push yapmak güncelleme yayımlamaz.
+Gerçek Developer ID dağıtımı için Apple Developer hesabı, tüm iç bileşenleri doğru imzalama, noter onayı ve staple adımları ayrıca gerekir; mevcut script bunları yaptığını iddia etmez. Kıyı, GitHub’daki kendi Sparkle akışını uygulama açıkken yaklaşık iki saatte bir kontrol eder. Otomatik indirme varsayılan olarak açıktır; doğrulanan paket Sparkle tarafından uygun kapanışta kurulur, gerektiğinde kurulum onayı istenir. Ayarlar → Güncellemeler bölümünden kapatılabilir veya elle kontrol edilebilir. Upstream Boring Notch güncelleme akışı kullanılmaz. Yeni sürümün çalışması için yayıncının DMG’yi Releases’a yüklemesi ve imzalı `updates/appcast.xml` girdisini yayımlaması gerekir; yalnız kaynak koda push yapmak güncelleme yayımlamaz.
 
 ## Geliştirici ve yapay zekâ araçları için harita
 
@@ -123,3 +123,7 @@ Kıyı, **[TheBoredTeam/boring.notch](https://github.com/TheBoredTeam/boring.not
 6. Önceki kurulu sürümden güncelleme kontrolü/indirme/yeniden açılmayı dene. Noter onayı olmayan bu dağıtımda macOS izin veya güvenlik onayı istemeye devam edebilir. Ed25519 arşiv imzası, Apple Developer ID/noter onayının yerine geçmez.
 
 CI iş akışı doğrulanan Universal paket üretir; özel anahtarı barındırmaz ve kendi başına imzalı güncelleme yayımlamaz. Güncel akış başlangıçta boş olabilir; bu durumda kurulabilir yeni sürüm bildirilmez.
+
+Güncellemeler bölümünde kontrol aralığı **1–168 saat** arasında değiştirilebilir (varsayılan 2 saat). Otomatik kontrol ve indirme ayrı seçeneklerdir. Son kontrol zamanı ve elle kontrol düğmesi aynı bölümde yer alır; değişiklikler yeniden açılışta korunur.
+
+Ad-hoc Release paketinde Team ID bulunmadığından hardened runtime kapalı derlenir; aksi halde macOS gömülü medya kütüphanesini yüklemeyi reddeder. Developer ID/noter onaylı dağıtım ayrı, doğru imzalanmış bir hardened build gerektirir. Sistem genelinde Gatekeeper/SIP ayarı değiştirilmez.
