@@ -300,16 +300,11 @@ final class KiyiGelgit {
             windows = item.press.group.filter { read($0, kAXMinimizedAttribute, deadline: deadline) as? Bool == true }
             restoring = !windows.isEmpty
         }
-        // Resolve focus off the input callback: the relayed foreground PID can
-        // briefly lag behind a native Dock activation.
-        var focusedPID: pid_t = 0
-        if !item.press.restoreRequested,
-           let focused = read(AXUIElementCreateSystemWide(), kAXFocusedApplicationAttribute, deadline: deadline),
-           CFGetTypeID(focused) == AXUIElementGetTypeID() {
-            AXUIElementGetPid(unsafeBitCast(focused, to: AXUIElement.self), &focusedPID)
-        }
+        // Use the foreground PID relayed by the main GUI process. The XPC
+        // helper cannot reliably query system-wide focused application state;
+        // requiring that optional AX attribute disabled every minimize click.
         let action = GelgitWindowAction.choose(restoreRequested: item.press.restoreRequested,
-            hasMinimizedWindows: restoring, targetFocused: focusedPID == pid)
+            hasMinimizedWindows: restoring, targetFocused: locked { foregroundPID == pid })
         guard action != .native else {
             if item.press.restoreRequested && !restoring {
                 locked { if generation == id { groups.removeValue(forKey: pid) } }

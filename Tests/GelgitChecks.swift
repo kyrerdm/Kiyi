@@ -26,7 +26,7 @@ import AppKit
                      "An already restored window must never be minimized by a restore click")
         precondition(GelgitWindowAction.choose(restoreRequested: true, hasMinimizedWindows: true, targetFocused: false) == .restore)
         precondition(GelgitWindowAction.choose(restoreRequested: false, hasMinimizedWindows: false, targetFocused: false) == .native,
-                     "A stale relayed PID must not minimize a background app")
+                     "A different foreground app must not be minimized")
         precondition(GelgitWindowAction.choose(restoreRequested: false, hasMinimizedWindows: false, targetFocused: true) == .minimize)
         var sequence = GelgitClickSequence()
         sequence.record(pid: 42, timestamp: 100)
