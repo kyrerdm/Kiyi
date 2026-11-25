@@ -22,6 +22,19 @@ import AppKit
         precondition(committed.claim(now: 20, generation: 3))
         precondition(!committed.expire(now: 300), "Native fallback must not compete with an accepted window action")
         precondition(!committed.claim(now: 30, generation: 3), "Each click must commit exactly once")
+        precondition(GelgitWindowAction.choose(restoreRequested: true, hasMinimizedWindows: false, targetFocused: true) == .native,
+                     "An already restored window must never be minimized by a restore click")
+        precondition(GelgitWindowAction.choose(restoreRequested: true, hasMinimizedWindows: true, targetFocused: false) == .restore)
+        precondition(GelgitWindowAction.choose(restoreRequested: false, hasMinimizedWindows: false, targetFocused: false) == .native,
+                     "A stale relayed PID must not minimize a background app")
+        precondition(GelgitWindowAction.choose(restoreRequested: false, hasMinimizedWindows: false, targetFocused: true) == .minimize)
+        var sequence = GelgitClickSequence()
+        sequence.record(pid: 42, timestamp: 100)
+        precondition(sequence.isFollowup(pid: 42, clickCount: 2, timestamp: 150, interval: 100))
+        precondition(!sequence.isFollowup(pid: 43, clickCount: 2, timestamp: 150, interval: 100))
+        precondition(!sequence.isFollowup(pid: 42, clickCount: 1, timestamp: 150, interval: 100), "Separate single clicks remain available")
+        precondition(!sequence.isFollowup(pid: 42, clickCount: 2, timestamp: 250, interval: 100))
+        precondition(!sequence.isFollowup(pid: 42, clickCount: 2, timestamp: 90, interval: 100))
         // A stalled AX worker cannot stall the independent fallback deadline.
         let worker = DispatchQueue(label: "test.slow.ax")
         let blocker = DispatchSemaphore(value: 0)

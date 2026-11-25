@@ -22,6 +22,25 @@ struct GelgitOperationGate {
     }
 }
 
+// A restore click must never become a minimize when native Dock restoration
+// or an animation has already changed the window's minimized state.
+enum GelgitWindowAction {
+    case restore, minimize, native
+    static func choose(restoreRequested: Bool, hasMinimizedWindows: Bool, targetFocused: Bool) -> Self {
+        if restoreRequested { return hasMinimizedWindows ? .restore : .native }
+        return targetFocused ? .minimize : .native
+    }
+}
+
+struct GelgitClickSequence {
+    private var pid: pid_t?
+    private var timestamp: UInt64 = 0
+    mutating func record(pid: pid_t, timestamp: UInt64) { self.pid = pid; self.timestamp = timestamp }
+    func isFollowup(pid: pid_t, clickCount: Int64, timestamp: UInt64, interval: UInt64) -> Bool {
+        clickCount > 1 && self.pid == pid && timestamp >= self.timestamp && timestamp - self.timestamp <= interval
+    }
+}
+
 /// The input callback only reads small cached values. All Accessibility IPC,
 /// app activation and window mutations run on axQueue, without its state lock.
 final class KiyiGelgit {
@@ -34,6 +53,8 @@ final class KiyiGelgit {
         let original: CGEvent
         let allWindows: Bool
         let group: [AXUIElement]
+        let restoreRequested: Bool
+        let suppressOnly: Bool
     }
     private struct Work {
         let press: Press
@@ -55,6 +76,8 @@ final class KiyiGelgit {
     private var press: Press?
     private var work: [UInt64: Work] = [:]
     private var groups: [pid_t: [AXUIElement]] = [:]
+    private var clickSequence = GelgitClickSequence()
+    private var doubleClickInterval: UInt64 = 1_000_000_000
     private var refreshQueued = false
     private var tap: CFMachPort?
     private var eventLoop: EventLoop?
@@ -80,7 +103,9 @@ final class KiyiGelgit {
 
     func configure(enabled: Bool, allWindows: Bool, includeFinder: Bool, frontmostPID: Int32) -> Bool {
         guard enabled, AXIsProcessTrusted() else { stop(); return false }
+        let clickInterval = UInt64(max(0.15, NSEvent.doubleClickInterval) * 1_000_000_000)
         let changedPID = locked { () -> Bool in
+            doubleClickInterval = clickInterval
             let changed = foregroundPID != frontmostPID
             if self.allWindows != allWindows || self.includeFinder != includeFinder {
                 generation &+= 1
@@ -141,6 +166,7 @@ final class KiyiGelgit {
             hit = nil
             work.removeAll()
             groups.removeAll()
+            clickSequence = GelgitClickSequence()
             let old = (tap, eventLoop?.runLoop)
             tap = nil
             eventLoop = nil
@@ -174,6 +200,20 @@ final class KiyiGelgit {
         return locked {
             guard enabled else { return false }
             if type == .leftMouseDown {
+                press = nil
+                // Only suppress the remainder of a click sequence that *we* began.
+                // Keep its mouse pair for the normal drag escape path below.
+                let modifiers: CGEventFlags = [.maskCommand, .maskControl, .maskAlternate, .maskShift]
+                if event.flags.intersection(modifiers).isEmpty, let hit,
+                   hit.frame.contains(event.location),
+                   clickSequence.isFollowup(pid: hit.pid, clickCount: event.getIntegerValueField(.mouseEventClickState),
+                                            timestamp: event.timestamp, interval: doubleClickInterval),
+                   let original = event.copy() {
+                    clickSequence.record(pid: hit.pid, timestamp: event.timestamp)
+                    press = Press(id: generation, pid: hit.pid, dockOwner: hit.dockOwner, point: event.location,
+                                  original: original, allWindows: allWindows, group: [], restoreRequested: false, suppressOnly: true)
+                    return true
+                }
                 generation &+= 1
                 press = nil
                 // Never execute the result of an earlier, superseded click.
@@ -184,7 +224,9 @@ final class KiyiGelgit {
                       foregroundPID == hit.pid || groups[hit.pid] != nil,
                       let original = event.copy() else { return false }
                 press = Press(id: generation, pid: hit.pid, dockOwner: hit.dockOwner, point: event.location, original: original,
-                              allWindows: allWindows, group: groups[hit.pid] ?? [])
+                              allWindows: allWindows, group: groups[hit.pid] ?? [],
+                              restoreRequested: groups[hit.pid] != nil, suppressOnly: false)
+                clickSequence.record(pid: hit.pid, timestamp: event.timestamp)
                 return true
             }
             if type == .leftMouseDragged, let pending = press {
@@ -198,6 +240,7 @@ final class KiyiGelgit {
             }
             if type == .leftMouseUp, let pending = press {
                 press = nil
+                if pending.suppressOnly { return true }
                 guard let up = event.copy() else { return false }
                 guard Self.isPlainClick(from: pending.point, to: event.location, clickCount: 1, flags: event.flags),
                       hit?.pid == pending.pid else {
@@ -257,7 +300,24 @@ final class KiyiGelgit {
             windows = item.press.group.filter { read($0, kAXMinimizedAttribute, deadline: deadline) as? Bool == true }
             restoring = !windows.isEmpty
         }
-        if !restoring {
+        // Resolve focus off the input callback: the relayed foreground PID can
+        // briefly lag behind a native Dock activation.
+        var focusedPID: pid_t = 0
+        if !item.press.restoreRequested,
+           let focused = read(AXUIElementCreateSystemWide(), kAXFocusedApplicationAttribute, deadline: deadline),
+           CFGetTypeID(focused) == AXUIElementGetTypeID() {
+            AXUIElementGetPid(unsafeBitCast(focused, to: AXUIElement.self), &focusedPID)
+        }
+        let action = GelgitWindowAction.choose(restoreRequested: item.press.restoreRequested,
+            hasMinimizedWindows: restoring, targetFocused: focusedPID == pid)
+        guard action != .native else {
+            if item.press.restoreRequested && !restoring {
+                locked { if generation == id { groups.removeValue(forKey: pid) } }
+            }
+            nativeFallback(id)
+            return
+        }
+        if action == .minimize {
             guard locked({ foregroundPID == pid }) else { nativeFallback(id); return }
             let app = AXUIElementCreateApplication(pid)
             let focused = read(app, kAXFocusedWindowAttribute, deadline: deadline) ?? read(app, kAXMainWindowAttribute, deadline: deadline)
