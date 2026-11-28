@@ -31180,6 +31180,28 @@
           }
         }
       }
+    },
+    "Tam ekran uygulamalar ve oyunlarda ada, bildirimler ve fare etkileşimi gizlenir. Tam ekrandan çıkınca geri gelir.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tam ekran uygulamalar ve oyunlarda ada, bildirimler ve fare etkileşimi gizlenir. Tam ekrandan çıkınca geri gelir."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The island, notifications and mouse interaction are hidden in fullscreen apps and games, and return when you leave fullscreen."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In Vollbild-Apps und Spielen werden Insel, Hinweise und Mausinteraktionen ausgeblendet. Nach dem Verlassen des Vollbildmodus kehren sie zurück."
+          }
+        }
+      }
     }
   },
   "version": "1.0"

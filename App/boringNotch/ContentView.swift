@@ -229,6 +229,15 @@ struct ContentView: View {
         )
         .animation(.smooth, value: gestureProgress)
         .background(dragDetector)
+        .opacity(vm.hideOnClosed ? 0 : 1)
+        .allowsHitTesting(!vm.hideOnClosed)
+        .onChange(of: vm.hideOnClosed) { _, hidden in
+            if hidden {
+                hoverTask?.cancel()
+                anyDropDebounceTask?.cancel()
+                isHovering = false
+            }
+        }
         .environment(\.locale, Locale(identifier: languageCode))
         .preferredColorScheme(.dark)
         .tint(useCustomAccent && accentData != nil ? .effectiveAccent : .accentColor)

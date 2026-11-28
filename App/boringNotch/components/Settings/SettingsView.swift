@@ -173,6 +173,7 @@ struct SettingsView: View {
                     Text("Medya uygulamasında gizle").tag(HideNotchOption.nowPlayingOnly)
                     Text("Görünür kalsın").tag(HideNotchOption.never)
                 }
+                Text("Tam ekran uygulamalar ve oyunlarda ada, bildirimler ve fare etkileşimi gizlenir. Tam ekrandan çıkınca geri gelir.").font(.callout).foregroundStyle(.secondary)
                 Defaults.Toggle(key: .hideFromScreenRecording) { Text("Ekran kaydında paneli gizle") }
                 Defaults.Toggle(key: .hideTitleBar) { Text("Üst pencere başlık alanını koru") }
             }

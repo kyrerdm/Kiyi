@@ -26,7 +26,7 @@ class BoringViewModel: NSObject, ObservableObject {
     @Published var anyDropZoneTargeting: Bool = false
     var cancellables: Set<AnyCancellable> = []
     
-    @Published var hideOnClosed: Bool = true
+    @Published var hideOnClosed: Bool = false
 
     @Published var edgeAutoOpenActive: Bool = false
     @Published var isHoveringCalendar: Bool = false
@@ -95,8 +95,13 @@ class BoringViewModel: NSObject, ObservableObject {
             .removeDuplicates()
             .receive(on: RunLoop.main)
             .sink { [weak self] shouldHide in
-                withAnimation(.smooth) {
-                    self?.hideOnClosed = shouldHide
+                guard let self else { return }
+                self.hideOnClosed = shouldHide
+                if shouldHide {
+                    // Fullscreen suppression must also close an already expanded panel.
+                    self.notchState = .closed
+                    self.isBatteryPopoverActive = false
+                    self.edgeAutoOpenActive = false
                 }
             }
             .store(in: &cancellables)
@@ -188,6 +193,7 @@ class BoringViewModel: NSObject, ObservableObject {
     }
 
     func open() {
+        guard !hideOnClosed else { return }
         // A track notification is a shortcut into the player, even if Shelf was last used.
         if coordinator.sneakPeek.show && coordinator.sneakPeek.type == .music {
             coordinator.currentView = .home

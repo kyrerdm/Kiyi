@@ -67,3 +67,9 @@ Sorunu https://github.com/kyrerdm/Kiyi/issues adresine macOS sürümü, işlemci
 Menüden Kıyı’yı kapat. Uygulamalar/Kıyı.app’i Çöp Sepeti’ne taşı. Giriş öğesi etkinse Sistem Ayarları → Genel → Giriş Öğeleri’nden kapat. Gizlilik izinlerindeki Kıyı kaydını kaldırabilirsin. Tercihleri silmek zorunda değilsin; yeniden kurulum için kalabilir.
 
 Güncellemeler bölümünde kontrol aralığı **1–168 saat** arasında değiştirilebilir (varsayılan 2 saat). Otomatik kontrol ve indirme ayrı seçeneklerdir. Son kontrol zamanı ve elle kontrol düğmesi aynı bölümde yer alır; değişiklikler yeniden açılışta korunur.
+
+## Tam ekran oyunlar
+
+Ayarlar → Davranış → Tam ekranda seçeneği varsayılan olarak **Daima gizle** değerindedir. Kıyı, tam ekran uygulamanın bulunduğu ekranda adayı ve tüm ada bildirimlerini gizler; görünmez panel oyun tıklamalarını yakalamaz. Tam ekrandan çıkınca geri gelir. macOS tam ekran Spaces yanında, ekranı kaplayan çerçevesiz oyun pencereleri de algılanır. Normal, menü çubuğunun altında büyütülmüş pencereler tam ekran sayılmaz. Daha önce açıkça seçilmiş “Medya uygulamasında gizle” veya “Görünür kalsın” tercihleri korunur; oyunlarda gizlemek için “Daima gizle”yi seç. Kilit ekranı oynatıcısı ayrı çalışır.
+
+Bu algılama ek bir Ekran Kaydı veya Erişilebilirlik izni istemez. Çerçevesiz mod değişimleri yaklaşık yarım saniyede kontrol edilir. Farklı oyun motorları ve çoklu ekran donanımları ayrıca gerçek cihazda doğrulanmalıdır.

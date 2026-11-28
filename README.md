@@ -127,3 +127,9 @@ CI iş akışı doğrulanan Universal paket üretir; özel anahtarı barındırm
 Güncellemeler bölümünde kontrol aralığı **1–168 saat** arasında değiştirilebilir (varsayılan 2 saat). Otomatik kontrol ve indirme ayrı seçeneklerdir. Son kontrol zamanı ve elle kontrol düğmesi aynı bölümde yer alır; değişiklikler yeniden açılışta korunur.
 
 Ad-hoc Release paketinde Team ID bulunmadığından hardened runtime kapalı derlenir; aksi halde macOS gömülü medya kütüphanesini yüklemeyi reddeder. Developer ID/noter onaylı dağıtım ayrı, doğru imzalanmış bir hardened build gerektirir. Sistem genelinde Gatekeeper/SIP ayarı değiştirilmez.
+
+## Tam ekran oyunlar
+
+Ayarlar → Davranış → Tam ekranda seçeneği varsayılan olarak **Daima gizle** değerindedir. Kıyı, tam ekran uygulamanın bulunduğu ekranda adayı ve tüm ada bildirimlerini gizler; görünmez panel oyun tıklamalarını yakalamaz. Tam ekrandan çıkınca geri gelir. macOS tam ekran Spaces yanında, ekranı kaplayan çerçevesiz oyun pencereleri de algılanır. Normal, menü çubuğunun altında büyütülmüş pencereler tam ekran sayılmaz. Daha önce açıkça seçilmiş “Medya uygulamasında gizle” veya “Görünür kalsın” tercihleri korunur; oyunlarda gizlemek için “Daima gizle”yi seç. Kilit ekranı oynatıcısı ayrı çalışır.
+
+Bu algılama ek bir Ekran Kaydı veya Erişilebilirlik izni istemez. Çerçevesiz mod değişimleri yaklaşık yarım saniyede kontrol edilir. Farklı oyun motorları ve çoklu ekran donanımları ayrıca gerçek cihazda doğrulanmalıdır.

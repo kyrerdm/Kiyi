@@ -31,9 +31,15 @@ extension SkyLightOperator {
     }
 }
 
-class BoringNotchSkyLightWindow: NSPanel {
+class BoringNotchSkyLightWindow: KiyiFullscreenPanel {
     private var isSkyLightEnabled: Bool = false
-    
+
+    func observeFullscreen(_ viewModel: BoringViewModel) {
+        viewModel.$hideOnClosed.removeDuplicates().sink { [weak self] hidden in
+            self?.setFullscreenSuppressed(hidden)
+        }.store(in: &observers)
+    }
+
     override init(
         contentRect: NSRect,
         styleMask: NSWindow.StyleMask,
@@ -97,6 +103,7 @@ class BoringNotchSkyLightWindow: NSPanel {
         if !isSkyLightEnabled {
             SkyLightOperator.shared.delegateWindow(self)
             isSkyLightEnabled = true
+            fullscreenExempt = true
         }
     }
     
@@ -104,6 +111,7 @@ class BoringNotchSkyLightWindow: NSPanel {
         if isSkyLightEnabled {
             SkyLightOperator.shared.undelegateWindow(self)
             isSkyLightEnabled = false
+            fullscreenExempt = false
         }
     }
     
